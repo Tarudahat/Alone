@@ -1,0 +1,22 @@
+TODO:
+  -player 
+    -movement = click & move
+      -interaction = E
+      -chop wood click
+  -Crab 
+    -movement = side to side
+      -group/ base node -> max radius
+      -hit -> mat dmg
+  -Raft
+    -Need for go next Island
+    -cost wood + time (1min?)
+    -dodge mini game -> wood + or lose more
+  -Materials
+    -wood = punch tree
+    -coal = 5 wood? -> D & J mashing for friction
+    -shells E collect -> 5 for 1 KNO3
+    -Phosphor on lava island -> dodge falling lava balls
+  -Time limit for each Island 3 min?
+  -Big monster
+    -kill with bomb made
+      -depending on # black powder diff ending? like still died, gg, u nuked everything
