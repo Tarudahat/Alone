@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8t31a8vhserc"]
+
+[ext_resource type="Texture2D" uid="uid://df8g53dnx8r6t" path="res://assets/log_fire_UI.png" id="1_nfrom"]
+[ext_resource type="Script" uid="uid://de8a2q0a2wbl3" path="res://scripts/start_fire_minigame.gd" id="1_tmktg"]
+[ext_resource type="Texture2D" uid="uid://bjuk64vrfk48y" path="res://assets/stick_fire_UI.png" id="2_4upnx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pgdnb"]
+font_size = 32
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tmktg")
+
+[node name="Log" type="Sprite2D" parent="."]
+position = Vector2(0, 620)
+texture = ExtResource("1_nfrom")
+
+[node name="Stick" type="Sprite2D" parent="."]
+position = Vector2(-28, 421)
+scale = Vector2(0.716667, 0.872222)
+texture = ExtResource("2_4upnx")
+offset = Vector2(-12.558, 13.758)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 749.0
+offset_top = 159.0
+offset_right = 1216.0
+offset_bottom = 247.0
+text = "MASH [D] & [J] !"
+label_settings = SubResource("LabelSettings_pgdnb")
+
+[node name="friction_timer" type="Timer" parent="."]
+wait_time = 7.0
+
+[node name="input_delay_timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="friction_timer" to="." method="_on_friction_timer_timeout"]
+[connection signal="timeout" from="input_delay_timer" to="." method="_on_input_delay_timer_timeout"]

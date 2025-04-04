@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkhwrpk8o2kf8"]
+
+[ext_resource type="Texture2D" uid="uid://b2xbviayn2yjr" path="res://icon.svg" id="1_p0vlq"]
+[ext_resource type="Script" uid="uid://bgxgwjvih218s" path="res://scripts/player.gd" id="1_v6fml"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p0vlq"]
+radius = 51.0882
+
+[sub_resource type="LabelSettings" id="LabelSettings_v6fml"]
+font_size = 40
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_v6fml")
+speed = 550
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_p0vlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p0vlq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = -1164.0
+offset_top = -731.0
+offset_right = -839.0
+offset_bottom = -499.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Material amount"
+label_settings = SubResource("LabelSettings_v6fml")
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Material amount"
+label_settings = SubResource("LabelSettings_v6fml")
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Material amount"
+label_settings = SubResource("LabelSettings_v6fml")
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Material amount"
+label_settings = SubResource("LabelSettings_v6fml")

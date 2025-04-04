@@ -1,0 +1,65 @@
+extends Sprite2D
+
+var player: Node2D = null
+var player_in_range: bool = false
+var mouse_in_hitbox: bool = false
+var wood_node = preload("res://scenes/item.tscn")
+var rng = RandomNumberGenerator.new()
+@export var hp: int = 20
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+		
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	$click_indicator/ProgressBar.value = hp;
+	$click_indicator.visible = false
+	if player_in_range:
+		$click_indicator.visible = true
+		if mouse_in_hitbox:
+			if Input.is_action_just_pressed("left_click"):
+				if $Timer.time_left <= 0:
+					player.cutting_wood = true
+				$Timer.start()
+				hp-=1
+					
+	if hp == 0:
+		player.cutting_wood = false	
+		for i in rng.randi_range(2, 4):
+			var new_wood = wood_node.instantiate()
+			new_wood.item_type = 1
+			new_wood.position = self.position + Vector2(rng.randf_range(-100.0, 100.0),rng.randf_range(-10.0, 200.0))
+			get_parent().add_child(new_wood)
+
+		queue_free()
+				
+
+func _on_punch_hitbox_mouse_entered() -> void:
+	mouse_in_hitbox = true
+
+
+func _on_punch_hitbox_mouse_exited() -> void:
+	mouse_in_hitbox = false
+
+
+func _on_timer_timeout() -> void:
+	player.cutting_wood = false
+
+
+func _on_range_checker_body_entered(body: Node2D) -> void:
+	if body.name == "Player": 
+		player = body
+		player_in_range = true
+
+
+func _on_range_checker_body_exited(body: Node2D) -> void:
+	if body.name == "Player": 
+		player_in_range = false
+
+
+func _on_range_checker_mouse_exited() -> void:
+	mouse_in_hitbox = false
+	if player:
+		player.cutting_wood = false
+	$Timer.stop()
+	

@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi8c5e1k7qi8r"]
+
+[ext_resource type="Script" uid="uid://b214ub7m2aky5" path="res://scripts/crab.gd" id="1_2b8bq"]
+[ext_resource type="Texture2D" uid="uid://b2xbviayn2yjr" path="res://icon.svg" id="1_ow7wl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ow7wl"]
+radius = 55.3263
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2b8bq"]
+radius = 453.0
+
+[node name="Crab" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_2b8bq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.235294, 0.137255, 1)
+texture = ExtResource("1_ow7wl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ow7wl")
+
+[node name="agro_zone" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="agro_zone"]
+shape = SubResource("CircleShape2D_2b8bq")
+
+[node name="ray_left" type="RayCast2D" parent="."]
+position = Vector2(-62, 0)
+target_position = Vector2(-40, 0)
+
+[node name="ray_right" type="RayCast2D" parent="."]
+position = Vector2(65, 0)
+target_position = Vector2(40, 0)
+
+[node name="dmg_cooldown" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="body_entered" from="agro_zone" to="." method="_on_agro_zone_body_entered"]
+[connection signal="body_exited" from="agro_zone" to="." method="_on_agro_zone_body_exited"]
+[connection signal="timeout" from="dmg_cooldown" to="." method="_on_dmg_cooldown_timeout"]

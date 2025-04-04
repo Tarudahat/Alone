@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs6vorw8qhva2"]
+
+[ext_resource type="Texture2D" uid="uid://dsn2iw15ptviv" path="res://assets/click.png" id="1_mkgbx"]
+
+[node name="click_indicator" type="Sprite2D"]
+texture = ExtResource("1_mkgbx")

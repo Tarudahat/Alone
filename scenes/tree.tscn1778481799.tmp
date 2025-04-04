@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://4dr46qywa42t"]
+
+[ext_resource type="Texture2D" uid="uid://bk8ola3ebtjm6" path="res://assets/tree.png" id="1_avsvi"]
+[ext_resource type="Script" uid="uid://bslg5pnjdmc6j" path="res://scripts/tree.gd" id="2_vplca"]
+[ext_resource type="PackedScene" uid="uid://cs6vorw8qhva2" path="res://scenes/click_indicator.tscn" id="3_viusy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_viusy"]
+radius = 47.0538
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vplca"]
+size = Vector2(101, 285)
+
+[node name="Tree" type="Sprite2D"]
+z_index = 1
+texture = ExtResource("1_avsvi")
+script = ExtResource("2_vplca")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, 136.25)
+shape = SubResource("CircleShape2D_viusy")
+
+[node name="punch_hitbox" type="StaticBody2D" parent="."]
+collision_mask = 0
+input_pickable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="punch_hitbox"]
+position = Vector2(-0.5, 44.5)
+shape = SubResource("RectangleShape2D_vplca")
+
+[node name="click_indicator" parent="." instance=ExtResource("3_viusy")]
+position = Vector2(53, 67)
+
+[connection signal="mouse_entered" from="punch_hitbox" to="." method="_on_punch_hitbox_mouse_entered"]
+[connection signal="mouse_exited" from="punch_hitbox" to="." method="_on_punch_hitbox_mouse_exited"]

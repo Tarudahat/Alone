@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkhwrpk8o2kf8"]
+
+[ext_resource type="Texture2D" uid="uid://b2xbviayn2yjr" path="res://icon.svg" id="1_p0vlq"]
+[ext_resource type="Script" uid="uid://bgxgwjvih218s" path="res://scripts/player.gd" id="1_v6fml"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p0vlq"]
+radius = 63.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_v6fml")
+speed = 550
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_p0vlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p0vlq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = -317.0
+offset_top = -177.0
+offset_right = -187.0
+offset_bottom = -154.0
+text = "Material amount"
