@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://suhtqx5m2874"
-path="res://.godot/imported/vulcanic2.png-9443e5209f35b80c8a8f1ec4984c1831.ctex"
+uid="uid://bwoc7bivslx44"
+path="res://.godot/imported/snake.png-9033f7746695cff0737edcc17c2b422a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vulcanic2.png"
-dest_files=["res://.godot/imported/vulcanic2.png-9443e5209f35b80c8a8f1ec4984c1831.ctex"]
+source_file="res://assets/enemies/snake.png"
+dest_files=["res://.godot/imported/snake.png-9033f7746695cff0737edcc17c2b422a.ctex"]
 
 [params]
 

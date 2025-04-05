@@ -1,10 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://bi8c5e1k7qi8r"]
+[gd_scene load_steps=8 format=3 uid="uid://bi8c5e1k7qi8r"]
 
 [ext_resource type="Script" uid="uid://b214ub7m2aky5" path="res://scripts/crab.gd" id="1_2b8bq"]
-[ext_resource type="Texture2D" uid="uid://b2xbviayn2yjr" path="res://icon.svg" id="1_ow7wl"]
+[ext_resource type="Texture2D" uid="uid://cgq5s40lv3v3e" path="res://assets/enemies/crab.png" id="2_2b8bq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq6vx"]
+atlas = ExtResource("2_2b8bq")
+region = Rect2(0, 0, 240, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83q5x"]
+atlas = ExtResource("2_2b8bq")
+region = Rect2(240, 0, 240, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rftv6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq6vx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83q5x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ow7wl"]
-radius = 55.3263
+radius = 127.063
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2b8bq"]
 radius = 466.429
@@ -19,9 +41,11 @@ floor_block_on_wall = false
 platform_floor_layers = 4294967294
 script = ExtResource("1_2b8bq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0.235294, 0.137255, 1)
-texture = ExtResource("1_ow7wl")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_rftv6")
+autoplay = "default"
+frame_progress = 0.886327
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ow7wl")

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsp5tqil3gvlt"]
+[gd_scene load_steps=3 format=3 uid="uid://dsp5tqil3gvlt"]
 
 [ext_resource type="Texture2D" uid="uid://b7671mcybmvp4" path="res://assets/E.png" id="1_4d68p"]
+[ext_resource type="Script" uid="uid://dtt8kmdl47ssa" path="res://scripts/indicator.gd" id="2_a3ptr"]
 
 [node name="E_indicator" type="Sprite2D"]
+z_index = 70
 texture = ExtResource("1_4d68p")
+script = ExtResource("2_a3ptr")

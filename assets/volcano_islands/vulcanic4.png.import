@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6y204bhjy02p"
-path="res://.godot/imported/tree4.png-85620fc42022ea909943b76b55c9a0af.ctex"
+uid="uid://dojxmwylj1w6t"
+path="res://.godot/imported/vulcanic4.png-5b8db9399d14d3988d1008dd2dcccf69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tree4.png"
-dest_files=["res://.godot/imported/tree4.png-85620fc42022ea909943b76b55c9a0af.ctex"]
+source_file="res://assets/volcano_islands/vulcanic4.png"
+dest_files=["res://.godot/imported/vulcanic4.png-5b8db9399d14d3988d1008dd2dcccf69.ctex"]
 
 [params]
 

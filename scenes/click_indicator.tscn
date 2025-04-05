@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cs6vorw8qhva2"]
+[gd_scene load_steps=3 format=3 uid="uid://cs6vorw8qhva2"]
 
 [ext_resource type="Texture2D" uid="uid://dsn2iw15ptviv" path="res://assets/click.png" id="1_mkgbx"]
+[ext_resource type="Script" uid="uid://dtt8kmdl47ssa" path="res://scripts/indicator.gd" id="2_r4xs6"]
 
 [node name="click_indicator" type="Sprite2D"]
+z_index = 70
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_mkgbx")
+script = ExtResource("2_r4xs6")

@@ -23,7 +23,7 @@ func damage():
 		if items[victim_idx]:
 			items[victim_idx] -= 1
 
-func _process(delta):
+func _process(_delta):
 	$VBoxContainer/Label.text = "Shell: " + str(items[0])
 	$VBoxContainer/Label2.text = "wood: " + str(items[1])
 	$VBoxContainer/Label3.text = "sulfur: " + str(items[2])

@@ -1,13 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtojjnxtrvye8"]
+[gd_scene load_steps=10 format=3 uid="uid://dtojjnxtrvye8"]
 
-[ext_resource type="Texture2D" uid="uid://b2xbviayn2yjr" path="res://icon.svg" id="1_a5f6l"]
 [ext_resource type="Script" uid="uid://cgxwffr0y3d4v" path="res://scripts/snake.gd" id="1_yc36x"]
+[ext_resource type="Texture2D" uid="uid://bwoc7bivslx44" path="res://assets/enemies/snake.png" id="2_yc36x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auphx"]
+atlas = ExtResource("2_yc36x")
+region = Rect2(0, 0, 40, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4b1q"]
+atlas = ExtResource("2_yc36x")
+region = Rect2(40, 0, 40, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j5f3"]
+atlas = ExtResource("2_yc36x")
+region = Rect2(80, 0, 40, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1p8c4"]
+atlas = ExtResource("2_yc36x")
+region = Rect2(120, 0, 40, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oj63r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auphx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4b1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j5f3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1p8c4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yc36x"]
 size = Vector2(200, 44)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yc36x"]
-radius = 344.001
+radius = 430.01
 
 [node name="Snake" type="CharacterBody2D"]
 input_pickable = true
@@ -17,10 +53,12 @@ floor_block_on_wall = false
 platform_floor_layers = 4294967294
 script = ExtResource("1_yc36x")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.235294, 1, 0.0980392, 1)
-scale = Vector2(1.54688, 0.34375)
-texture = ExtResource("1_a5f6l")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_oj63r")
+autoplay = "default"
+frame_progress = 0.297862
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yc36x")

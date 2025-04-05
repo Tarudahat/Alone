@@ -6,7 +6,7 @@ var Player_node: Node2D = null
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	frame=item_type
 	$E_indicator.visible = false
 	if player_in_range:

@@ -18,7 +18,7 @@ func _ready() -> void:
 	$friction_timer.start(friction_level_time_limits[0])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if input_delay_over:
 		if Input.is_action_just_pressed("rotate_stick_left") and stick_side == 1:
 			$Stick.flip_h = true

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://4dr46qywa42t"]
+[gd_scene load_steps=9 format=3 uid="uid://4dr46qywa42t"]
 
 [ext_resource type="Texture2D" uid="uid://bk8ola3ebtjm6" path="res://assets/tree.png" id="1_avsvi"]
 [ext_resource type="Script" uid="uid://bslg5pnjdmc6j" path="res://scripts/tree.gd" id="2_vplca"]
 [ext_resource type="PackedScene" uid="uid://cs6vorw8qhva2" path="res://scenes/click_indicator.tscn" id="3_viusy"]
+[ext_resource type="Texture2D" uid="uid://4bxuuq6062l3" path="res://assets/tree_hp_bar_empty.png" id="4_ake3r"]
 [ext_resource type="Texture2D" uid="uid://c3d61suif5la0" path="res://assets/tree_hp_bar.png" id="4_qd6xs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_viusy"]
@@ -37,17 +38,7 @@ position = Vector2(-0.5, 44.5)
 shape = SubResource("RectangleShape2D_vplca")
 
 [node name="click_indicator" parent="." instance=ExtResource("3_viusy")]
-position = Vector2(-97, 113)
-
-[node name="ProgressBar" type="TextureProgressBar" parent="click_indicator"]
-offset_left = 165.0
-offset_top = -53.0
-offset_right = 229.0
-offset_bottom = 139.0
-max_value = 20.0
-fill_mode = 3
-texture_progress = ExtResource("4_qd6xs")
-metadata/_edit_use_anchors_ = true
+position = Vector2(80, 99)
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -57,6 +48,18 @@ position = Vector2(-8, 115)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="range_checker"]
 position = Vector2(1, 136)
 shape = SubResource("CircleShape2D_qd6xs")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+z_index = 60
+offset_left = -149.0
+offset_top = -55.0
+offset_right = -69.0
+offset_bottom = 145.0
+max_value = 20.0
+fill_mode = 3
+texture_under = ExtResource("4_ake3r")
+texture_progress = ExtResource("4_qd6xs")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="punch_hitbox" to="." method="_on_punch_hitbox_mouse_entered"]
 [connection signal="mouse_exited" from="punch_hitbox" to="." method="_on_punch_hitbox_mouse_exited"]

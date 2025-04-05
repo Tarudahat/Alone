@@ -11,11 +11,13 @@ func _ready() -> void:
 	pass
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	$click_indicator/ProgressBar.value = hp;
+func _process(_delta: float) -> void:
+	$ProgressBar.value = hp;
+	$ProgressBar.visible = false;
 	$click_indicator.visible = false
 	if player_in_range:
 		$click_indicator.visible = true
+		$ProgressBar.visible = true;
 		if mouse_in_hitbox:
 			if Input.is_action_just_pressed("left_click"):
 				if $Timer.time_left <= 0:

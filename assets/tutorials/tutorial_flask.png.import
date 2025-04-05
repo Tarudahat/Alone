@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d24lix7c7hajh"
-path="res://.godot/imported/vulcanic4.png-a7a4169c1756b0251c022f57381fe06f.ctex"
+uid="uid://c4cmmdaba7dev"
+path="res://.godot/imported/tutorial_flask.png-46fd7c5eaaa4e783a78aa28b3c66eb93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vulcanic4.png"
-dest_files=["res://.godot/imported/vulcanic4.png-a7a4169c1756b0251c022f57381fe06f.ctex"]
+source_file="res://assets/tutorials/tutorial_flask.png"
+dest_files=["res://.godot/imported/tutorial_flask.png-46fd7c5eaaa4e783a78aa28b3c66eb93.ctex"]
 
 [params]
 

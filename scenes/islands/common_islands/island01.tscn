@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuuypdqdgd130"]
+[gd_scene load_steps=9 format=3 uid="uid://cuuypdqdgd130"]
 
 [ext_resource type="Texture2D" uid="uid://cv07byhkhag3k" path="res://assets/basic_islands/basic1.png" id="1_b8l7x"]
 [ext_resource type="PackedScene" uid="uid://bkhwrpk8o2kf8" path="res://scenes/Player.tscn" id="2_h75ht"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dtojjnxtrvye8" path="res://scenes/snake.tscn" id="5_b8l7x"]
 [ext_resource type="PackedScene" uid="uid://bi8c5e1k7qi8r" path="res://scenes/crab.tscn" id="6_j7yk5"]
 [ext_resource type="PackedScene" uid="uid://vsswstq88npp" path="res://scenes/item.tscn" id="7_bp5o4"]
+[ext_resource type="PackedScene" uid="uid://bplo0xxon7kth" path="res://scenes/tutorial_flask.tscn" id="7_j7yk5"]
+[ext_resource type="Texture2D" uid="uid://cxqg4eb0upju0" path="res://assets/tutorials/tutorial2.png" id="8_bp5o4"]
 
 [node name="Island" type="Node2D"]
 
@@ -69,29 +71,6 @@ position = Vector2(753, -467)
 
 [node name="Tree18" parent="Trees" instance=ExtResource("4_iywj2")]
 position = Vector2(753, -467)
-
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="Snake" parent="Enemies" instance=ExtResource("5_b8l7x")]
-position = Vector2(1034, 410)
-
-[node name="Snake2" parent="Enemies" instance=ExtResource("5_b8l7x")]
-position = Vector2(1315, -67)
-
-[node name="Snake3" parent="Enemies" instance=ExtResource("5_b8l7x")]
-position = Vector2(795, -844)
-
-[node name="Snake4" parent="Enemies" instance=ExtResource("5_b8l7x")]
-position = Vector2(1963, -1162)
-
-[node name="Snake5" parent="Enemies" instance=ExtResource("5_b8l7x")]
-position = Vector2(1816, 581)
-
-[node name="Snake6" parent="Enemies" instance=ExtResource("5_b8l7x")]
-position = Vector2(55, -557)
-
-[node name="Crab" parent="Enemies" instance=ExtResource("6_j7yk5")]
-position = Vector2(-1845, -217)
 
 [node name="Shells" type="Node2D" parent="."]
 
@@ -209,5 +188,36 @@ item_type = 5
 position = Vector2(-1243, -404)
 item_type = 5
 
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Snake" parent="Enemies" instance=ExtResource("5_b8l7x")]
+position = Vector2(1034, 410)
+
+[node name="Snake2" parent="Enemies" instance=ExtResource("5_b8l7x")]
+position = Vector2(1315, -67)
+
+[node name="Snake3" parent="Enemies" instance=ExtResource("5_b8l7x")]
+position = Vector2(795, -844)
+
+[node name="Snake4" parent="Enemies" instance=ExtResource("5_b8l7x")]
+position = Vector2(1963, -1162)
+
+[node name="Snake5" parent="Enemies" instance=ExtResource("5_b8l7x")]
+position = Vector2(1816, 581)
+
+[node name="Snake6" parent="Enemies" instance=ExtResource("5_b8l7x")]
+position = Vector2(55, -557)
+
+[node name="Crab" parent="Enemies" instance=ExtResource("6_j7yk5")]
+position = Vector2(-1845, -217)
+
 [node name="Player" parent="." instance=ExtResource("2_h75ht")]
 position = Vector2(-521, 1225)
+
+[node name="tutorial_flask" parent="." instance=ExtResource("7_j7yk5")]
+position = Vector2(-622, 1307)
+
+[node name="tutorial_flask2" parent="." instance=ExtResource("7_j7yk5")]
+position = Vector2(-2345, 714)
+flip_v = true
+texture_ = ExtResource("8_bp5o4")
