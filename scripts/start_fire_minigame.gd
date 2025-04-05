@@ -49,7 +49,7 @@ func _process(delta: float) -> void:
 			new_coal.position = self.position + Vector2(rng.randf_range(-100.0, 100.0),rng.randf_range(-10.0, 200.0))
 			get_parent().add_child(new_coal)
 			player_node.items[1] -= 1
-			player_node.cutting_wood = false
+			player_node.block_movement = false
 			queue_free()
 
 
@@ -57,7 +57,7 @@ func _process(delta: float) -> void:
 func _on_friction_timer_timeout() -> void:
 	print("Failed make coal")
 	print(rub_succ)
-	player_node.cutting_wood = false
+	player_node.block_movement = false
 	queue_free()
 	
 

@@ -19,12 +19,12 @@ func _process(delta: float) -> void:
 		if mouse_in_hitbox:
 			if Input.is_action_just_pressed("left_click"):
 				if $Timer.time_left <= 0:
-					player.cutting_wood = true
+					player.block_movement = true
 				$Timer.start()
 				hp-=1
 					
 	if hp == 0:
-		player.cutting_wood = false	
+		player.block_movement = false	
 		for i in rng.randi_range(2, 4):
 			var new_wood = wood_node.instantiate()
 			new_wood.item_type = 1
@@ -43,7 +43,7 @@ func _on_punch_hitbox_mouse_exited() -> void:
 
 
 func _on_timer_timeout() -> void:
-	player.cutting_wood = false
+	player.block_movement = false
 
 
 func _on_range_checker_body_entered(body: Node2D) -> void:
@@ -60,6 +60,6 @@ func _on_range_checker_body_exited(body: Node2D) -> void:
 func _on_range_checker_mouse_exited() -> void:
 	mouse_in_hitbox = false
 	if player:
-		player.cutting_wood = false
+		player.block_movement = false
 	$Timer.stop()
 	

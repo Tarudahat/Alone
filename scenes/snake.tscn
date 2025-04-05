@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtojjnxtrvye8"]
+
+[ext_resource type="Texture2D" uid="uid://b2xbviayn2yjr" path="res://icon.svg" id="1_a5f6l"]
+[ext_resource type="Script" uid="uid://cgxwffr0y3d4v" path="res://scripts/snake.gd" id="1_yc36x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc36x"]
+size = Vector2(200, 44)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yc36x"]
+radius = 344.001
+
+[node name="Snake" type="CharacterBody2D"]
+input_pickable = true
+motion_mode = 1
+floor_stop_on_slope = false
+floor_block_on_wall = false
+platform_floor_layers = 4294967294
+script = ExtResource("1_yc36x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.235294, 1, 0.0980392, 1)
+scale = Vector2(1.54688, 0.34375)
+texture = ExtResource("1_a5f6l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yc36x")
+
+[node name="agro_zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="agro_zone"]
+shape = SubResource("CircleShape2D_yc36x")
+
+[node name="dmg_cooldown" type="Timer" parent="."]
+
+[node name="idle_timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="body_entered" from="agro_zone" to="." method="_on_agro_zone_body_entered"]
+[connection signal="body_exited" from="agro_zone" to="." method="_on_agro_zone_body_exited"]
+[connection signal="timeout" from="dmg_cooldown" to="." method="_on_dmg_cooldown_timeout"]
+[connection signal="timeout" from="idle_timer" to="." method="_on_idle_timer_timeout"]
