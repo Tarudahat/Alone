@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BombIt"
-run/main_scene="uid://jpuk188t3p7h"
+run/main_scene="uid://cuuypdqdgd130"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -55,3 +55,4 @@ make_coal={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.370394, 0.560309, 0.706433, 1)

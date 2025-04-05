@@ -30,7 +30,7 @@ func _process(delta):
 	$VBoxContainer/Label4.text = "coal: " + str(items[3])
 	$VBoxContainer/Label5.text = "snake rope: " + str(items[4])
 	$VBoxContainer/Label6.text = "stone: " + str(items[5])
-	
+	#$Sprite.play(animation_direction())
 
 func _input(event):
 	# Use is_action_pressed to only accept single taps as input instead of mouse drags.
@@ -66,23 +66,6 @@ func _physics_process(_delta):
 		velocity = Vector2.ZERO
 	if position.distance_to(target) > 10 and not block_movement:
 		move_and_slide()
-
-#func update_animation() -> void:
-#	animation_player.play(state + "_" + animation_direction() )
-
-func animation_direction() -> String:
-	if target.x > 0:
-		if target.y > 0:
-			return "down"
-		else:
-			return "up"
-	else:
-		if target.y > 0:
-			return "right"
-		else:
-			return "left"	
-	
-
 
 func _on_throw_cooldown_timeout() -> void:
 	can_throw = true

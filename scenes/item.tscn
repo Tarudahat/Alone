@@ -1,8 +1,33 @@
-[gd_scene load_steps=12 format=3 uid="uid://vsswstq88npp"]
+[gd_scene load_steps=19 format=3 uid="uid://vsswstq88npp"]
 
 [ext_resource type="Texture2D" uid="uid://cnvb48j08akv0" path="res://assets/items.png" id="1_6muww"]
+[ext_resource type="Texture2D" uid="uid://c8x023cjfvjs3" path="res://assets/items_thick.png" id="1_vljjh"]
 [ext_resource type="Script" uid="uid://d2d6swjtxfavm" path="res://scripts/item.gd" id="2_sb42f"]
 [ext_resource type="PackedScene" uid="uid://dsp5tqil3gvlt" path="res://scenes/e_indicator.tscn" id="3_6fq18"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0cwl"]
+atlas = ExtResource("1_vljjh")
+region = Rect2(0, 0, 144, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr48l"]
+atlas = ExtResource("1_vljjh")
+region = Rect2(144, 0, 144, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34t5m"]
+atlas = ExtResource("1_vljjh")
+region = Rect2(288, 0, 144, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j134a"]
+atlas = ExtResource("1_vljjh")
+region = Rect2(432, 0, 144, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xo3q"]
+atlas = ExtResource("1_vljjh")
+region = Rect2(576, 0, 144, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l6h1"]
+atlas = ExtResource("1_vljjh")
+region = Rect2(720, 0, 144, 120)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6muww"]
 atlas = ExtResource("1_6muww")
@@ -32,6 +57,29 @@ region = Rect2(480, 0, 96, 80)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_v0cwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr48l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34t5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j134a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xo3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l6h1")
+}],
+"loop": true,
+"name": &"thick_lines",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6muww")
 }, {
 "duration": 1.0,
@@ -50,7 +98,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_c4387")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"thin_lines",
 "speed": 5.0
 }]
 
@@ -59,7 +107,7 @@ radius = 92.0
 
 [node name="item" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_c4387")
-animation = &"new_animation"
+animation = &"thick_lines"
 script = ExtResource("2_sb42f")
 
 [node name="Area2D" type="Area2D" parent="."]

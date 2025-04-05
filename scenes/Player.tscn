@@ -1,11 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkhwrpk8o2kf8"]
 
 [ext_resource type="Script" uid="uid://bgxgwjvih218s" path="res://scripts/player.gd" id="1_v6fml"]
-[ext_resource type="Texture2D" uid="uid://dddv0e0gkrbcp" path="res://assets/player_sprite.png" id="2_v6fml"]
+[ext_resource type="Texture2D" uid="uid://b2xbviayn2yjr" path="res://icon.svg" id="2_v6fml"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3li8b"]
-radius = 27.0
-height = 138.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6fml"]
+radius = 63.0317
 
 [sub_resource type="LabelSettings" id="LabelSettings_v6fml"]
 font_size = 40
@@ -18,15 +17,14 @@ speed = 550
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_v6fml")
-hframes = 32
-frame = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_3li8b")
+shape = SubResource("CircleShape2D_v6fml")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 50
 offset_left = -1164.0
 offset_top = -731.0
 offset_right = -839.0
