@@ -19,6 +19,8 @@ func _process(delta):
 	$VBoxContainer/Label2.text = "wood: " + str(items[1])
 	$VBoxContainer/Label3.text = "sulfur: " + str(items[2])
 	$VBoxContainer/Label4.text = "coal: " + str(items[3])
+	
+	update_animation()
 
 func _input(event):
 	# Use is_action_pressed to only accept single taps as input instead of mouse drags.
@@ -51,12 +53,14 @@ func update_animation() -> void:
 	animation_player.play(state + "_" + animation_direction() )
 
 func animation_direction() -> String:
-	if target == Vector2.DOWN:
-		return "down"
-	elif target == Vector2.UP:
-		return "up"
-	elif target == Vector2.LEFT:
-		return "left"
+	if target.x > 0:
+		if target.y > 0:
+			return "down"
+		else:
+			return "up"
 	else:
-		return "right"
+		if target.y > 0:
+			return "right"
+		else:
+			return "left"	
 	
