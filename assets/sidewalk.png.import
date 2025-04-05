@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhw7ww63lady"
-path="res://.godot/imported/vulcanic1.png-80ee787f27b87bf0784918319e876a34.ctex"
+uid="uid://dlv2qva86fsvp"
+path="res://.godot/imported/sidewalk.png-49386e0a05b59848d044f8ebd70089ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vulcanic1.png"
-dest_files=["res://.godot/imported/vulcanic1.png-80ee787f27b87bf0784918319e876a34.ctex"]
+source_file="res://assets/sidewalk.png"
+dest_files=["res://.godot/imported/sidewalk.png-49386e0a05b59848d044f8ebd70089ef.ctex"]
 
 [params]
 

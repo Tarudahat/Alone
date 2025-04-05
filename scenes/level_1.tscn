@@ -1,58 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://jpuk188t3p7h"]
+[gd_scene load_steps=6 format=3 uid="uid://jpuk188t3p7h"]
 
+[ext_resource type="Texture2D" uid="uid://b2xbviayn2yjr" path="res://icon.svg" id="1_bswci"]
 [ext_resource type="PackedScene" uid="uid://bkhwrpk8o2kf8" path="res://scenes/Player.tscn" id="2_rus8k"]
 [ext_resource type="PackedScene" uid="uid://vsswstq88npp" path="res://scenes/item.tscn" id="3_rus8k"]
 [ext_resource type="PackedScene" uid="uid://4dr46qywa42t" path="res://scenes/tree.tscn" id="4_5xbjy"]
-[ext_resource type="PackedScene" uid="uid://dupqr4gi3wba4" path="res://scenes/fireball.tscn" id="6_pa8r4"]
+[ext_resource type="PackedScene" uid="uid://bi8c5e1k7qi8r" path="res://scenes/crab.tscn" id="5_4nkto"]
+[ext_resource type="PackedScene" uid="uid://dtojjnxtrvye8" path="res://scenes/snake.tscn" id="6_fcfvj"]
 
 [node name="Level1" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(435, 341)
+scale = Vector2(4.57813, 1)
+texture = ExtResource("1_bswci")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(536, 261)
+scale = Vector2(1, 4.39063)
+texture = ExtResource("1_bswci")
 
 [node name="Player" parent="." instance=ExtResource("2_rus8k")]
 position = Vector2(145, 45)
 speed = 600
 
 [node name="Sprite2D" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-460, 1198)
-
-[node name="Sprite2D3" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-642, 718)
-item_type = 5
-
-[node name="Sprite2D4" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-764, 744)
-item_type = 5
-
-[node name="Sprite2D5" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-753, 834)
-item_type = 5
-
-[node name="Sprite2D6" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-985, 866)
-item_type = 5
-
-[node name="Sprite2D7" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-852, 892)
-item_type = 5
-
-[node name="Sprite2D8" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-852, 929.5)
-scale = Vector2(1, 1.9375)
-item_type = 5
-
-[node name="Sprite2D9" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-713, 957)
-scale = Vector2(1, 1.9375)
-item_type = 5
-
-[node name="Sprite2D10" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-595, 876)
-scale = Vector2(1, 1.9375)
-item_type = 5
-
-[node name="Sprite2D11" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-595, 876)
-scale = Vector2(1, 1.9375)
-item_type = 5
+position = Vector2(-463, 640)
 
 [node name="Sprite2D2" parent="." instance=ExtResource("3_rus8k")]
 position = Vector2(798, -47)
@@ -61,57 +33,17 @@ position = Vector2(798, -47)
 
 [node name="Tree" parent="Trees" instance=ExtResource("4_5xbjy")]
 position = Vector2(-192, -165)
+texture = ExtResource("5_pa8r4")
 
 [node name="Tree3" parent="Trees" instance=ExtResource("4_5xbjy")]
-position = Vector2(1290, 447)
+position = Vector2(431, 341)
 
 [node name="Tree2" parent="Trees" instance=ExtResource("4_5xbjy")]
 position = Vector2(284, -311)
+texture = ExtResource("6_15mv3")
 
-[node name="Fireball" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
+[node name="Snake" parent="." instance=ExtResource("6_fcfvj")]
+position = Vector2(-1073, 29)
 
-[node name="Fireball2" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball3" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball4" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball5" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball6" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball7" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball8" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball9" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball10" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball11" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball12" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball13" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball14" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball15" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball16" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
+[node name="Crab" parent="." instance=ExtResource("5_4nkto")]
+position = Vector2(148, 766)

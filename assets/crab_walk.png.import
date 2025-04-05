@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhw7ww63lady"
-path="res://.godot/imported/vulcanic1.png-80ee787f27b87bf0784918319e876a34.ctex"
+uid="uid://b5yavdjevhpjm"
+path="res://.godot/imported/crab_walk.png-2b95b70576b8b38458ed702efe82cf26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vulcanic1.png"
-dest_files=["res://.godot/imported/vulcanic1.png-80ee787f27b87bf0784918319e876a34.ctex"]
+source_file="res://assets/crab_walk.png"
+dest_files=["res://.godot/imported/crab_walk.png-2b95b70576b8b38458ed702efe82cf26.ctex"]
 
 [params]
 

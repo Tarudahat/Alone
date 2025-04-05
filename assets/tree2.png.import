@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhw7ww63lady"
-path="res://.godot/imported/vulcanic1.png-80ee787f27b87bf0784918319e876a34.ctex"
+uid="uid://cp14jl0y8rwcq"
+path="res://.godot/imported/tree2.png-bc5512a08e465109896bc84ae368df0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vulcanic1.png"
-dest_files=["res://.godot/imported/vulcanic1.png-80ee787f27b87bf0784918319e876a34.ctex"]
+source_file="res://assets/tree2.png"
+dest_files=["res://.godot/imported/tree2.png-bc5512a08e465109896bc84ae368df0d.ctex"]
 
 [params]
 
