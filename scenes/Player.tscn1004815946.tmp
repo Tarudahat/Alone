@@ -60,21 +60,6 @@ size_flags_vertical = 0
 text = "Material amount"
 label_settings = SubResource("LabelSettings_v6fml")
 
-[node name="Label5" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "Material amount"
-label_settings = SubResource("LabelSettings_v6fml")
-
-[node name="Label6" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "Material amount"
-label_settings = SubResource("LabelSettings_v6fml")
-
 [node name="throw_cooldown" type="Timer" parent="."]
-wait_time = 0.3
 
 [connection signal="timeout" from="throw_cooldown" to="." method="_on_throw_cooldown_timeout"]
