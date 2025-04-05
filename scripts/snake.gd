@@ -37,10 +37,7 @@ func _physics_process(_delta):
 			if collider is Player and can_dmg:
 				$dmg_cooldown.start()
 				can_dmg = false
-				for j in rng.randi_range(1, 5):
-					var victim_idx = rng.randi_range(0, 3)
-					if collider.items[victim_idx]:
-						collider.items[victim_idx] -= 1
+				player_node.damage()
 
 	if hp <= 0:
 		for i in rng.randi_range(2, 4):

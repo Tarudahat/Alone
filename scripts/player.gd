@@ -8,6 +8,7 @@ var block_movement = false
 var can_throw = true
 var throw_target_position
 var items: Array[int] = [0,0,0,0,0,0]
+var rng = RandomNumberGenerator.new()
 var wood_minigame = preload("res://scenes/start_fire_minigame.tscn")
 var throwing_stone = preload("res://scenes/throw_stone.tscn")
 var wood_minigame_instance = null
@@ -17,6 +18,12 @@ var wood_minigame_instance = null
 # coal_count
 # snake_count
 # stone_count
+
+func damage():
+	for j in rng.randi_range(1, 5):
+		var victim_idx = rng.randi_range(0, 5)
+		if items[victim_idx]:
+			items[victim_idx] -= 1
 
 func _process(delta):
 	$VBoxContainer/Label.text = "Shell: " + str(items[0])
