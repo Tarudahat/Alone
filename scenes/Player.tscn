@@ -111,8 +111,8 @@ label_settings = SubResource("LabelSettings_v6fml")
 
 [node name="death_timer_ui" type="TextureRect" parent="items_ui"]
 layout_mode = 0
-offset_left = 398.0
-offset_right = 998.0
+offset_left = 980.0
+offset_right = 1580.0
 offset_bottom = 250.0
 texture = ExtResource("4_mdl7e")
 

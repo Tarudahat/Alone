@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://2tbe5mnhco3q"]
+
+[ext_resource type="Script" uid="uid://cwyxcu2cel237" path="res://scripts/chest.gd" id="1_gqd3d"]
+[ext_resource type="Texture2D" uid="uid://b6wl3med4t2wj" path="res://assets/chest.png" id="1_oii8l"]
+[ext_resource type="PackedScene" uid="uid://dsp5tqil3gvlt" path="res://scenes/e_indicator.tscn" id="2_sy5e1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqd3d"]
+atlas = ExtResource("1_oii8l")
+region = Rect2(0, 0, 160, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yue2o"]
+atlas = ExtResource("1_oii8l")
+region = Rect2(160, 0, 160, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhylo"]
+atlas = ExtResource("1_oii8l")
+region = Rect2(320, 0, 160, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w02o5"]
+atlas = ExtResource("1_oii8l")
+region = Rect2(480, 0, 160, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w02o5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqd3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yue2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhylo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w02o5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yue2o"]
+size = Vector2(212, 126)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oii8l"]
+radius = 161.05
+
+[node name="Chest" type="Area2D"]
+script = ExtResource("1_gqd3d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_w02o5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 68)
+shape = SubResource("RectangleShape2D_yue2o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_oii8l")
+
+[node name="E_indicator" parent="." instance=ExtResource("2_sy5e1")]
+position = Vector2(0, -102)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
