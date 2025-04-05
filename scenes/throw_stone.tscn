@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dapjw24wesd07"]
+
+[ext_resource type="Script" uid="uid://m8pjeffjxi25" path="res://scripts/throw_stone.gd" id="2_3pohx"]
+[ext_resource type="Texture2D" uid="uid://dirndebnao166" path="res://assets/throw_rock.png" id="2_fq5w6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7c8on"]
+radius = 46.0977
+
+[node name="throw_stone" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("2_3pohx")
+
+[node name="throw_stone" type="Sprite2D" parent="."]
+modulate = Color(0.650128, 0.650128, 0.650128, 1)
+texture = ExtResource("2_fq5w6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7c8on")

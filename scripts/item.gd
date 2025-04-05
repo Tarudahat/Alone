@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-@export_range(0,3) var item_type = 0
+@export_range(0,5) var item_type = 0
 var player_in_range: bool  = false
 var Player_node: Node2D = null
 
