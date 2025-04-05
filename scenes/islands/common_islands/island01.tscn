@@ -16,6 +16,12 @@
 [node name="Map" type="Sprite2D" parent="Background"]
 texture = ExtResource("1_b8l7x")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Background"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
+polygon = PackedVector2Array(-494, -204, 530, 1578, 2825, 1273, 2648, -2184, -3370, -1741, -3469, 406, -2947, 1549, -606, 1919, 156, 1608, -229, -183, -255, -236, -500, -202, -701, 32, -607, 300, -459, 628, -202, 884, -56, 1224, -225, 1545, -829, 1667, -2243, 1385, -2705, 1177, -3076, 453, -3088, 251, -3042, -320, -3091, -706, -2793, -1321, -2513, -1565, -1978, -1603, -1742, -1466, -1431, -1082, -1094, -1092, -536, -1292, 63, -1168, 252, -1004, 506, -1012, 908, -1344, 1129, -1666, 1910, -1671, 2296, -1399, 2325, -836, 2236, -589, 1993, -255, 2052, 70, 2177, 487, 1982, 889, 1902, 925, 680, 980, 390, 705, 172, 51, -5, -213, -116, -249)
+one_way_collision = true
+
 [node name="Trees" type="Node2D" parent="."]
 
 [node name="Tree" parent="Trees" instance=ExtResource("4_iywj2")]
@@ -36,9 +42,6 @@ position = Vector2(-1277, 190)
 [node name="Tree6" parent="Trees" instance=ExtResource("4_iywj2")]
 position = Vector2(-2506, 83)
 
-[node name="Tree7" parent="Trees" instance=ExtResource("4_iywj2")]
-position = Vector2(-2443, 426)
-
 [node name="Tree10" parent="Trees" instance=ExtResource("4_iywj2")]
 position = Vector2(-2292, -848)
 
@@ -53,6 +56,9 @@ position = Vector2(-2260, 186)
 
 [node name="Tree12" parent="Trees" instance=ExtResource("4_iywj2")]
 position = Vector2(-1137, -719)
+
+[node name="Tree7" parent="Trees" instance=ExtResource("4_iywj2")]
+position = Vector2(-2443, 426)
 
 [node name="Tree13" parent="Trees" instance=ExtResource("4_iywj2")]
 position = Vector2(-1424, -572)
@@ -211,9 +217,6 @@ position = Vector2(55, -557)
 [node name="Crab" parent="Enemies" instance=ExtResource("6_j7yk5")]
 position = Vector2(-1845, -217)
 
-[node name="Player" parent="." instance=ExtResource("2_h75ht")]
-position = Vector2(-521, 1225)
-
 [node name="tutorial_flask" parent="." instance=ExtResource("7_j7yk5")]
 position = Vector2(-622, 1307)
 
@@ -221,3 +224,6 @@ position = Vector2(-622, 1307)
 position = Vector2(-2345, 714)
 flip_v = true
 texture_ = ExtResource("8_bp5o4")
+
+[node name="Player" parent="." instance=ExtResource("2_h75ht")]
+position = Vector2(-521, 1225)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkhwrpk8o2kf8"]
+[gd_scene load_steps=6 format=3 uid="uid://bkhwrpk8o2kf8"]
 
 [ext_resource type="Script" uid="uid://bgxgwjvih218s" path="res://scripts/player.gd" id="1_v6fml"]
 [ext_resource type="Texture2D" uid="uid://b2xbviayn2yjr" path="res://icon.svg" id="2_v6fml"]
+[ext_resource type="Texture2D" uid="uid://dem7ihhnw3g57" path="res://assets/item_ui.png" id="3_3li8b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v6fml"]
 radius = 63.0317
@@ -23,55 +24,6 @@ shape = SubResource("CircleShape2D_v6fml")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-z_index = 50
-offset_left = -1164.0
-offset_top = -731.0
-offset_right = -839.0
-offset_bottom = -499.0
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "Material amount"
-label_settings = SubResource("LabelSettings_v6fml")
-
-[node name="Label2" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "Material amount"
-label_settings = SubResource("LabelSettings_v6fml")
-
-[node name="Label3" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "Material amount"
-label_settings = SubResource("LabelSettings_v6fml")
-
-[node name="Label4" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "Material amount"
-label_settings = SubResource("LabelSettings_v6fml")
-
-[node name="Label5" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "Material amount"
-label_settings = SubResource("LabelSettings_v6fml")
-
-[node name="Label6" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "Material amount"
-label_settings = SubResource("LabelSettings_v6fml")
-
 [node name="throw_cooldown" type="Timer" parent="."]
 wait_time = 0.3
 
@@ -88,5 +40,65 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 stretch_mode = 3
+
+[node name="items_ui" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.858824)
+z_index = 110
+offset_left = -1254.0
+offset_top = -775.0
+offset_right = -854.0
+offset_bottom = -175.0
+texture = ExtResource("3_3li8b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="items_ui"]
+modulate = Color(0.345098, 0.301961, 0.211765, 1)
+z_index = 50
+offset_left = 133.0
+offset_top = 61.0
+offset_right = 458.0
+offset_bottom = 541.0
+theme_override_constants/separation = 28
+
+[node name="Label" type="Label" parent="items_ui/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Material amount"
+label_settings = SubResource("LabelSettings_v6fml")
+
+[node name="Label2" type="Label" parent="items_ui/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Material amount"
+label_settings = SubResource("LabelSettings_v6fml")
+
+[node name="Label3" type="Label" parent="items_ui/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Material amount"
+label_settings = SubResource("LabelSettings_v6fml")
+
+[node name="Label4" type="Label" parent="items_ui/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Material amount"
+label_settings = SubResource("LabelSettings_v6fml")
+
+[node name="Label5" type="Label" parent="items_ui/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Material amount"
+label_settings = SubResource("LabelSettings_v6fml")
+
+[node name="Label6" type="Label" parent="items_ui/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Material amount"
+label_settings = SubResource("LabelSettings_v6fml")
 
 [connection signal="timeout" from="throw_cooldown" to="." method="_on_throw_cooldown_timeout"]

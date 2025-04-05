@@ -6,9 +6,10 @@ var mouse_in_hitbox: bool = false
 var wood_node = preload("res://scenes/item.tscn")
 var rng = RandomNumberGenerator.new()
 @export var hp: int = 20
+var max_hp: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	max_hp = hp
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -17,7 +18,8 @@ func _process(_delta: float) -> void:
 	$click_indicator.visible = false
 	if player_in_range:
 		$click_indicator.visible = true
-		$ProgressBar.visible = true;
+		if hp < max_hp:
+			$ProgressBar.visible = true;
 		if mouse_in_hitbox:
 			if Input.is_action_just_pressed("left_click"):
 				if $Timer.time_left <= 0:

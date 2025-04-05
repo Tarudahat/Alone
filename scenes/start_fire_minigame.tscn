@@ -4,9 +4,7 @@
 [ext_resource type="Script" uid="uid://de8a2q0a2wbl3" path="res://scripts/start_fire_minigame.gd" id="1_tmktg"]
 [ext_resource type="Texture2D" uid="uid://bjuk64vrfk48y" path="res://assets/stick_fire_UI.png" id="2_4upnx"]
 [ext_resource type="Texture2D" uid="uid://bhi87gk2o3fxo" path="res://assets/fire_start_spark.png" id="4_pgdnb"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_pgdnb"]
-font_size = 64
+[ext_resource type="Texture2D" uid="uid://et6eg7m7nwak" path="res://assets/tutorials/unga_bunga.png" id="5_w8kt7"]
 
 [sub_resource type="Curve" id="Curve_pgdnb"]
 _data = [Vector2(0.393548, 0.91118), 0.0, 0.0, 0, 0, Vector2(0.835484, 0.0279584), 0.0, 0.0, 0, 0]
@@ -68,15 +66,6 @@ scale = Vector2(0.716667, 0.872222)
 texture = ExtResource("2_4upnx")
 offset = Vector2(-12.558, 13.758)
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = -267.0
-offset_top = -282.0
-offset_right = 200.0
-offset_bottom = -194.0
-text = "MASH [D] & [J] !"
-label_settings = SubResource("LabelSettings_pgdnb")
-
 [node name="friction_timer" type="Timer" parent="."]
 wait_time = 7.0
 
@@ -91,6 +80,15 @@ explosiveness = 0.28
 randomness = 0.17
 collision_base_size = 0.0
 process_material = SubResource("ParticleProcessMaterial_pgdnb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 301.0
+offset_top = -758.0
+offset_right = 901.0
+offset_bottom = -390.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_w8kt7")
 
 [connection signal="timeout" from="friction_timer" to="." method="_on_friction_timer_timeout"]
 [connection signal="timeout" from="input_delay_timer" to="." method="_on_input_delay_timer_timeout"]

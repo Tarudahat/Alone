@@ -24,12 +24,12 @@ func damage():
 			items[victim_idx] -= 1
 
 func _process(_delta):
-	$VBoxContainer/Label.text = "Shell: " + str(items[0])
-	$VBoxContainer/Label2.text = "wood: " + str(items[1])
-	$VBoxContainer/Label3.text = "sulfur: " + str(items[2])
-	$VBoxContainer/Label4.text = "coal: " + str(items[3])
-	$VBoxContainer/Label5.text = "snake rope: " + str(items[4])
-	$VBoxContainer/Label6.text = "stone: " + str(items[5])
+	$items_ui/VBoxContainer/Label.text = "Shells: " + str(items[0])
+	$items_ui/VBoxContainer/Label2.text = "Wood: " + str(items[1])
+	$items_ui/VBoxContainer/Label3.text = "Sulfur: " + str(items[2])
+	$items_ui/VBoxContainer/Label4.text = "Coal: " + str(items[3])
+	$items_ui/VBoxContainer/Label5.text = "\"Rope\": " + str(items[4])
+	$items_ui/VBoxContainer/Label6.text = "Stones: " + str(items[5])
 	#$Sprite.play(animation_direction())
 
 func _input(event):
