@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://jpuk188t3p7h"]
+[gd_scene load_steps=8 format=3 uid="uid://jpuk188t3p7h"]
 
 [ext_resource type="Texture2D" uid="uid://b2xbviayn2yjr" path="res://icon.svg" id="1_bswci"]
 [ext_resource type="PackedScene" uid="uid://bkhwrpk8o2kf8" path="res://scenes/Player.tscn" id="2_rus8k"]
 [ext_resource type="PackedScene" uid="uid://vsswstq88npp" path="res://scenes/item.tscn" id="3_rus8k"]
 [ext_resource type="PackedScene" uid="uid://4dr46qywa42t" path="res://scenes/tree.tscn" id="4_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://bi8c5e1k7qi8r" path="res://scenes/crab.tscn" id="5_4nkto"]
+[ext_resource type="Texture2D" uid="uid://buhkh165r0kcf" path="res://assets/tree1.png" id="5_pa8r4"]
+[ext_resource type="Texture2D" uid="uid://bpte3les6l5g3" path="res://assets/tree3.png" id="6_15mv3"]
 
 [node name="Level1" type="Node2D"]
 
@@ -32,12 +34,14 @@ position = Vector2(798, -47)
 
 [node name="Tree" parent="Trees" instance=ExtResource("4_5xbjy")]
 position = Vector2(-192, -165)
+texture = ExtResource("5_pa8r4")
 
 [node name="Tree3" parent="Trees" instance=ExtResource("4_5xbjy")]
 position = Vector2(431, 341)
 
 [node name="Tree2" parent="Trees" instance=ExtResource("4_5xbjy")]
 position = Vector2(284, -311)
+texture = ExtResource("6_15mv3")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_4nkto")]
 position = Vector2(225, 497)

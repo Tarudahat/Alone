@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 @export var speed = 600
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+var state = "Idle"
 var target = position
 var cutting_wood = false
 var items: Array[int] = [0,0,0,0]
@@ -23,6 +25,7 @@ func _input(event):
 	if not cutting_wood:
 		if event.is_action_pressed(&"left_click"):
 			target = get_global_mouse_position()
+			state = "Walk"
 		if event.is_action_pressed("make_coal") and items[1]:
 			cutting_wood = true
 			wood_minigame_instance = wood_minigame.instantiate()
@@ -43,3 +46,17 @@ func _physics_process(_delta):
 	# look_at(target)
 	if position.distance_to(target) > 10 and not cutting_wood:
 		move_and_slide()
+
+func update_animation() -> void:
+	animation_player.play(state + "_" + animation_direction() )
+
+func animation_direction() -> String:
+	if target == Vector2.DOWN:
+		return "down"
+	elif target == Vector2.UP:
+		return "up"
+	elif target == Vector2.LEFT:
+		return "left"
+	else:
+		return "right"
+	
