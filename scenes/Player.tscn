@@ -1,14 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkhwrpk8o2kf8"]
+[gd_scene load_steps=8 format=3 uid="uid://bkhwrpk8o2kf8"]
 
 [ext_resource type="Script" uid="uid://bgxgwjvih218s" path="res://scripts/player.gd" id="1_v6fml"]
 [ext_resource type="Texture2D" uid="uid://b2xbviayn2yjr" path="res://icon.svg" id="2_v6fml"]
 [ext_resource type="Texture2D" uid="uid://dem7ihhnw3g57" path="res://assets/item_ui.png" id="3_3li8b"]
+[ext_resource type="Texture2D" uid="uid://dtmx0u7o77cf5" path="res://assets/death_ui.png" id="4_mdl7e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v6fml"]
 radius = 63.0317
 
 [sub_resource type="LabelSettings" id="LabelSettings_v6fml"]
 font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_mdl7e"]
+font_size = 120
+font_color = Color(0.280354, 0.164959, 0.169573, 1)
+outline_color = Color(0.352941, 0.239216, 0.25098, 1)
+shadow_size = 0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
@@ -42,7 +49,7 @@ scale = Vector2(1.5, 1.5)
 stretch_mode = 3
 
 [node name="items_ui" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0.858824)
+modulate = Color(1, 1, 1, 0.745098)
 z_index = 110
 offset_left = -1254.0
 offset_top = -775.0
@@ -53,6 +60,7 @@ texture = ExtResource("3_3li8b")
 [node name="VBoxContainer" type="VBoxContainer" parent="items_ui"]
 modulate = Color(0.345098, 0.301961, 0.211765, 1)
 z_index = 50
+layout_mode = 0
 offset_left = 133.0
 offset_top = 61.0
 offset_right = 458.0
@@ -101,4 +109,25 @@ size_flags_vertical = 0
 text = "Material amount"
 label_settings = SubResource("LabelSettings_v6fml")
 
+[node name="death_timer_ui" type="TextureRect" parent="items_ui"]
+layout_mode = 0
+offset_left = 398.0
+offset_right = 998.0
+offset_bottom = 250.0
+texture = ExtResource("4_mdl7e")
+
+[node name="Label7" type="Label" parent="items_ui/death_timer_ui"]
+layout_mode = 2
+offset_left = 191.0
+offset_top = 35.0
+offset_right = 516.0
+offset_bottom = 200.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "0 : 00"
+label_settings = SubResource("LabelSettings_mdl7e")
+
+[node name="island_timer" type="Timer" parent="."]
+
 [connection signal="timeout" from="throw_cooldown" to="." method="_on_throw_cooldown_timeout"]
+[connection signal="timeout" from="island_timer" to="." method="_on_island_timer_timeout"]

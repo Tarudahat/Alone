@@ -17,6 +17,10 @@ var wood_minigame_instance = null
 # sulfer_count
 # coal_count
 
+func _ready():
+	self.items = Globals.items
+	self.get_node("island_timer").start(Globals.time_left + Globals.time_s_per_level[Globals.current_level])
+
 func damage():
 	for j in rng.randi_range(1, 5):
 		var victim_idx = rng.randi_range(0, 5)
@@ -31,6 +35,13 @@ func _process(_delta):
 	$items_ui/VBoxContainer/Label5.text = "\"Rope\": " + str(items[4])
 	$items_ui/VBoxContainer/Label6.text = "Stones: " + str(items[5])
 	#$Sprite.play(animation_direction())
+	if int(int($island_timer.time_left)%60) > 9:
+		$items_ui/death_timer_ui/Label7.text = str(int($island_timer.time_left/60)) +\
+		 " : " +str(int(int($island_timer.time_left)%60))
+	else:
+		$items_ui/death_timer_ui/Label7.text = str(int($island_timer.time_left/60)) +\
+		 " : 0" +str(int(int($island_timer.time_left)%60))
+
 
 func _input(event):
 	# Use is_action_pressed to only accept single taps as input instead of mouse drags.
@@ -69,3 +80,13 @@ func _physics_process(_delta):
 
 func _on_throw_cooldown_timeout() -> void:
 	can_throw = true
+
+
+func _on_island_timer_timeout() -> void:
+	pass
+	#var target_scene = load("res:game_over").instantiate()
+	#get_tree().get_root().add_child(target_scene)
+	# queue wipe current scene from root
+	#get_tree().get_current_scene().queue_free()
+	# change scene
+	#get_tree().set_current_scene(target_scene)

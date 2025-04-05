@@ -6,7 +6,7 @@ var player_in_range: bool = false
 var player_node: Node2D = null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$E_indicator.visible = false
 	if player_in_range:
 		$E_indicator.visible = true
@@ -23,7 +23,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		player_in_range = true
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	player_in_range = false
-	if player_node:
-		player_node.get_node("img_ui").texture = null
+	if body is Player:
+		player_in_range = false
+		body.get_node("img_ui").texture = null
 	

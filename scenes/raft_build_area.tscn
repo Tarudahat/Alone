@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://e1a8cxmcl6ck"]
+
+[ext_resource type="Script" uid="uid://c2lji1u5c4xjy" path="res://scripts/raft_build_area.gd" id="1_sd8hw"]
+[ext_resource type="PackedScene" uid="uid://bplo0xxon7kth" path="res://scenes/tutorial_flask.tscn" id="2_1h7ca"]
+[ext_resource type="Texture2D" uid="uid://b5dpvys2re13c" path="res://assets/raft_fancy.png" id="2_sd8hw"]
+[ext_resource type="PackedScene" uid="uid://dsp5tqil3gvlt" path="res://scenes/e_indicator.tscn" id="2_y6j40"]
+[ext_resource type="Texture2D" uid="uid://catjf1oc84jhd" path="res://assets/tutorials/tutorial3.png" id="5_l4m51"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4m51"]
+atlas = ExtResource("2_sd8hw")
+region = Rect2(408, 0, 408, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mg07"]
+atlas = ExtResource("2_sd8hw")
+region = Rect2(0, 0, 408, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_51h2n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4m51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mg07")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2pdby"]
+radius = 100.02
+
+[node name="raft_build_area" type="Area2D"]
+script = ExtResource("1_sd8hw")
+
+[node name="raft" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_51h2n")
+
+[node name="E_indicator" parent="raft" instance=ExtResource("2_y6j40")]
+position = Vector2(0, -137)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2pdby")
+
+[node name="tutorial_flask" parent="." instance=ExtResource("2_1h7ca")]
+position = Vector2(265, -95)
+offset = Vector2(10, 40)
+flip_v = true
+texture_ = ExtResource("5_l4m51")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

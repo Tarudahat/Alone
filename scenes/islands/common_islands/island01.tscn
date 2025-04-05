@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cuuypdqdgd130"]
+[gd_scene load_steps=10 format=3 uid="uid://cuuypdqdgd130"]
 
 [ext_resource type="Texture2D" uid="uid://cv07byhkhag3k" path="res://assets/basic_islands/basic1.png" id="1_b8l7x"]
 [ext_resource type="PackedScene" uid="uid://bkhwrpk8o2kf8" path="res://scenes/Player.tscn" id="2_h75ht"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://vsswstq88npp" path="res://scenes/item.tscn" id="7_bp5o4"]
 [ext_resource type="PackedScene" uid="uid://bplo0xxon7kth" path="res://scenes/tutorial_flask.tscn" id="7_j7yk5"]
 [ext_resource type="Texture2D" uid="uid://cxqg4eb0upju0" path="res://assets/tutorials/tutorial2.png" id="8_bp5o4"]
+[ext_resource type="PackedScene" uid="uid://e1a8cxmcl6ck" path="res://scenes/raft_build_area.tscn" id="9_2a53t"]
 
 [node name="Island" type="Node2D"]
 
@@ -19,8 +20,7 @@ texture = ExtResource("1_b8l7x")
 [node name="StaticBody2D" type="StaticBody2D" parent="Background"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
-polygon = PackedVector2Array(-494, -204, 530, 1578, 2825, 1273, 2648, -2184, -3370, -1741, -3469, 406, -2947, 1549, -606, 1919, 156, 1608, -229, -183, -255, -236, -500, -202, -701, 32, -607, 300, -459, 628, -202, 884, -56, 1224, -225, 1545, -829, 1667, -2243, 1385, -2705, 1177, -3076, 453, -3088, 251, -3042, -320, -3091, -706, -2793, -1321, -2513, -1565, -1978, -1603, -1742, -1466, -1431, -1082, -1094, -1092, -536, -1292, 63, -1168, 252, -1004, 506, -1012, 908, -1344, 1129, -1666, 1910, -1671, 2296, -1399, 2325, -836, 2236, -589, 1993, -255, 2052, 70, 2177, 487, 1982, 889, 1902, 925, 680, 980, 390, 705, 172, 51, -5, -213, -116, -249)
-one_way_collision = true
+polygon = PackedVector2Array(-494, -204, 530, 1578, 2825, 1273, 2648, -2184, -3370, -1741, -3469, 406, -2947, 1549, -606, 1919, 520, 1593, -229, -183, -255, -236, -500, -202, -701, 32, -607, 300, -459, 628, -202, 884, -56, 1224, -225, 1545, -829, 1667, -2243, 1385, -2705, 1177, -3076, 453, -3088, 251, -3042, -320, -3091, -706, -2793, -1321, -2513, -1565, -1978, -1603, -1742, -1466, -1431, -1082, -1094, -1092, -536, -1292, 63, -1168, 252, -1004, 506, -1012, 908, -1344, 1129, -1666, 1910, -1671, 2296, -1399, 2325, -836, 2236, -589, 1993, -255, 2052, 70, 2177, 487, 1982, 889, 1902, 925, 680, 980, 390, 705, 172, 51, -5, -213, -116, -249)
 
 [node name="Trees" type="Node2D" parent="."]
 
@@ -77,6 +77,21 @@ position = Vector2(753, -467)
 
 [node name="Tree18" parent="Trees" instance=ExtResource("4_iywj2")]
 position = Vector2(753, -467)
+
+[node name="Tree19" parent="Trees" instance=ExtResource("4_iywj2")]
+position = Vector2(1437, 52)
+
+[node name="Tree20" parent="Trees" instance=ExtResource("4_iywj2")]
+position = Vector2(1437, 52)
+
+[node name="Tree21" parent="Trees" instance=ExtResource("4_iywj2")]
+position = Vector2(1315, 196)
+
+[node name="Tree22" parent="Trees" instance=ExtResource("4_iywj2")]
+position = Vector2(1315, 196)
+
+[node name="Tree23" parent="Trees" instance=ExtResource("4_iywj2")]
+position = Vector2(1654, 287)
 
 [node name="Shells" type="Node2D" parent="."]
 
@@ -146,6 +161,70 @@ item_type = 5
 position = Vector2(-1432, 363)
 item_type = 5
 
+[node name="item20" parent="Stones" instance=ExtResource("7_bp5o4")]
+position = Vector2(-1047, 794)
+item_type = 5
+
+[node name="item21" parent="Stones" instance=ExtResource("7_bp5o4")]
+position = Vector2(653, -258)
+item_type = 5
+
+[node name="item22" parent="Stones" instance=ExtResource("7_bp5o4")]
+position = Vector2(543, -295)
+item_type = 5
+
+[node name="item23" parent="Stones" instance=ExtResource("7_bp5o4")]
+position = Vector2(584, -212)
+item_type = 5
+
+[node name="item24" parent="Stones" instance=ExtResource("7_bp5o4")]
+position = Vector2(602, -276)
+item_type = 5
+
+[node name="item32" parent="Stones" instance=ExtResource("7_bp5o4")]
+position = Vector2(1477, 541)
+item_type = 5
+
+[node name="item33" parent="Stones" instance=ExtResource("7_bp5o4")]
+position = Vector2(1369, 604)
+item_type = 5
+
+[node name="item34" parent="Stones" instance=ExtResource("7_bp5o4")]
+position = Vector2(1627, 683)
+item_type = 5
+
+[node name="item35" parent="Stones" instance=ExtResource("7_bp5o4")]
+position = Vector2(1173, 442)
+item_type = 5
+
+[node name="item25" parent="Stones" instance=ExtResource("7_bp5o4")]
+position = Vector2(680, -129)
+item_type = 5
+
+[node name="item28" parent="Stones" instance=ExtResource("7_bp5o4")]
+position = Vector2(1394, -624)
+item_type = 5
+
+[node name="item29" parent="Stones" instance=ExtResource("7_bp5o4")]
+position = Vector2(1446, -669)
+item_type = 5
+
+[node name="item30" parent="Stones" instance=ExtResource("7_bp5o4")]
+position = Vector2(1458, -575)
+item_type = 5
+
+[node name="item31" parent="Stones" instance=ExtResource("7_bp5o4")]
+position = Vector2(1677, 90)
+item_type = 5
+
+[node name="item26" parent="Stones" instance=ExtResource("7_bp5o4")]
+position = Vector2(1934, -997)
+item_type = 5
+
+[node name="item27" parent="Stones" instance=ExtResource("7_bp5o4")]
+position = Vector2(1934, -997)
+item_type = 5
+
 [node name="item8" parent="Stones" instance=ExtResource("7_bp5o4")]
 position = Vector2(-2196, 405)
 item_type = 5
@@ -197,10 +276,10 @@ item_type = 5
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Snake" parent="Enemies" instance=ExtResource("5_b8l7x")]
-position = Vector2(1034, 410)
+position = Vector2(780, 262)
 
 [node name="Snake2" parent="Enemies" instance=ExtResource("5_b8l7x")]
-position = Vector2(1315, -67)
+position = Vector2(1273, -277)
 
 [node name="Snake3" parent="Enemies" instance=ExtResource("5_b8l7x")]
 position = Vector2(795, -844)
@@ -209,7 +288,7 @@ position = Vector2(795, -844)
 position = Vector2(1963, -1162)
 
 [node name="Snake5" parent="Enemies" instance=ExtResource("5_b8l7x")]
-position = Vector2(1816, 581)
+position = Vector2(1913, -22)
 
 [node name="Snake6" parent="Enemies" instance=ExtResource("5_b8l7x")]
 position = Vector2(55, -557)
@@ -224,6 +303,9 @@ position = Vector2(-622, 1307)
 position = Vector2(-2345, 714)
 flip_v = true
 texture_ = ExtResource("8_bp5o4")
+
+[node name="raft_build_area" parent="." instance=ExtResource("9_2a53t")]
+position = Vector2(-564, -1071)
 
 [node name="Player" parent="." instance=ExtResource("2_h75ht")]
 position = Vector2(-521, 1225)
