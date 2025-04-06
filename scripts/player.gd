@@ -80,7 +80,7 @@ func _input(event):
 			wood_minigame_instance.max_coal_reward = items[1]
 			
 		get_parent().add_child(wood_minigame_instance)
-	if event.is_action_pressed("collect") and not block_movement:
+	if event.is_action_pressed("collect") and not block_movement and false: #somehow chekc if in raft area
 		block_movement = true
 		raft_minigame_instance = raft_minigame.instantiate()
 		self.position = raft_minigame_instance.position
