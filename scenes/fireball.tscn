@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dupqr4gi3wba4"]
 
 [ext_resource type="Texture2D" uid="uid://br4h16dalelpl" path="res://assets/fireball.png" id="1_3s14c"]
-[ext_resource type="Script" uid="uid://dwlyp410mlsak" path="res://scripts/fireball.gd" id="1_cb14k"]
+[ext_resource type="Script" path="res://scripts/fireball.gd" id="1_cb14k"]
 [ext_resource type="Texture2D" uid="uid://db512wj36tjdf" path="res://assets/fireball_shadow.png" id="2_1gl40"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1gl40"]
@@ -47,6 +47,10 @@ frame_progress = 0.0615025
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball/Area2D"]
 position = Vector2(0, 9)
 shape = SubResource("CircleShape2D_3s14c")
+
+[node name="Woosh_fire_sound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Fireball_impact_sound" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="body_entered" from="Fireball/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Fireball/Area2D" to="." method="_on_area_2d_body_exited"]

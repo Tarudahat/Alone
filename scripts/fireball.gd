@@ -5,6 +5,8 @@ var rng = RandomNumberGenerator.new()
 var reposition: bool = true
 var player_node: Node2D = null
 var player_in_range: bool = false
+@onready var woosh_fire_sound: AudioStreamPlayer2D = $Woosh_fire_sound
+@onready var fireball_impact_sound: AudioStreamPlayer2D = $Fireball_impact_sound
 
 func _physics_process(_delta):
 	
@@ -14,10 +16,12 @@ func _physics_process(_delta):
 		$Shadow.position = self.position + Vector2(rng.randf_range(-600.0, 600.0),rng.randf_range(-600.0, 600.0))
 		$Fireball.position = $Shadow.position - Vector2(0, rng.randf_range(400.0, 550.0))
 		reposition = false
+		woosh_fire_sound.play()
 		
 	if player_node and player_in_range and $Fireball.position.y > $Shadow.position.y - 140:
 		player_node.damage()
 		reposition = true
+		fireball_impact_sound.play()
 	
 func _process(delta: float) -> void:
 	$Fireball.position.y += speed * delta

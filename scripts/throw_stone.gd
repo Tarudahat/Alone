@@ -5,12 +5,14 @@ extends CharacterBody2D
 @onready var dmg:int = 1
 var Player_node: Node2D = null
 var hit_target:bool = false
+@onready var throw_sound: AudioStreamPlayer2D = $Throw_sound
 
 func _physics_process(_delta):
 	rotation_degrees += 20
 
 	velocity = movement_direction * SPEED
 	var collision = move_and_slide()
+	throw_sound.play()
 	
 	if collision and not hit_target:
 		for i in get_slide_collision_count():

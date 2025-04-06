@@ -61,6 +61,10 @@ texture_under = ExtResource("4_ake3r")
 texture_progress = ExtResource("4_qd6xs")
 metadata/_edit_use_anchors_ = true
 
+[node name="Hit_tree_sound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Break_tree_sound" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="mouse_entered" from="punch_hitbox" to="." method="_on_punch_hitbox_mouse_entered"]
 [connection signal="mouse_exited" from="punch_hitbox" to="." method="_on_punch_hitbox_mouse_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -7,6 +7,8 @@ var wood_node = preload("res://scenes/item.tscn")
 var rng = RandomNumberGenerator.new()
 var player_node
 var max_coal_reward
+@onready var fire_friction_sound: AudioStreamPlayer2D = $Fire_friction_sound
+@onready var fire_sound: AudioStreamPlayer2D = $Fire_sound
 
 @export var friction_level_time_limits: Array[float] = [3,3,4]
 @export var friction_level_delays: Array[float] = [0.05,0.01,0.005]
@@ -34,7 +36,7 @@ func _process(_delta: float) -> void:
 			$input_delay_timer.start(friction_level_delays[friction_level])
 			rub_succ+=1
 			
-			
+	fire_friction_sound.play()
 	if rub_succ > friction_level_succ_req[friction_level]:
 		friction_level += 1
 		$GPUParticles2D.amount *=2
@@ -48,6 +50,7 @@ func _process(_delta: float) -> void:
 			new_coal.item_type = 3
 			new_coal.position = self.position + Vector2(rng.randf_range(-100.0, 100.0),rng.randf_range(-10.0, 200.0))
 			get_parent().add_child(new_coal)
+			fire_sound.play()
 			player_node.items[1] -= 1
 			player_node.block_movement = false
 			queue_free()

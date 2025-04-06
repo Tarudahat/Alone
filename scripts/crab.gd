@@ -2,6 +2,8 @@ extends CharacterBody2D
 class_name Crab
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var walk_sound: AudioStreamPlayer2D = $Walk_sound
+@onready var damage_sound: AudioStreamPlayer2D = $Damage_sound
 
 @export var SPEED = 320.0
 @export var NON_AGRO_SPEED = 250.0
@@ -35,6 +37,8 @@ func _physics_process(_delta):
 			velocity = Vector2(no_angry_direction, 0) * NON_AGRO_SPEED
 	
 	var collision = move_and_slide()
+	walk_sound.play()
+	
 	if collision:
 		for i in get_slide_collision_count():
 			var collision_ = get_slide_collision(i)
@@ -43,6 +47,7 @@ func _physics_process(_delta):
 				$dmg_cooldown.start()
 				can_dmg = false
 				player_node.damage()
+				damage_sound.play()
 
 						
 	if hp <= 0:
