@@ -129,13 +129,17 @@ label_settings = SubResource("LabelSettings_cw2d6")
 [node name="Walk_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_mdl7e")
 
-[node name="Throw_sound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_70d11")
-
 [node name="Damage_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_70d11")
 
+<<<<<<< HEAD
 [node name="island_timer" type="Timer" parent="."]
+=======
+[node name="Throw_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_70d11")
+volume_db = 10.133
+attenuation = 1.03526
+>>>>>>> 5573a16 (sounds about done.)
 
 [connection signal="timeout" from="throw_cooldown" to="." method="_on_throw_cooldown_timeout"]
 [connection signal="timeout" from="island_timer" to="." method="_on_island_timer_timeout"]

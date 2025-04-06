@@ -22,6 +22,7 @@ func _physics_process(_delta):
 	velocity = Vector2.ZERO
 	if angry:
 		if player_node:
+			#slither_sound.play()
 			velocity = position.direction_to(player_node.position) * SPEED
 	else:
 		if position.distance_to(og_position) > 350:
@@ -31,7 +32,6 @@ func _physics_process(_delta):
 			
 	look_at(self.position + velocity)
 	var collision = move_and_slide()
-	slither_sound.play()
 	if collision:
 		for i in get_slide_collision_count():
 			var collision_ = get_slide_collision(i)

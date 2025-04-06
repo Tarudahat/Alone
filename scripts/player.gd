@@ -4,6 +4,7 @@ class_name Player
 @export var speed = 600
 @onready var walk_sound: AudioStreamPlayer2D = $Walk_sound
 @onready var damage_sound: AudioStreamPlayer2D = $Damage_sound
+@onready var throw_sound: AudioStreamPlayer2D = $Throw_sound
 
 var target = position
 var block_movement = false
@@ -49,6 +50,7 @@ func _input(event):
 	# Use is_action_pressed to only accept single taps as input instead of mouse drags.
 	if items[5] and Input.is_action_pressed("collect") and event.is_action_pressed(&"left_click"):
 		if can_throw:
+			throw_sound.play()
 			items[5]-=1
 			var rock_instance = throwing_rock.instantiate()
 			throw_target_position = get_global_mouse_position()
@@ -78,7 +80,6 @@ func _physics_process(_delta):
 	velocity = position.direction_to(target) * speed
 	if block_movement:
 		velocity = Vector2.ZERO
-		#walk_sound.stop()
 	if position.distance_to(target) > 10 and not block_movement:
 		move_and_slide()
 
