@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Crab
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+#@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var walk_sound: AudioStreamPlayer2D = $Walk_sound
 
 @export var SPEED = 320.0
@@ -17,7 +17,7 @@ var can_dmg:bool = true
 
 func _ready():
 	og_postions = self.position
-	animation_player.play("Walk")
+	#animation_player.play("Walk")
 
 func _physics_process(_delta):
 	velocity = Vector2.ZERO

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cv07byhkhag3k" path="res://assets/basic_islands/basic1.png" id="1_b8l7x"]
 [ext_resource type="PackedScene" uid="uid://bkhwrpk8o2kf8" path="res://scenes/Player.tscn" id="2_h75ht"]
 [ext_resource type="PackedScene" uid="uid://4dr46qywa42t" path="res://scenes/tree.tscn" id="4_iywj2"]
-[ext_resource type="PackedScene" uid="uid://dtojjnxtrvye8" path="res://scenes/snake.tscn" id="5_b8l7x"]
+[ext_resource type="PackedScene" uid="uid://o6e5fdcfdv4r" path="res://scenes/snake.tscn" id="5_b8l7x"]
 [ext_resource type="PackedScene" uid="uid://bi8c5e1k7qi8r" path="res://scenes/crab.tscn" id="6_j7yk5"]
 [ext_resource type="PackedScene" uid="uid://vsswstq88npp" path="res://scenes/item.tscn" id="7_bp5o4"]
 [ext_resource type="PackedScene" uid="uid://bplo0xxon7kth" path="res://scenes/tutorial_flask.tscn" id="7_j7yk5"]
