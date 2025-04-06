@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://b2uu3d4udk4q4" path="res://scripts/raft_minigame.gd" id="1_keugn"]
 [ext_resource type="Script" uid="uid://co2thrc4yd4xi" path="res://scripts/rock.gd" id="2_j7673"]
-[ext_resource type="Texture2D" uid="uid://b2xbviayn2yjr" path="res://icon.svg" id="3_eegjx"]
 [ext_resource type="Texture2D" uid="uid://br856cjntwh1" path="res://assets/blue_background.png" id="4_eegjx"]
 [ext_resource type="PackedScene" uid="uid://bkhwrpk8o2kf8" path="res://scenes/Player.tscn" id="5_cfoot"]
 [ext_resource type="PackedScene" uid="uid://bo6a2e3rspor5" path="res://scenes/raft.tscn" id="6_cfoot"]
 [ext_resource type="Script" uid="uid://bda1hwj4ajj13" path="res://scenes/finish.gd" id="6_v08c5"]
 [ext_resource type="Texture2D" uid="uid://bw3xo01m6qtt2" path="res://assets/raft.png" id="7_uet1u"]
+[ext_resource type="Texture2D" uid="uid://do3auymkwtcw1" path="res://assets/Seamine.png" id="8_v08c5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vbdr"]
 size = Vector2(473, 14284)
@@ -18,10 +18,10 @@ size = Vector2(125, 178)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v08c5"]
 size = Vector2(1338, 232)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6xy5"]
-size = Vector2(115, 115)
+[sub_resource type="CircleShape2D" id="CircleShape2D_nyjvl"]
+radius = 8.324
 
-[node name="RaftMinigame" type="Control"]
+[node name="RaftMinigame1" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -103,487 +103,847 @@ script = ExtResource("6_v08c5")
 position = Vector2(-15, 14)
 shape = SubResource("RectangleShape2D_v08c5")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Seamines" type="Node2D" parent="."]
 
-[node name="Rock" type="StaticBody2D" parent="Node2D"]
+[node name="Seamines" type="Area2D" parent="Seamines"]
 position = Vector2(1019, 84)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock2" type="StaticBody2D" parent="Node2D"]
-position = Vector2(412, -94)
+[node name="Seamines2" type="Area2D" parent="Seamines"]
+position = Vector2(314, -57)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock2"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines2"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines2"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock3" type="StaticBody2D" parent="Node2D"]
-position = Vector2(833, -360)
+[node name="Seamines3" type="Area2D" parent="Seamines"]
+position = Vector2(642, -248)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock3"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines3"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines3"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock4" type="StaticBody2D" parent="Node2D"]
-position = Vector2(263, -577)
+[node name="Seamines4" type="Area2D" parent="Seamines"]
+position = Vector2(977, -461)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock4"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines4"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines4"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock5" type="StaticBody2D" parent="Node2D"]
-position = Vector2(1095, -782)
+[node name="Seamines5" type="Area2D" parent="Seamines"]
+position = Vector2(374, -478)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock5"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines5"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines5"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock6" type="StaticBody2D" parent="Node2D"]
-position = Vector2(651, -805)
+[node name="Seamines6" type="Area2D" parent="Seamines"]
+position = Vector2(1125, -839)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock6"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines6"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines6"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock7" type="StaticBody2D" parent="Node2D"]
-position = Vector2(351, -1070)
+[node name="Seamines7" type="Area2D" parent="Seamines"]
+position = Vector2(674, -733)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock7"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines7"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines7"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock8" type="StaticBody2D" parent="Node2D"]
-position = Vector2(721, -1251)
+[node name="Seamines8" type="Area2D" parent="Seamines"]
+position = Vector2(352, -867)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock8"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines8"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock8"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines8"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock9" type="StaticBody2D" parent="Node2D"]
-position = Vector2(1114, -1728)
+[node name="Seamines9" type="Area2D" parent="Seamines"]
+position = Vector2(135, -667)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock9"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines9"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock9"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines9"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock10" type="StaticBody2D" parent="Node2D"]
-position = Vector2(375, -1751)
+[node name="Seamines10" type="Area2D" parent="Seamines"]
+position = Vector2(619, -1072)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock10"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines10"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock10"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines10"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock11" type="StaticBody2D" parent="Node2D"]
-position = Vector2(745, -2109)
+[node name="Seamines11" type="Area2D" parent="Seamines"]
+position = Vector2(980, -1106)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock11"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines11"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock11"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines11"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock12" type="StaticBody2D" parent="Node2D"]
-position = Vector2(173, -2419)
+[node name="Seamines12" type="Area2D" parent="Seamines"]
+position = Vector2(352, -1211)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock12"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines12"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock12"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines12"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock13" type="StaticBody2D" parent="Node2D"]
-position = Vector2(1055, -2443)
+[node name="Seamines13" type="Area2D" parent="Seamines"]
+position = Vector2(152, -1478)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock13"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines13"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock13"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines13"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock14" type="StaticBody2D" parent="Node2D"]
-position = Vector2(542, -2884)
+[node name="Seamines14" type="Area2D" parent="Seamines"]
+position = Vector2(580, -1501)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock14"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines14"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock14"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines14"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock15" type="StaticBody2D" parent="Node2D"]
-position = Vector2(959, -3205)
+[node name="Seamines15" type="Area2D" parent="Seamines"]
+position = Vector2(980, -1620)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock15"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines15"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock15"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines15"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock16" type="StaticBody2D" parent="Node2D"]
-position = Vector2(209, -3360)
+[node name="Seamines16" type="Area2D" parent="Seamines"]
+position = Vector2(337, -1856)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock16"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines16"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock16"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines16"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock17" type="StaticBody2D" parent="Node2D"]
-position = Vector2(518, -3587)
+[node name="Seamines17" type="Area2D" parent="Seamines"]
+position = Vector2(731, -2079)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock17"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines17"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock17"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines17"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock18" type="StaticBody2D" parent="Node2D"]
-position = Vector2(940, -4040)
+[node name="Seamines18" type="Area2D" parent="Seamines"]
+position = Vector2(1111, -2302)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock18"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines18"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock18"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines18"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock19" type="StaticBody2D" parent="Node2D"]
-position = Vector2(210, -4199)
+[node name="Seamines19" type="Area2D" parent="Seamines"]
+position = Vector2(350, -2368)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock19"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines19"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock19"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines19"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock20" type="StaticBody2D" parent="Node2D"]
-position = Vector2(829, -4802)
+[node name="Seamines20" type="Area2D" parent="Seamines"]
+position = Vector2(731, -2643)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock20"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines20"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock20"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines20"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock21" type="StaticBody2D" parent="Node2D"]
-position = Vector2(289, -4897)
+[node name="Seamines21" type="Area2D" parent="Seamines"]
+position = Vector2(316, -2847)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock21"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines21"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock21"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines21"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock22" type="StaticBody2D" parent="Node2D"]
-position = Vector2(670, -5484)
+[node name="Seamines22" type="Area2D" parent="Seamines"]
+position = Vector2(687, -3190)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock22"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines22"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock22"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines22"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock23" type="StaticBody2D" parent="Node2D"]
-position = Vector2(1082, -5357)
+[node name="Seamines23" type="Area2D" parent="Seamines"]
+position = Vector2(1106, -2858)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock23"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines23"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock23"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines23"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock24" type="StaticBody2D" parent="Node2D"]
-position = Vector2(178, -5960)
+[node name="Seamines24" type="Area2D" parent="Seamines"]
+position = Vector2(255, -3420)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock24"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines24"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock24"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines24"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock25" type="StaticBody2D" parent="Node2D"]
-position = Vector2(781, -6293)
+[node name="Seamines25" type="Area2D" parent="Seamines"]
+position = Vector2(658, -3651)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock25"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines25"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock25"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines25"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock26" type="StaticBody2D" parent="Node2D"]
-position = Vector2(242, -6690)
+[node name="Seamines26" type="Area2D" parent="Seamines"]
+position = Vector2(1062, -3478)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock26"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines26"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock26"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines26"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock27" type="StaticBody2D" parent="Node2D"]
-position = Vector2(765, -6896)
+[node name="Seamines27" type="Area2D" parent="Seamines"]
+position = Vector2(255, -3983)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock27"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines27"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock27"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines27"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock28" type="StaticBody2D" parent="Node2D"]
-position = Vector2(305, -7530)
+[node name="Seamines28" type="Area2D" parent="Seamines"]
+position = Vector2(716, -4228)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock28"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines28"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock28"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines28"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock29" type="StaticBody2D" parent="Node2D"]
-position = Vector2(987, -7530)
+[node name="Seamines29" type="Area2D" parent="Seamines"]
+position = Vector2(1124, -3982)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock29"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines29"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock29"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines29"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock30" type="StaticBody2D" parent="Node2D"]
-position = Vector2(441, -8519)
+[node name="Seamines30" type="Area2D" parent="Seamines"]
+position = Vector2(328, -4523)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock30"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines30"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock30"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines30"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock31" type="StaticBody2D" parent="Node2D"]
-position = Vector2(951, -9199)
+[node name="Seamines31" type="Area2D" parent="Seamines"]
+position = Vector2(885, -4811)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock31"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines31"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock31"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines31"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock32" type="StaticBody2D" parent="Node2D"]
-position = Vector2(373, -9777)
+[node name="Seamines32" type="Area2D" parent="Seamines"]
+position = Vector2(429, -5340)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock32"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines32"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock32"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines32"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock33" type="StaticBody2D" parent="Node2D"]
-position = Vector2(1155, -10185)
+[node name="Seamines33" type="Area2D" parent="Seamines"]
+position = Vector2(1019, -5761)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock33"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines33"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock33"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines33"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock34" type="StaticBody2D" parent="Node2D"]
-position = Vector2(509, -10661)
+[node name="Seamines34" type="Area2D" parent="Seamines"]
+position = Vector2(288, -6155)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock34"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines34"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock34"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines34"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock35" type="StaticBody2D" parent="Node2D"]
-position = Vector2(985, -11511)
+[node name="Seamines35" type="Area2D" parent="Seamines"]
+position = Vector2(963, -6548)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock35"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines35"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock35"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines35"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock36" type="StaticBody2D" parent="Node2D"]
-position = Vector2(271, -11545)
+[node name="Seamines36" type="Area2D" parent="Seamines"]
+position = Vector2(345, -6914)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock36"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines36"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock36"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines36"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock37" type="StaticBody2D" parent="Node2D"]
-position = Vector2(577, -12225)
+[node name="Seamines37" type="Area2D" parent="Seamines"]
+position = Vector2(878, -7279)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock37"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines37"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock37"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines37"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock38" type="StaticBody2D" parent="Node2D"]
-position = Vector2(1053, -12701)
+[node name="Seamines38" type="Area2D" parent="Seamines"]
+position = Vector2(308, -7706)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock38"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines38"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock38"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines38"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock39" type="StaticBody2D" parent="Node2D"]
-position = Vector2(237, -12906)
+[node name="Seamines39" type="Area2D" parent="Seamines"]
+position = Vector2(731, -7651)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock39"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines39"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock39"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines39"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
-[node name="Rock40" type="StaticBody2D" parent="Node2D"]
-position = Vector2(973, -13179)
+[node name="Seamines40" type="Area2D" parent="Seamines"]
+position = Vector2(1057, -8246)
 script = ExtResource("2_j7673")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock40"]
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines40"]
 z_index = 1
-texture = ExtResource("3_eegjx")
+texture = ExtResource("8_v08c5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock40"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines40"]
 position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_x6xy5")
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines41" type="Area2D" parent="Seamines"]
+position = Vector2(462, -8285)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines41"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines41"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines42" type="Area2D" parent="Seamines"]
+position = Vector2(846, -8822)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines42"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines42"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines43" type="Area2D" parent="Seamines"]
+position = Vector2(290, -8841)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines43"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines43"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines44" type="Area2D" parent="Seamines"]
+position = Vector2(578, -9360)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines44"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines44"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines45" type="Area2D" parent="Seamines"]
+position = Vector2(1077, -9456)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines45"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines45"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines46" type="Area2D" parent="Seamines"]
+position = Vector2(232, -9763)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines46"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines46"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines47" type="Area2D" parent="Seamines"]
+position = Vector2(712, -9993)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines47"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines47"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines48" type="Area2D" parent="Seamines"]
+position = Vector2(270, -10473)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines48"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines48"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines49" type="Area2D" parent="Seamines"]
+position = Vector2(1077, -10339)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines49"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines49"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines50" type="Area2D" parent="Seamines"]
+position = Vector2(693, -10761)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines50"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines50"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines51" type="Area2D" parent="Seamines"]
+position = Vector2(251, -11145)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines51"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines51"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines52" type="Area2D" parent="Seamines"]
+position = Vector2(1096, -11260)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines52"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines52"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines53" type="Area2D" parent="Seamines"]
+position = Vector2(585, -11566)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines53"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines53"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines54" type="Area2D" parent="Seamines"]
+position = Vector2(1019, -11796)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines54"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines54"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines55" type="Area2D" parent="Seamines"]
+position = Vector2(227, -11975)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines55"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines55"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines56" type="Area2D" parent="Seamines"]
+position = Vector2(661, -12332)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines56"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines56"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines57" type="Area2D" parent="Seamines"]
+position = Vector2(1121, -12409)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines57"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines57"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines58" type="Area2D" parent="Seamines"]
+position = Vector2(227, -12613)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines58"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines58"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines59" type="Area2D" parent="Seamines"]
+position = Vector2(636, -12817)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines59"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines59"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="Seamines60" type="Area2D" parent="Seamines"]
+position = Vector2(1096, -12945)
+script = ExtResource("2_j7673")
+
+[node name="Sprite2D" type="Sprite2D" parent="Seamines/Seamines60"]
+z_index = 1
+texture = ExtResource("8_v08c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seamines/Seamines60"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(-5.59023, -4.77938)
+shape = SubResource("CircleShape2D_nyjvl")
 
 [connection signal="area_entered" from="finish" to="finish" method="_on_area_entered"]
 [connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines" to="Seamines/Seamines" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines2" to="Seamines/Seamines2" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines3" to="Seamines/Seamines3" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines4" to="Seamines/Seamines4" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines5" to="Seamines/Seamines5" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines6" to="Seamines/Seamines6" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines7" to="Seamines/Seamines7" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines8" to="Seamines/Seamines8" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines9" to="Seamines/Seamines9" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines10" to="Seamines/Seamines10" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines11" to="Seamines/Seamines11" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines12" to="Seamines/Seamines12" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines13" to="Seamines/Seamines13" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines14" to="Seamines/Seamines14" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines15" to="Seamines/Seamines15" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines16" to="Seamines/Seamines16" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines17" to="Seamines/Seamines17" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines18" to="Seamines/Seamines18" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines19" to="Seamines/Seamines19" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines20" to="Seamines/Seamines20" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines21" to="Seamines/Seamines21" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines22" to="Seamines/Seamines22" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines23" to="Seamines/Seamines23" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines24" to="Seamines/Seamines24" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines25" to="Seamines/Seamines25" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines26" to="Seamines/Seamines26" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines27" to="Seamines/Seamines27" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines28" to="Seamines/Seamines28" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines29" to="Seamines/Seamines29" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines30" to="Seamines/Seamines30" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines31" to="Seamines/Seamines31" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines32" to="Seamines/Seamines32" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines33" to="Seamines/Seamines33" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines34" to="Seamines/Seamines34" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines35" to="Seamines/Seamines35" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines36" to="Seamines/Seamines36" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines37" to="Seamines/Seamines37" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines38" to="Seamines/Seamines38" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines39" to="Seamines/Seamines39" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines40" to="Seamines/Seamines40" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines41" to="Seamines/Seamines41" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines42" to="Seamines/Seamines42" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines43" to="Seamines/Seamines43" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines44" to="Seamines/Seamines44" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines45" to="Seamines/Seamines45" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines46" to="Seamines/Seamines46" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines47" to="Seamines/Seamines47" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines48" to="Seamines/Seamines48" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines49" to="Seamines/Seamines49" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines50" to="Seamines/Seamines50" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines51" to="Seamines/Seamines51" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines52" to="Seamines/Seamines52" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines53" to="Seamines/Seamines53" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines54" to="Seamines/Seamines54" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines55" to="Seamines/Seamines55" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines56" to="Seamines/Seamines56" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines57" to="Seamines/Seamines57" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines58" to="Seamines/Seamines58" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines59" to="Seamines/Seamines59" method="_on_body_entered"]
+[connection signal="body_entered" from="Seamines/Seamines60" to="Seamines/Seamines60" method="_on_body_entered"]

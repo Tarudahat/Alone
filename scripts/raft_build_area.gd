@@ -24,6 +24,13 @@ func _process(_delta: float) -> void:
 					Globals.time_left = player_node.get_node("island_timer").time_left
 					Globals.current_level +=1
 					# add destination scene as child root
+					match Globals.current_level:
+						1:
+							destination_scene = load("res://scenes/islands/volcano_islands/island02.tscn")
+						2:
+							destination_scene = load("res://scenes/islands/common_islands/common_island02.tscn")
+						3:
+							destination_scene = load("res://scenes/raft_minigame.tscn")
 					var target_scene = destination_scene.instantiate()
 					get_tree().get_root().add_child(target_scene)
 					# queue wipe current scene from root

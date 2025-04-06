@@ -17,6 +17,7 @@ var rng = RandomNumberGenerator.new()
 var wood_minigame = preload("res://scenes/start_fire_minigame.tscn")
 var throwing_rock = preload("res://scenes/throw_stone.tscn")
 var wood_minigame_instance = null
+@onready var current_timer = $island_timer
 # shell_count
 # wood_count
 # sulfer_count
@@ -41,12 +42,12 @@ func _process(_delta):
 	$items_ui/VBoxContainer/Label5.text = "\"Rope\": " + str(items[4])
 	$items_ui/VBoxContainer/Label6.text = "Stones: " + str(items[5])
 	#$Sprite.play(animation_direction())
-	if int(int($island_timer.time_left)%60) > 9:
-		$items_ui/death_timer_ui/Label7.text = str(int($island_timer.time_left/60)) +\
-		 " : " +str(int(int($island_timer.time_left)%60))
+	if int(int(current_timer.time_left)%60) > 9:
+		$items_ui/death_timer_ui/Label7.text = str(int(current_timer.time_left/60)) +\
+		 " : " +str(int(int(current_timer.time_left)%60))
 	else:
-		$items_ui/death_timer_ui/Label7.text = str(int($island_timer.time_left/60)) +\
-		 " : 0" +str(int(int($island_timer.time_left)%60))
+		$items_ui/death_timer_ui/Label7.text = str(int(current_timer.time_left/60)) +\
+		 " : 0" +str(int(int(current_timer.time_left)%60))
 		
 
 func _input(event):

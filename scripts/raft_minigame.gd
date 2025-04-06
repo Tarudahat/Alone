@@ -21,7 +21,7 @@ func _on_minigame_timer_timeout():
 func exit_raft() -> void:
 	player.block_movement = false
 	# add destination scene as child root
-	var target_scene = Globals.vulcanic_island.instantiate()
+	var target_scene = Globals.bomb_island.instantiate()
 	get_tree().get_root().add_child(target_scene)
 	# queue wipe current scene from root
 	get_tree().get_current_scene().queue_free()
