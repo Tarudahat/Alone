@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cy7actb3fia78"]
+[gd_scene load_steps=13 format=3 uid="uid://cy7actb3fia78"]
 
 [ext_resource type="Script" uid="uid://b2uu3d4udk4q4" path="res://scripts/raft_minigame.gd" id="1_keugn"]
 [ext_resource type="Script" uid="uid://co2thrc4yd4xi" path="res://scripts/rock.gd" id="2_j7673"]
@@ -13,10 +13,13 @@
 size = Vector2(473, 14284)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nyjvl"]
-size = Vector2(132, 184)
+size = Vector2(125, 178)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v08c5"]
-size = Vector2(1321, 204)
+size = Vector2(1338, 232)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6xy5"]
+size = Vector2(115, 115)
 
 [node name="RaftMinigame" type="Control"]
 layout_mode = 3
@@ -41,6 +44,8 @@ offset_bottom = 3851.0
 texture = ExtResource("4_eegjx")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background"]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2(473, -13798)
@@ -48,6 +53,8 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_2vbdr")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Background"]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Background/StaticBody2D2"]
 position = Vector2(548, 941)
@@ -56,12 +63,16 @@ shape = SubResource("RectangleShape2D_2vbdr")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Background"]
 position = Vector2(-411, -1234)
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Background/StaticBody2D3"]
 position = Vector2(172, -5185)
 shape = SubResource("RectangleShape2D_2vbdr")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Background"]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Background/StaticBody2D4"]
 position = Vector2(1510, -6419)
@@ -73,20 +84,23 @@ position = Vector2(639, 361)
 
 [node name="Raft" parent="." instance=ExtResource("6_cfoot")]
 position = Vector2(639, 361)
+collision_layer = 4
+collision_mask = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="Raft"]
 show_behind_parent = true
 texture = ExtResource("7_uet1u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Raft"]
-position = Vector2(-4, -18)
+position = Vector2(-6.5, -16)
 shape = SubResource("RectangleShape2D_nyjvl")
 
-[node name="finish" type="StaticBody2D" parent="."]
+[node name="finish" type="Area2D" parent="."]
+position = Vector2(632, -13460)
 script = ExtResource("6_v08c5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
-position = Vector2(642.5, -13465)
+position = Vector2(-15, 14)
 shape = SubResource("RectangleShape2D_v08c5")
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -99,474 +113,477 @@ script = ExtResource("2_j7673")
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock2" type="StaticBody2D" parent="Node2D"]
-position = Vector2(330, 84)
+position = Vector2(412, -94)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock2"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock2"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock2"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock3" type="StaticBody2D" parent="Node2D"]
-position = Vector2(785, -210)
+position = Vector2(833, -360)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock3"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock3"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock3"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock4" type="StaticBody2D" parent="Node2D"]
-position = Vector2(394, -412)
+position = Vector2(263, -577)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock4"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock4"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock4"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock5" type="StaticBody2D" parent="Node2D"]
-position = Vector2(1152, -500)
+position = Vector2(1095, -782)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock5"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock5"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock5"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock6" type="StaticBody2D" parent="Node2D"]
-position = Vector2(82, -656)
+position = Vector2(651, -805)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock6"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock6"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock6"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock7" type="StaticBody2D" parent="Node2D"]
-position = Vector2(449, -899)
+position = Vector2(351, -1070)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock7"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock7"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock7"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock8" type="StaticBody2D" parent="Node2D"]
-position = Vector2(844, -729)
+position = Vector2(721, -1251)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock8"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock8"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock8"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock9" type="StaticBody2D" parent="Node2D"]
-position = Vector2(812, -1305)
+position = Vector2(1114, -1728)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock9"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock9"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock9"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock10" type="StaticBody2D" parent="Node2D"]
-position = Vector2(172, -1472)
+position = Vector2(375, -1751)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock10"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock10"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock10"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock11" type="StaticBody2D" parent="Node2D"]
-position = Vector2(1137, -1847)
+position = Vector2(745, -2109)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock11"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock11"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock11"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock12" type="StaticBody2D" parent="Node2D"]
-position = Vector2(497, -2044)
+position = Vector2(173, -2419)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock12"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock12"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock12"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock13" type="StaticBody2D" parent="Node2D"]
-position = Vector2(930, -2644)
+position = Vector2(1055, -2443)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock13"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock13"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock13"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock14" type="StaticBody2D" parent="Node2D"]
-position = Vector2(280, -2743)
+position = Vector2(542, -2884)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock14"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock14"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock14"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock15" type="StaticBody2D" parent="Node2D"]
-position = Vector2(615, -3009)
+position = Vector2(959, -3205)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock15"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock15"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock15"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock16" type="StaticBody2D" parent="Node2D"]
-position = Vector2(370, -3694)
+position = Vector2(209, -3360)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock16"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock16"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock16"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock17" type="StaticBody2D" parent="Node2D"]
-position = Vector2(904, -3478)
+position = Vector2(518, -3587)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock17"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock17"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock17"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock18" type="StaticBody2D" parent="Node2D"]
-position = Vector2(630, -4300)
+position = Vector2(940, -4040)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock18"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock18"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock18"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock19" type="StaticBody2D" parent="Node2D"]
-position = Vector2(211, -4805)
+position = Vector2(210, -4199)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock19"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock19"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock19"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock20" type="StaticBody2D" parent="Node2D"]
-position = Vector2(1149, -4704)
+position = Vector2(829, -4802)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock20"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock20"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock20"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock21" type="StaticBody2D" parent="Node2D"]
-position = Vector2(572, -5324)
+position = Vector2(289, -4897)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock21"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock21"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock21"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock22" type="StaticBody2D" parent="Node2D"]
-position = Vector2(1134, -5713)
+position = Vector2(670, -5484)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock22"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock22"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock22"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock23" type="StaticBody2D" parent="Node2D"]
-position = Vector2(471, -6002)
+position = Vector2(1082, -5357)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock23"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock23"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock23"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock24" type="StaticBody2D" parent="Node2D"]
-position = Vector2(923, -6461)
+position = Vector2(178, -5960)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock24"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock24"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock24"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock25" type="StaticBody2D" parent="Node2D"]
-position = Vector2(309, -7133)
+position = Vector2(781, -6293)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock25"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock25"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock25"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock26" type="StaticBody2D" parent="Node2D"]
-position = Vector2(1096, -7075)
+position = Vector2(242, -6690)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock26"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock26"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock26"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock27" type="StaticBody2D" parent="Node2D"]
-position = Vector2(738, -8038)
+position = Vector2(765, -6896)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock27"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock27"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock27"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock28" type="StaticBody2D" parent="Node2D"]
-position = Vector2(269, -7661)
+position = Vector2(305, -7530)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock28"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock28"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock28"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock29" type="StaticBody2D" parent="Node2D"]
-position = Vector2(1104, -8542)
+position = Vector2(987, -7530)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock29"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock29"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock29"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock30" type="StaticBody2D" parent="Node2D"]
-position = Vector2(472, -8972)
+position = Vector2(441, -8519)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock30"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock30"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock30"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock31" type="StaticBody2D" parent="Node2D"]
-position = Vector2(981, -9553)
+position = Vector2(951, -9199)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock31"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock31"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock31"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock32" type="StaticBody2D" parent="Node2D"]
-position = Vector2(353, -9836)
+position = Vector2(373, -9777)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock32"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock32"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock32"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock33" type="StaticBody2D" parent="Node2D"]
-position = Vector2(852, -10562)
+position = Vector2(1155, -10185)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock33"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock33"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock33"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock34" type="StaticBody2D" parent="Node2D"]
-position = Vector2(227, -11095)
+position = Vector2(509, -10661)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock34"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock34"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock34"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock35" type="StaticBody2D" parent="Node2D"]
-position = Vector2(729, -11619)
+position = Vector2(985, -11511)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock35"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock35"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock35"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock36" type="StaticBody2D" parent="Node2D"]
-position = Vector2(1091, -12247)
+position = Vector2(271, -11545)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock36"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock36"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock36"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock37" type="StaticBody2D" parent="Node2D"]
-position = Vector2(188, -12234)
+position = Vector2(577, -12225)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock37"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock37"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock37"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock38" type="StaticBody2D" parent="Node2D"]
-position = Vector2(789, -12719)
+position = Vector2(1053, -12701)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock38"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock38"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock38"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock39" type="StaticBody2D" parent="Node2D"]
-position = Vector2(202, -12797)
+position = Vector2(237, -12906)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock39"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock39"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock39"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
 
 [node name="Rock40" type="StaticBody2D" parent="Node2D"]
-position = Vector2(1115, -13160)
+position = Vector2(973, -13179)
 script = ExtResource("2_j7673")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Rock40"]
 z_index = 1
 texture = ExtResource("3_eegjx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Rock40"]
-position = Vector2(-59.0945, -59.1982)
-polygon = PackedVector2Array(11.0945, 10.1982, 2.0945, -1.80183, 6.0945, -4.80183, 112.094, -4.80183, 122.094, 6.19817, 122.094, 109.198, 113.094, 121.198, 5.0945, 123.198, -3.9055, 112.198, -4.9055, 6.19817, 2.0945, -2.80183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Rock40"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_x6xy5")
+
+[connection signal="area_entered" from="finish" to="finish" method="_on_area_entered"]
+[connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]

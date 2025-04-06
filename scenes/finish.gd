@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Area2D
 
 @onready var raft_minigame: Control = $".."
 
@@ -6,6 +6,9 @@ extends StaticBody2D
 func _process(delta: float) -> void:
 	pass
 	
-func _area_entered(body) -> void:
+
+func _on_body_entered(body: Node2D) -> void:
+	print("finished")
 	if body.name == "Player":
+		print("finished")
 		raft_minigame.exit_raft()
