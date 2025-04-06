@@ -1,19 +1,10 @@
 TODO:
-   - Islands:
-     Design islands:
-        5 default Islands
-        3 Volcano islands
-        1 final island -> has small island which wil be eaten first, thus prime placement location for the bomb
-   - fireball enemies
-      - fall from sky on volcano island
-   -Raft
-    -Need for go next Island
-    -cost wood + time (1min?)
-    -dodge mini game -> wood + or lose more
-  -Materials
-    -shells E collect -> 3 for 1 KNO3
-    -Phosphor on lava island -> dodge falling lava balls
-  -Time limit for each Island 3 min?
+   - make bomb island
+   - add sound
+   - raft minigame
+   - x-tra islands for replayability
+   - titlescreen + game over screen + intro monster "illustration"
+
   -Big monster
     -kill with bomb made
       -depending on # black powder diff ending? like still died, gg, u nuked everything
