@@ -17,9 +17,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if player_in_range and player_node:
 		if Input.is_action_just_pressed("collect"):
-			if player_node.items[3] >= coal_cost and\
-				player_node.items[2] >= sulfur_cost and\
-				player_node.items[0] >= shell_cost :
+			if player_node.items[3] >= coal_cost*4 and\
+				player_node.items[2] >= sulfur_cost*4 and\
+				player_node.items[0] >= shell_cost*4 :
 				$AnimatedSprite2D.modulate = Color(Color.WHITE, 100)
 				var max_bombs = floori(min(player_node.items[3]/coal_cost,player_node.items[2]/sulfur_cost,player_node.items[0]/shell_cost))
 				player_node.items[3] -= coal_cost * max_bombs
@@ -27,6 +27,7 @@ func _process(_delta: float) -> void:
 				player_node.items[0] -= shell_cost * max_bombs
 				$AnimatedSprite2D.scale.x = 1.0 + float(max_bombs)/10
 				$AnimatedSprite2D.scale.y = 1.0 + float(max_bombs)/10
+				Globals.max_bombs = max_bombs
 			
 
 

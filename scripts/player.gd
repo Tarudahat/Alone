@@ -17,8 +17,6 @@ var rng = RandomNumberGenerator.new()
 var wood_minigame = preload("res://scenes/start_fire_minigame.tscn")
 var throwing_rock = preload("res://scenes/throw_stone.tscn")
 var wood_minigame_instance = null
-var raft_minigame = preload("res://scenes/raft_minigame.tscn")
-var raft_minigame_instance = null
 # shell_count
 # wood_count
 # sulfer_count
@@ -80,11 +78,7 @@ func _input(event):
 			wood_minigame_instance.max_coal_reward = items[1]
 			
 		get_parent().add_child(wood_minigame_instance)
-	if event.is_action_pressed("collect") and not block_movement:
-		block_movement = true
-		raft_minigame_instance = raft_minigame.instantiate()
-		self.position = raft_minigame_instance.position
-		wood_minigame_instance.player_node = self
+
 
 func _physics_process(_delta):
 	velocity = position.direction_to(target) * speed
@@ -98,13 +92,12 @@ func _on_throw_cooldown_timeout() -> void:
 
 
 func _on_island_timer_timeout() -> void:
-	pass
-	#var target_scene = load("res:game_over").instantiate()
-	#get_tree().get_root().add_child(target_scene)
+	var target_scene = load("res://scenes/game_over.tscn").instantiate()
+	get_tree().get_root().add_child(target_scene)
 	# queue wipe current scene from root
-	#get_tree().get_current_scene().queue_free()
+	get_tree().get_current_scene().queue_free()
 	# change scene
-	#get_tree().set_current_scene(target_scene)
+	get_tree().set_current_scene(target_scene)
 
 
 func _on_wave_sounds_finished() -> void:

@@ -5,7 +5,7 @@ var current_level: int = 0
 var items: Array[int] = [0,0,0,0,0,0]
 var time_left = 0 # + per level time
 var treasures_found = 0
-
+var max_bombs = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
