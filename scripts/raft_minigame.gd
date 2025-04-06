@@ -9,6 +9,7 @@ extends Control
 var player_node
 
 func _ready():
+	player.current_timer = minigame_timer
 	minigame_timer.start()
 
 func _process(delta: float) -> void:
@@ -19,12 +20,8 @@ func _on_minigame_timer_timeout():
 
 func exit_raft() -> void:
 	player.block_movement = false
-	#
-	Globals.items = player_node.items
-	Globals.time_left = player_node.get_node("island_timer").time_left
-	Globals.current_level +=1
 	# add destination scene as child root
-	var target_scene = destination_scene.instantiate()
+	var target_scene = Globals.vulcanic_island.instantiate()
 	get_tree().get_root().add_child(target_scene)
 	# queue wipe current scene from root
 	get_tree().get_current_scene().queue_free()

@@ -1,8 +1,10 @@
 extends CharacterBody2D
 @export var speed = 400
-@export var vertical_speed := 300.0  # constant upward motion
-@onready var finish: StaticBody2D = $"../finish"
+@export var vertical_speed := 500.0  # constant upward motion
+@onready var finish: Area2D = $"../finish"
+
 var block_movement: bool = false
+
 
 func _ready() -> void:
 	pass
