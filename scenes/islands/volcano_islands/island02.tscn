@@ -1,0 +1,421 @@
+[gd_scene load_steps=10 format=3 uid="uid://ilxf5peuoqpt"]
+
+[ext_resource type="Texture2D" uid="uid://c6agk3fbwbgsf" path="res://assets/volcano_islands/vulcanic3.png" id="1_6bsgh"]
+[ext_resource type="PackedScene" uid="uid://4dr46qywa42t" path="res://scenes/tree.tscn" id="2_fef7v"]
+[ext_resource type="PackedScene" uid="uid://dtojjnxtrvye8" path="res://scenes/snake.tscn" id="3_2hdq6"]
+[ext_resource type="PackedScene" uid="uid://bkhwrpk8o2kf8" path="res://scenes/Player.tscn" id="3_vybd8"]
+[ext_resource type="PackedScene" uid="uid://bi8c5e1k7qi8r" path="res://scenes/crab.tscn" id="4_0mfbj"]
+[ext_resource type="PackedScene" uid="uid://vsswstq88npp" path="res://scenes/item.tscn" id="5_ncxdc"]
+[ext_resource type="PackedScene" uid="uid://2tbe5mnhco3q" path="res://scenes/chest.tscn" id="6_c7cb8"]
+[ext_resource type="PackedScene" uid="uid://e1a8cxmcl6ck" path="res://scenes/raft_build_area.tscn" id="6_cvtu4"]
+[ext_resource type="PackedScene" uid="uid://dupqr4gi3wba4" path="res://scenes/fireball.tscn" id="8_505x7"]
+
+[node name="Island" type="Node2D"]
+
+[node name="BG" type="Node2D" parent="."]
+
+[node name="map" type="TextureRect" parent="BG"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_6bsgh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BG"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BG/StaticBody2D"]
+polygon = PackedVector2Array(2828, 1505, 2765, 1836, 2896, 2279, 3438, 1959, 3738, 2045, 4086, 2210, 4263, 2107, 4585, 2367, 4625, 2510, 5047, 2504, 5441, 1942, 5470, 1742, 5199, 1146, 4856, 1066, 4774, 1149, 4893, 1431, 5002, 1782, 4873, 2053, 4685, 2119, 3370, 1594, 3487, 1063, 3404, 769, 3184, 598, 3219, 204, 3513, 33, 4032, 39, 4274, 182, 4719, 484, 5033, 484, 5681, 22, 6337, 184, 6192, 1320, 6329, 1685, 6400, 2076, 6340, 2410, 6291, 2818, 6368, 3334, 6075, 3674, 5869, 3842, 5293, 3834, 4751, 3725, 4266, 3922, 3687, 3933, 3347, 3702, 2856, 3874, 2315, 3967, 1643, 3736, 803, 3952, 292, 3850, 17, 3378, 90, 2784, 287, 2388, 253, 2201, 455, 1944, 720, 1973, 1316, 2102, 1591, 2351, 1703, 2268, 1750, 1970, 2014, 1778, 2053, 1630, 1947, 1529, 1835, 1698, 1604, 1838, 1239, 1835, 865, 1651, 582, 1156, 593, 741, 826, 385, 1070, 409, 1303, 645, 1622, 588, 1856, 160, 2043, 12, 2538, 12, 2833, 134, 2913, 427, 2759, 864, 2891, 1107, 2765, 1812, 3130, 1472, 3106, -541, 13, 533, -322, 4079, 2387, 4551, 6800, 4088, 6632, -295, 3117, -511, 3134, 1491)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Crab" parent="Enemies" instance=ExtResource("4_0mfbj")]
+position = Vector2(2456, 801)
+
+[node name="Crab3" parent="Enemies" instance=ExtResource("4_0mfbj")]
+position = Vector2(5609, 779)
+
+[node name="Crab2" parent="Enemies" instance=ExtResource("4_0mfbj")]
+position = Vector2(1608, 2779)
+
+[node name="Snake" parent="Enemies" instance=ExtResource("3_2hdq6")]
+position = Vector2(472, 2637)
+
+[node name="Snake2" parent="Enemies" instance=ExtResource("3_2hdq6")]
+position = Vector2(824, 2430)
+
+[node name="Snake3" parent="Enemies" instance=ExtResource("3_2hdq6")]
+position = Vector2(503, 2181)
+
+[node name="Snake4" parent="Enemies" instance=ExtResource("3_2hdq6")]
+position = Vector2(848, 3748)
+
+[node name="Snake5" parent="Enemies" instance=ExtResource("3_2hdq6")]
+position = Vector2(1349, 3278)
+
+[node name="Trees" type="Node2D" parent="."]
+
+[node name="Tree" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(2281, 181)
+
+[node name="Tree2" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(2100, 279)
+
+[node name="Tree3" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(2454, 355)
+
+[node name="Tree4" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(2170, 1161)
+
+[node name="Tree5" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(2416, 1474)
+
+[node name="Tree6" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(2144, 1762)
+
+[node name="Tree7" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(3485, 2163)
+
+[node name="Tree8" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(3293, 2301)
+
+[node name="Tree10" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(1903, 2250)
+
+[node name="Tree11" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(443, 3026)
+
+[node name="Tree12" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(2476, 2569)
+
+[node name="Tree9" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(3266, 3058)
+
+[node name="Tree16" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(1965, 3277)
+
+[node name="Tree20" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(4399, 2352)
+
+[node name="Tree21" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(5628, 3149)
+
+[node name="Tree22" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(5614, 1671)
+
+[node name="Tree23" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(6146, 1633)
+
+[node name="Tree24" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(5893, 1747)
+
+[node name="Tree17" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(969, 2744)
+
+[node name="Tree18" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(714, 2872)
+
+[node name="Tree15" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(1119, 3022)
+
+[node name="Tree14" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(782, 3098)
+
+[node name="Tree19" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(3020, 3145)
+
+[node name="Tree13" parent="Trees" instance=ExtResource("2_fef7v")]
+position = Vector2(935, 3166)
+
+[node name="Stones" type="Node2D" parent="."]
+
+[node name="item" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(1150, 1507)
+item_type = 5
+
+[node name="item2" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(1254, 1645)
+item_type = 5
+
+[node name="item35" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(1157, 1677)
+item_type = 5
+
+[node name="item36" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(1387, 1542)
+item_type = 5
+
+[node name="item3" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(966, 1549)
+item_type = 5
+
+[node name="item4" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(1125, 630)
+item_type = 5
+
+[node name="item5" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(991, 722)
+item_type = 5
+
+[node name="item6" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(903, 630)
+item_type = 5
+
+[node name="item7" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(2236, 563)
+item_type = 5
+
+[node name="item8" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(2294, 621)
+item_type = 5
+
+[node name="item9" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(2165, 621)
+item_type = 5
+
+[node name="item10" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(2449, 1866)
+item_type = 5
+
+[node name="item11" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(2370, 1941)
+item_type = 5
+
+[node name="item12" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(2491, 1991)
+item_type = 5
+
+[node name="item13" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(1335, 3410)
+item_type = 5
+
+[node name="item14" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(1219, 3490)
+item_type = 5
+
+[node name="item15" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(1176, 3362)
+item_type = 5
+
+[node name="item16" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(503, 3478)
+item_type = 5
+
+[node name="item17" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(699, 3558)
+item_type = 5
+
+[node name="item18" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(852, 2206)
+item_type = 5
+
+[node name="item19" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(669, 2341)
+item_type = 5
+
+[node name="item20" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(742, 2225)
+item_type = 5
+
+[node name="item21" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(589, 2298)
+item_type = 5
+
+[node name="item22" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(3207, 3381)
+item_type = 5
+
+[node name="item32" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(3804, 3691)
+item_type = 5
+
+[node name="item33" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(3174, 3449)
+item_type = 5
+
+[node name="item34" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(3822, 3584)
+item_type = 5
+
+[node name="item23" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(3374, 3182)
+item_type = 5
+
+[node name="item24" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(3753, 3622)
+item_type = 5
+
+[node name="item25" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(3906, 3668)
+item_type = 5
+
+[node name="item26" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(5366, 3473)
+item_type = 5
+
+[node name="item27" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(5238, 3504)
+item_type = 5
+
+[node name="item28" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(5434, 3584)
+item_type = 5
+
+[node name="item29" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(5477, 3449)
+item_type = 5
+
+[node name="item30" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(5428, 3357)
+item_type = 5
+
+[node name="item31" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(5018, 3437)
+item_type = 5
+
+[node name="Sulfur" type="Node2D" parent="."]
+
+[node name="item" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(3884, 197)
+item_type = 2
+
+[node name="item2" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(3973, 268)
+item_type = 2
+
+[node name="item3" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(3877, 276)
+item_type = 2
+
+[node name="item4" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(4393, 362)
+item_type = 2
+
+[node name="item5" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(4476, 392)
+item_type = 2
+
+[node name="item6" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(4454, 1379)
+item_type = 2
+
+[node name="item20" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(4423, 1483)
+item_type = 2
+
+[node name="item21" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(4547, 1436)
+item_type = 2
+
+[node name="item7" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(3903, 674)
+item_type = 2
+
+[node name="item8" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(3754, 1302)
+item_type = 2
+
+[node name="item9" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(3688, 1392)
+item_type = 2
+
+[node name="item10" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(3782, 1470)
+item_type = 2
+
+[node name="item11" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(4422, 431)
+item_type = 2
+
+[node name="item12" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(4090, 868)
+item_type = 2
+
+[node name="item13" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(4102, 753)
+item_type = 2
+
+[node name="item14" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(3999, 755)
+item_type = 2
+
+[node name="item15" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(5981, 317)
+item_type = 2
+
+[node name="item16" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(6050, 465)
+item_type = 2
+
+[node name="item17" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(5912, 383)
+item_type = 2
+
+[node name="item18" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(5382, 437)
+item_type = 2
+
+[node name="item19" parent="Sulfur" instance=ExtResource("5_ncxdc")]
+position = Vector2(5476, 443)
+item_type = 2
+
+[node name="raft_build_area" parent="." instance=ExtResource("6_cvtu4")]
+position = Vector2(4498, 3563)
+
+[node name="Chest" parent="." instance=ExtResource("6_c7cb8")]
+position = Vector2(904, 3080)
+
+[node name="Player" parent="." instance=ExtResource("3_vybd8")]
+position = Vector2(1260, 991)
+
+[node name="Fireballs" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(-3650, -608)
+
+[node name="Fireball" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(2461, 2226)
+
+[node name="Fireball2" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(2738, 1909)
+
+[node name="Fireball3" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(2168, 2056)
+
+[node name="Fireball4" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(3619, 1995)
+
+[node name="Fireball5" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(3863, 2285)
+
+[node name="Fireball6" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(4208, 2159)
+
+[node name="Fireball8" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(3093, 2001)
+
+[node name="Fireball10" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(4133, 591)
+
+[node name="Fireball17" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(4073, 697)
+
+[node name="Fireball18" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(4192, 789)
+
+[node name="Fireball20" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(4004, 573)
+
+[node name="Fireball23" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(3872, 866)
+
+[node name="Fireball12" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(4281, 1140)
+
+[node name="Fireball13" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(3972, 1270)
+
+[node name="Fireball14" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(4574, 537)
+
+[node name="Fireball15" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(3548, 561)
+
+[node name="Fireball16" parent="Fireballs" instance=ExtResource("8_505x7")]
+position = Vector2(3971, 390)

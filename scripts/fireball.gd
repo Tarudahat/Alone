@@ -8,10 +8,10 @@ var player_in_range: bool = false
 
 func _physics_process(_delta):
 	
-	if $Fireball.position.y > $Shadow.position.y - 40:
+	if $Fireball.position.y > $Shadow.position.y - 60:
 		reposition = true
 	if reposition:
-		$Shadow.position = self.position + Vector2(rng.randf_range(-1000.0, 1000.0),rng.randf_range(-1000.0, 1000.0))
+		$Shadow.position = self.position + Vector2(rng.randf_range(-600.0, 600.0),rng.randf_range(-600.0, 600.0))
 		$Fireball.position = $Shadow.position - Vector2(0, rng.randf_range(400.0, 550.0))
 		reposition = false
 		
@@ -21,7 +21,6 @@ func _physics_process(_delta):
 	
 func _process(delta: float) -> void:
 	$Fireball.position.y += speed * delta
-	
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:

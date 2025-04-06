@@ -33,9 +33,11 @@ radius = 52.1536
 script = ExtResource("1_cb14k")
 
 [node name="Shadow" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_1gl40")
 
 [node name="Fireball" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_7kba2")
 autoplay = "default"
 frame_progress = 0.0615025

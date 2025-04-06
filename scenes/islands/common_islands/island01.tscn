@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cuuypdqdgd130"]
+[gd_scene load_steps=12 format=3 uid="uid://cuuypdqdgd130"]
 
 [ext_resource type="Texture2D" uid="uid://cv07byhkhag3k" path="res://assets/basic_islands/basic1.png" id="1_b8l7x"]
 [ext_resource type="PackedScene" uid="uid://bkhwrpk8o2kf8" path="res://scenes/Player.tscn" id="2_h75ht"]
@@ -9,13 +9,18 @@
 [ext_resource type="PackedScene" uid="uid://bplo0xxon7kth" path="res://scenes/tutorial_flask.tscn" id="7_j7yk5"]
 [ext_resource type="Texture2D" uid="uid://cxqg4eb0upju0" path="res://assets/tutorials/tutorial2.png" id="8_bp5o4"]
 [ext_resource type="PackedScene" uid="uid://e1a8cxmcl6ck" path="res://scenes/raft_build_area.tscn" id="9_2a53t"]
+[ext_resource type="PackedScene" uid="uid://ilxf5peuoqpt" path="res://scenes/islands/volcano_islands/island02.tscn" id="9_xwgot"]
 [ext_resource type="PackedScene" uid="uid://2tbe5mnhco3q" path="res://scenes/chest.tscn" id="10_2u55k"]
 
 [node name="Island" type="Node2D"]
 
 [node name="Background" type="Node2D" parent="."]
 
-[node name="Map" type="Sprite2D" parent="Background"]
+[node name="Map" type="TextureRect" parent="Background"]
+offset_left = -3212.0
+offset_top = -1804.0
+offset_right = 3188.0
+offset_bottom = 1796.0
 texture = ExtResource("1_b8l7x")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background"]
@@ -307,6 +312,7 @@ texture_ = ExtResource("8_bp5o4")
 
 [node name="raft_build_area" parent="." instance=ExtResource("9_2a53t")]
 position = Vector2(-564, -1071)
+destination_scene = ExtResource("9_xwgot")
 
 [node name="Chest" parent="." instance=ExtResource("10_2u55k")]
 position = Vector2(-1830, -469)
