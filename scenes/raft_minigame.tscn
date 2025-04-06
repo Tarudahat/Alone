@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cy7actb3fia78"]
+[gd_scene load_steps=11 format=3 uid="uid://cy7actb3fia78"]
 
 [ext_resource type="Script" path="res://scripts/raft_minigame.gd" id="1_keugn"]
 [ext_resource type="Script" path="res://scripts/rock.gd" id="2_j7673"]
@@ -6,10 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://br856cjntwh1" path="res://assets/blue_background.png" id="4_eegjx"]
 [ext_resource type="PackedScene" uid="uid://bkhwrpk8o2kf8" path="res://scenes/Player.tscn" id="5_cfoot"]
 [ext_resource type="PackedScene" uid="uid://bo6a2e3rspor5" path="res://scenes/raft.tscn" id="6_cfoot"]
+[ext_resource type="Script" uid="uid://bda1hwj4ajj13" path="res://scenes/finish.gd" id="6_v08c5"]
 [ext_resource type="Texture2D" uid="uid://bw3xo01m6qtt2" path="res://assets/raft.png" id="7_uet1u"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uet1u"]
-size = Vector2(1279, 14106)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nyjvl"]
+size = Vector2(132, 184)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v08c5"]
 size = Vector2(1321, 20)
@@ -38,9 +39,9 @@ texture = ExtResource("4_eegjx")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background"]
 
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Background/StaticBody2D"]
-position = Vector2(639.5, -6334)
-shape = SubResource("RectangleShape2D_uet1u")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
+position = Vector2(2, 733)
+polygon = PackedVector2Array(-4, -8, -2, -14130, 1293, -14134, 1279, -2, -2, -8, -2, 16, 1312, 29, 1397, -14307, -175, -14330, -69, -10)
 
 [node name="Player" parent="." instance=ExtResource("5_cfoot")]
 z_index = 1
@@ -53,7 +54,12 @@ position = Vector2(639, 361)
 show_behind_parent = true
 texture = ExtResource("7_uet1u")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Raft"]
+position = Vector2(-4, -18)
+shape = SubResource("RectangleShape2D_nyjvl")
+
 [node name="finish" type="StaticBody2D" parent="."]
+script = ExtResource("6_v08c5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
 position = Vector2(642.5, -13373)

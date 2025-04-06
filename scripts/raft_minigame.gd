@@ -15,3 +15,8 @@ func _process(delta: float) -> void:
 
 func _on_minigame_timer_timeout():
 	pass
+
+func exit_raft() -> void:
+	player.block_movement = false
+	#player.postition # change to new island position
+	queue_free()
