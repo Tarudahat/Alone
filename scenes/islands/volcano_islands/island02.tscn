@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ilxf5peuoqpt"]
+[gd_scene load_steps=11 format=3 uid="uid://ilxf5peuoqpt"]
 
 [ext_resource type="Texture2D" uid="uid://c6agk3fbwbgsf" path="res://assets/volcano_islands/vulcanic3.png" id="1_6bsgh"]
 [ext_resource type="PackedScene" uid="uid://4dr46qywa42t" path="res://scenes/tree.tscn" id="2_fef7v"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://vsswstq88npp" path="res://scenes/item.tscn" id="5_ncxdc"]
 [ext_resource type="PackedScene" uid="uid://2tbe5mnhco3q" path="res://scenes/chest.tscn" id="6_c7cb8"]
 [ext_resource type="PackedScene" uid="uid://e1a8cxmcl6ck" path="res://scenes/raft_build_area.tscn" id="6_cvtu4"]
+[ext_resource type="PackedScene" uid="uid://cq3gma1nsa7s7" path="res://scenes/islands/bomb_islands/bomb_island_01.tscn" id="7_e3cwm"]
 [ext_resource type="PackedScene" uid="uid://dupqr4gi3wba4" path="res://scenes/fireball.tscn" id="8_505x7"]
 
 [node name="Island" type="Node2D"]
@@ -358,6 +359,7 @@ item_type = 2
 
 [node name="raft_build_area" parent="." instance=ExtResource("6_cvtu4")]
 position = Vector2(4498, 3563)
+destination_scene = ExtResource("7_e3cwm")
 
 [node name="Chest" parent="." instance=ExtResource("6_c7cb8")]
 position = Vector2(904, 3080)

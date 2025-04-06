@@ -1,12 +1,7 @@
 extends CharacterBody2D
 class_name Crab
 
-<<<<<<< HEAD
-#@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var walk_sound: AudioStreamPlayer2D = $Walk_sound
-=======
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
->>>>>>> 5573a16 (sounds about done.)
 
 @export var SPEED = 320.0
 @export var NON_AGRO_SPEED = 250.0

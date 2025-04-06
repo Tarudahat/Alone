@@ -5,6 +5,8 @@ class_name Player
 @onready var walk_sound: AudioStreamPlayer2D = $Walk_sound
 @onready var damage_sound: AudioStreamPlayer2D = $Damage_sound
 @onready var throw_sound: AudioStreamPlayer2D = $Throw_sound
+@onready var item_collect_sound: AudioStreamPlayer2D = $Item_collect_sound
+@onready var wave_sounds : AudioStreamPlayer2D = $Wave_sounds
 
 var target = position
 var block_movement = false
@@ -45,6 +47,7 @@ func _process(_delta):
 	else:
 		$items_ui/death_timer_ui/Label7.text = str(int($island_timer.time_left/60)) +\
 		 " : 0" +str(int(int($island_timer.time_left)%60))
+		
 
 func _input(event):
 	# Use is_action_pressed to only accept single taps as input instead of mouse drags.
@@ -95,3 +98,7 @@ func _on_island_timer_timeout() -> void:
 	#get_tree().get_current_scene().queue_free()
 	# change scene
 	#get_tree().set_current_scene(target_scene)
+
+
+func _on_wave_sounds_finished() -> void:
+	$Wave_sounds.play(0)

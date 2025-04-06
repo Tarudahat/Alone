@@ -1,7 +1,6 @@
 extends Sprite2D
 
 @onready var hit_tree_sound: AudioStreamPlayer2D = $Hit_tree_sound
-@onready var break_tree_sound: AudioStreamPlayer2D = $Break_tree_sound
 
 var player: Node2D = null
 var player_in_range: bool = false
@@ -27,12 +26,14 @@ func _process(_delta: float) -> void:
 			if Input.is_action_just_pressed("left_click"):
 				if $Timer.time_left <= 0:
 					player.block_movement = true
+					
+				if not hit_tree_sound.playing:
+					hit_tree_sound.play()
+					
 				$Timer.start()
 				hp-=1
-				hit_tree_sound.play()
 					
 	if hp == 0:
-		break_tree_sound.play()
 		player.block_movement = false	
 		for i in rng.randi_range(2, 4):
 			var new_wood = wood_node.instantiate()
@@ -49,6 +50,7 @@ func _on_punch_hitbox_mouse_entered() -> void:
 
 func _on_punch_hitbox_mouse_exited() -> void:
 	mouse_in_hitbox = false
+	hit_tree_sound.stop()
 
 
 func _on_timer_timeout() -> void:
@@ -64,6 +66,7 @@ func _on_range_checker_body_entered(body: Node2D) -> void:
 func _on_range_checker_body_exited(body: Node2D) -> void:
 	if body.name == "Player": 
 		player_in_range = false
+		hit_tree_sound.stop()
 
 
 func _on_range_checker_mouse_exited() -> void:
