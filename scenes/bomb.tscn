@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvyekm4mtkj5y"]
+
+[ext_resource type="Texture2D" uid="uid://1h5ollofvo3" path="res://assets/bomb.png" id="1_4kkau"]
+[ext_resource type="Script" uid="uid://beqpewiyvmlpx" path="res://scripts/bomb.gd" id="1_j15uc"]
+[ext_resource type="PackedScene" uid="uid://dsp5tqil3gvlt" path="res://scenes/e_indicator.tscn" id="2_vpdcx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpdcx"]
+atlas = ExtResource("1_4kkau")
+region = Rect2(0, 0, 225, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j15uc"]
+atlas = ExtResource("1_4kkau")
+region = Rect2(225, 0, 225, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_84slv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpdcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j15uc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nxi8k"]
+radius = 288.21
+
+[node name="Bomb" type="Area2D"]
+script = ExtResource("1_j15uc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.419608, 0.419608, 0.419608, 0.34902)
+sprite_frames = SubResource("SpriteFrames_84slv")
+autoplay = "default"
+frame_progress = 0.943187
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nxi8k")
+
+[node name="E_indicator" parent="." instance=ExtResource("2_vpdcx")]
+position = Vector2(0, -139)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

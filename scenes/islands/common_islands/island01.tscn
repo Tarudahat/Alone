@@ -1,13 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://cuuypdqdgd130"]
+[gd_scene load_steps=14 format=3 uid="uid://cuuypdqdgd130"]
 
 [ext_resource type="Texture2D" uid="uid://cv07byhkhag3k" path="res://assets/basic_islands/basic1.png" id="1_b8l7x"]
 [ext_resource type="PackedScene" uid="uid://bkhwrpk8o2kf8" path="res://scenes/Player.tscn" id="2_h75ht"]
 [ext_resource type="PackedScene" uid="uid://4dr46qywa42t" path="res://scenes/tree.tscn" id="4_iywj2"]
 [ext_resource type="PackedScene" uid="uid://o6e5fdcfdv4r" path="res://scenes/snake.tscn" id="5_b8l7x"]
 [ext_resource type="PackedScene" uid="uid://bi8c5e1k7qi8r" path="res://scenes/crab.tscn" id="6_j7yk5"]
+[ext_resource type="Texture2D" uid="uid://dyv13t4fe174u" path="res://assets/tutorials/tutorial5.png" id="7_5a45s"]
 [ext_resource type="PackedScene" uid="uid://vsswstq88npp" path="res://scenes/item.tscn" id="7_bp5o4"]
 [ext_resource type="PackedScene" uid="uid://bplo0xxon7kth" path="res://scenes/tutorial_flask.tscn" id="7_j7yk5"]
 [ext_resource type="Texture2D" uid="uid://cxqg4eb0upju0" path="res://assets/tutorials/tutorial2.png" id="8_bp5o4"]
+[ext_resource type="Texture2D" uid="uid://cgvfgrns1q1oh" path="res://assets/tutorials/tutorial4.png" id="8_rdvga"]
 [ext_resource type="PackedScene" uid="uid://e1a8cxmcl6ck" path="res://scenes/raft_build_area.tscn" id="9_2a53t"]
 [ext_resource type="PackedScene" uid="uid://ilxf5peuoqpt" path="res://scenes/islands/volcano_islands/island02.tscn" id="9_xwgot"]
 [ext_resource type="PackedScene" uid="uid://2tbe5mnhco3q" path="res://scenes/chest.tscn" id="10_2u55k"]
@@ -305,6 +307,17 @@ position = Vector2(-2054, -209)
 [node name="tutorial_flask" parent="." instance=ExtResource("7_j7yk5")]
 position = Vector2(-622, 1307)
 
+[node name="tutorial_flask3" parent="." instance=ExtResource("7_j7yk5")]
+position = Vector2(-1240, 1087)
+flip_h = true
+flip_v = true
+texture_ = ExtResource("7_5a45s")
+
+[node name="tutorial_flask4" parent="." instance=ExtResource("7_j7yk5")]
+position = Vector2(-1137, 987)
+flip_v = true
+texture_ = ExtResource("8_rdvga")
+
 [node name="tutorial_flask2" parent="." instance=ExtResource("7_j7yk5")]
 position = Vector2(-2345, 714)
 flip_v = true
@@ -318,4 +331,4 @@ destination_scene = ExtResource("9_xwgot")
 position = Vector2(-1830, -469)
 
 [node name="Player" parent="." instance=ExtResource("2_h75ht")]
-position = Vector2(-521, 1225)
+position = Vector2(-454, 1186)

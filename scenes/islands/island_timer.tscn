@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://crprg2eb02dqh"]
-
-[node name="Island_timer" type="Node2D"]
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 300.0
-autostart = true

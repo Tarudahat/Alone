@@ -1,0 +1,160 @@
+[gd_scene load_steps=10 format=3 uid="uid://cq3gma1nsa7s7"]
+
+[ext_resource type="Texture2D" uid="uid://cgnxavydlgml" path="res://assets/bomb_islands/bomb_island01.png" id="1_vtltj"]
+[ext_resource type="PackedScene" uid="uid://bkhwrpk8o2kf8" path="res://scenes/Player.tscn" id="2_a4kfu"]
+[ext_resource type="PackedScene" uid="uid://cvyekm4mtkj5y" path="res://scenes/bomb.tscn" id="3_0gekt"]
+[ext_resource type="PackedScene" uid="uid://vsswstq88npp" path="res://scenes/item.tscn" id="3_y46wf"]
+[ext_resource type="PackedScene" uid="uid://o6e5fdcfdv4r" path="res://scenes/snake.tscn" id="4_4eq0f"]
+[ext_resource type="PackedScene" uid="uid://bplo0xxon7kth" path="res://scenes/tutorial_flask.tscn" id="4_h2ig4"]
+[ext_resource type="Texture2D" uid="uid://cgvfgrns1q1oh" path="res://assets/tutorials/tutorial4.png" id="5_3nfo5"]
+[ext_resource type="PackedScene" uid="uid://e1a8cxmcl6ck" path="res://scenes/raft_build_area.tscn" id="6_3nfo5"]
+[ext_resource type="PackedScene" uid="uid://4dr46qywa42t" path="res://scenes/tree.tscn" id="7_bqpj4"]
+
+[node name="Island" type="Node2D"]
+
+[node name="map" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="map"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_vtltj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="map"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="map/StaticBody2D"]
+polygon = PackedVector2Array(-91, 443, 973, 373, 1161, 508, 1341, 1028, 1544, 1053, 1676, 952, 1821, 628, 1793, 378, 2010, 201, 2437, 215, 2780, 351, 2818, 495, 2704, 785, 2714, 933, 2398, 1274, 2288, 1268, 2166, 1523, 2253, 1861, 2642, 2057, 2763, 2494, 2608, 2737, 2146, 2948, 1949, 3117, 1854, 3319, 1450, 3439, 1204, 3433, 356, 3117, 328, 2881, 135, 2655, 199, 1992, 227, 1763, 354, 1527, 152, 1172, 204, 1011, 400, 874, 519, 664, 513, 393, -91, 428, -58, 3607, 3157, 3550, 3198, -40, -96, 32)
+
+[node name="Trees" type="Node2D" parent="."]
+
+[node name="Tree" parent="Trees" instance=ExtResource("7_bqpj4")]
+position = Vector2(1307, 1173)
+
+[node name="Tree2" parent="Trees" instance=ExtResource("7_bqpj4")]
+position = Vector2(1464, 1299)
+
+[node name="Tree3" parent="Trees" instance=ExtResource("7_bqpj4")]
+position = Vector2(617, 1472)
+
+[node name="Tree4" parent="Trees" instance=ExtResource("7_bqpj4")]
+position = Vector2(686, 1635)
+
+[node name="Tree5" parent="Trees" instance=ExtResource("7_bqpj4")]
+position = Vector2(564, 1848)
+
+[node name="Tree6" parent="Trees" instance=ExtResource("7_bqpj4")]
+position = Vector2(1934, 2129)
+
+[node name="Tree7" parent="Trees" instance=ExtResource("7_bqpj4")]
+position = Vector2(1842, 2280)
+
+[node name="Tree8" parent="Trees" instance=ExtResource("7_bqpj4")]
+position = Vector2(2151, 2304)
+
+[node name="Tree9" parent="Trees" instance=ExtResource("7_bqpj4")]
+position = Vector2(977, 2285)
+
+[node name="Tree10" parent="Trees" instance=ExtResource("7_bqpj4")]
+position = Vector2(1996, 1266)
+
+[node name="shells" type="Node2D" parent="."]
+
+[node name="item" parent="shells" instance=ExtResource("3_y46wf")]
+position = Vector2(399, 1044)
+
+[node name="item9" parent="shells" instance=ExtResource("3_y46wf")]
+position = Vector2(267, 2368)
+
+[node name="item10" parent="shells" instance=ExtResource("3_y46wf")]
+position = Vector2(377, 2465)
+
+[node name="item11" parent="shells" instance=ExtResource("3_y46wf")]
+position = Vector2(192, 2562)
+
+[node name="item2" parent="shells" instance=ExtResource("3_y46wf")]
+position = Vector2(255, 1134)
+
+[node name="item3" parent="shells" instance=ExtResource("3_y46wf")]
+position = Vector2(1157, 735)
+
+[node name="item4" parent="shells" instance=ExtResource("3_y46wf")]
+position = Vector2(2332, 1152)
+
+[node name="item5" parent="shells" instance=ExtResource("3_y46wf")]
+position = Vector2(2437, 1053)
+
+[node name="item6" parent="shells" instance=ExtResource("3_y46wf")]
+position = Vector2(2594, 2453)
+
+[node name="item7" parent="shells" instance=ExtResource("3_y46wf")]
+position = Vector2(1875, 3043)
+
+[node name="item8" parent="shells" instance=ExtResource("3_y46wf")]
+position = Vector2(1951, 2883)
+
+[node name="rocks" type="Node2D" parent="."]
+
+[node name="item" parent="rocks" instance=ExtResource("3_y46wf")]
+position = Vector2(1152, 1162)
+item_type = 5
+
+[node name="item2" parent="rocks" instance=ExtResource("3_y46wf")]
+position = Vector2(1113, 1248)
+item_type = 5
+
+[node name="item3" parent="rocks" instance=ExtResource("3_y46wf")]
+position = Vector2(1265, 1263)
+item_type = 5
+
+[node name="item4" parent="rocks" instance=ExtResource("3_y46wf")]
+position = Vector2(1545, 1329)
+item_type = 5
+
+[node name="item5" parent="rocks" instance=ExtResource("3_y46wf")]
+position = Vector2(2001, 2537)
+item_type = 5
+
+[node name="item6" parent="rocks" instance=ExtResource("3_y46wf")]
+position = Vector2(1884, 2630)
+item_type = 5
+
+[node name="item7" parent="rocks" instance=ExtResource("3_y46wf")]
+position = Vector2(1798, 2419)
+item_type = 5
+
+[node name="item8" parent="rocks" instance=ExtResource("3_y46wf")]
+position = Vector2(465, 1870)
+item_type = 5
+
+[node name="item9" parent="rocks" instance=ExtResource("3_y46wf")]
+position = Vector2(562, 1760)
+item_type = 5
+
+[node name="item10" parent="rocks" instance=ExtResource("3_y46wf")]
+position = Vector2(541, 1908)
+item_type = 5
+
+[node name="item11" parent="rocks" instance=ExtResource("3_y46wf")]
+position = Vector2(1183, 1404)
+item_type = 5
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="Snake" parent="enemies" instance=ExtResource("4_4eq0f")]
+position = Vector2(1188, 2019)
+
+[node name="Snake2" parent="enemies" instance=ExtResource("4_4eq0f")]
+position = Vector2(1436, 2158)
+
+[node name="Bomb" parent="." instance=ExtResource("3_0gekt")]
+position = Vector2(2352, 539)
+
+[node name="raft_build_area" parent="." instance=ExtResource("6_3nfo5")]
+position = Vector2(1258, 3344)
+
+[node name="tutorial_flask" parent="." instance=ExtResource("4_h2ig4")]
+position = Vector2(1950, 592)
+flip_v = true
+texture_ = ExtResource("5_3nfo5")
+
+[node name="Player" parent="." instance=ExtResource("2_a4kfu")]
+position = Vector2(711, 589)

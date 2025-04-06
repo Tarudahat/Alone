@@ -31,7 +31,6 @@ func _process(_delta: float) -> void:
 					# change scene
 					get_tree().set_current_scene(target_scene)
 			if player_node:
-				print(player_node.items[1],player_node.items[4])
 				if player_node.items[1] >= wood_price and player_node.items[4] >= rope_price:
 					player_node.items[1] -= wood_price
 					player_node.items[4] -= rope_price
