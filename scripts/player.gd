@@ -17,6 +17,8 @@ var rng = RandomNumberGenerator.new()
 var wood_minigame = preload("res://scenes/start_fire_minigame.tscn")
 var throwing_rock = preload("res://scenes/throw_stone.tscn")
 var wood_minigame_instance = null
+var raft_minigame = preload("res://scenes/raft_minigame.tscn")
+var raft_minigame_instance = null
 # shell_count
 # wood_count
 # sulfer_count
@@ -78,6 +80,11 @@ func _input(event):
 			wood_minigame_instance.max_coal_reward = items[1]
 			
 		get_parent().add_child(wood_minigame_instance)
+	if event.is_action_pressed("collect") and not block_movement:
+		block_movement = true
+		raft_minigame_instance = raft_minigame.instantiate()
+		self.position = raft_minigame_instance.position
+		wood_minigame_instance.player_node = self
 
 func _physics_process(_delta):
 	velocity = position.direction_to(target) * speed
