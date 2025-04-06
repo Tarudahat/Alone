@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkhwrpk8o2kf8"]
+[gd_scene load_steps=11 format=3 uid="uid://bkhwrpk8o2kf8"]
 
 [ext_resource type="Script" uid="uid://bgxgwjvih218s" path="res://scripts/player.gd" id="1_v6fml"]
 [ext_resource type="Texture2D" uid="uid://b2xbviayn2yjr" path="res://icon.svg" id="2_v6fml"]
 [ext_resource type="Texture2D" uid="uid://dem7ihhnw3g57" path="res://assets/item_ui.png" id="3_3li8b"]
+[ext_resource type="Texture2D" uid="uid://dtmx0u7o77cf5" path="res://assets/death_ui.png" id="4_cw2d6"]
 [ext_resource type="AudioStream" uid="uid://b2tecjrqk0bcq" path="res://assets/walk_leaf.wav" id="4_mdl7e"]
 [ext_resource type="AudioStream" uid="uid://cegk5v6mevv8b" path="res://assets/Throw-stone.wav" id="5_70d11"]
 [ext_resource type="AudioStream" uid="uid://b0or0one87vuj" path="res://assets/Damage-sound.wav" id="6_70d11"]
@@ -12,6 +13,10 @@ radius = 63.0317
 
 [sub_resource type="LabelSettings" id="LabelSettings_v6fml"]
 font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_cw2d6"]
+font_size = 100
+font_color = Color(0.352941, 0.239216, 0.25098, 1)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
@@ -105,6 +110,22 @@ size_flags_vertical = 0
 text = "Material amount"
 label_settings = SubResource("LabelSettings_v6fml")
 
+[node name="death_timer_ui" type="TextureRect" parent="items_ui"]
+layout_mode = 0
+offset_left = 413.0
+offset_right = 915.0
+offset_bottom = 200.0
+texture = ExtResource("4_cw2d6")
+
+[node name="Label7" type="Label" parent="items_ui/death_timer_ui"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 25.0
+offset_right = 410.0
+offset_bottom = 162.0
+text = "0 : 00"
+label_settings = SubResource("LabelSettings_cw2d6")
+
 [node name="Walk_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_mdl7e")
 
@@ -114,4 +135,7 @@ stream = ExtResource("5_70d11")
 [node name="Damage_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_70d11")
 
+[node name="island_timer" type="Timer" parent="."]
+
 [connection signal="timeout" from="throw_cooldown" to="." method="_on_throw_cooldown_timeout"]
+[connection signal="timeout" from="island_timer" to="." method="_on_island_timer_timeout"]
