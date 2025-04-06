@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bi8c5e1k7qi8r"]
+[gd_scene load_steps=9 format=3 uid="uid://bi8c5e1k7qi8r"]
 
 [ext_resource type="Script" uid="uid://b214ub7m2aky5" path="res://scripts/crab.gd" id="1_2b8bq"]
 [ext_resource type="Texture2D" uid="uid://b5yavdjevhpjm" path="res://assets/crab_walk.png" id="2_2b8bq"]
+[ext_resource type="AudioStream" uid="uid://b2tecjrqk0bcq" path="res://assets/walk_leaf.wav" id="3_rq6vx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ow7wl"]
 radius = 55.3263
@@ -87,6 +88,9 @@ wait_time = 1.5
 libraries = {
 &"": SubResource("AnimationLibrary_hj1h3")
 }
+
+[node name="Walk_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rq6vx")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

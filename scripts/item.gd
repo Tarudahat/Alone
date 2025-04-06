@@ -1,5 +1,7 @@
 extends AnimatedSprite2D
 
+@onready var item_collect_sound: AudioStreamPlayer2D = $Item_collect_sound
+
 @export_range(0,5) var item_type = 0
 var player_in_range: bool  = false
 var Player_node: Node2D = null
@@ -13,6 +15,7 @@ func _process(_delta: float) -> void:
 		$E_indicator.visible = true
 		if Input.is_action_just_pressed("collect"):
 			Player_node.items[item_type] +=1
+			item_collect_sound.play()
 			queue_free()
 
 

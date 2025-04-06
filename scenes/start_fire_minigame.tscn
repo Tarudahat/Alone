@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8t31a8vhserc"]
+[gd_scene load_steps=15 format=3 uid="uid://b8t31a8vhserc"]
 
 [ext_resource type="Texture2D" uid="uid://df8g53dnx8r6t" path="res://assets/log_fire_UI.png" id="1_nfrom"]
 [ext_resource type="Script" uid="uid://de8a2q0a2wbl3" path="res://scripts/start_fire_minigame.gd" id="1_tmktg"]
 [ext_resource type="Texture2D" uid="uid://bjuk64vrfk48y" path="res://assets/stick_fire_UI.png" id="2_4upnx"]
 [ext_resource type="Texture2D" uid="uid://bhi87gk2o3fxo" path="res://assets/fire_start_spark.png" id="4_pgdnb"]
 [ext_resource type="Texture2D" uid="uid://et6eg7m7nwak" path="res://assets/tutorials/unga_bunga.png" id="5_w8kt7"]
+[ext_resource type="AudioStream" uid="uid://cckqk8rqvnx8v" path="res://assets/stick_fall.wav" id="6_yl8x4"]
+[ext_resource type="AudioStream" uid="uid://b2tecjrqk0bcq" path="res://assets/walk_leaf.wav" id="7_a7k51"]
 
 [sub_resource type="Curve" id="Curve_pgdnb"]
 _data = [Vector2(0.393548, 0.91118), 0.0, 0.0, 0, 0, Vector2(0.835484, 0.0279584), 0.0, 0.0, 0, 0]
@@ -89,6 +91,12 @@ offset_right = 901.0
 offset_bottom = -390.0
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_w8kt7")
+
+[node name="Friction_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_yl8x4")
+
+[node name="Fire_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_a7k51")
 
 [connection signal="timeout" from="friction_timer" to="." method="_on_friction_timer_timeout"]
 [connection signal="timeout" from="input_delay_timer" to="." method="_on_input_delay_timer_timeout"]

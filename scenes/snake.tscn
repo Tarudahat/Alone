@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtojjnxtrvye8"]
+[gd_scene load_steps=11 format=3 uid="uid://o6e5fdcfdv4r"]
 
 [ext_resource type="Script" uid="uid://cgxwffr0y3d4v" path="res://scripts/snake.gd" id="1_yc36x"]
 [ext_resource type="Texture2D" uid="uid://bwoc7bivslx44" path="res://assets/enemies/snake.png" id="2_yc36x"]
+[ext_resource type="AudioStream" uid="uid://b2tecjrqk0bcq" path="res://assets/walk_leaf.wav" id="3_auphx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_auphx"]
 atlas = ExtResource("2_yc36x")
@@ -72,6 +73,9 @@ shape = SubResource("CircleShape2D_yc36x")
 
 [node name="idle_timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Slither_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_auphx")
 
 [connection signal="body_entered" from="agro_zone" to="." method="_on_agro_zone_body_entered"]
 [connection signal="body_exited" from="agro_zone" to="." method="_on_agro_zone_body_exited"]

@@ -3,7 +3,6 @@ class_name Crab
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var walk_sound: AudioStreamPlayer2D = $Walk_sound
-@onready var damage_sound: AudioStreamPlayer2D = $Damage_sound
 
 @export var SPEED = 320.0
 @export var NON_AGRO_SPEED = 250.0
@@ -47,7 +46,6 @@ func _physics_process(_delta):
 				$dmg_cooldown.start()
 				can_dmg = false
 				player_node.damage()
-				damage_sound.play()
 
 						
 	if hp <= 0:

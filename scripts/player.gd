@@ -3,6 +3,7 @@ class_name Player
 
 @export var speed = 600
 @onready var walk_sound: AudioStreamPlayer2D = $Walk_sound
+@onready var damage_sound: AudioStreamPlayer2D = $Damage_sound
 
 var target = position
 var block_movement = false
@@ -23,6 +24,7 @@ func damage():
 		var victim_idx = rng.randi_range(0, 5)
 		if items[victim_idx]:
 			items[victim_idx] -= 1
+	damage_sound.play()
 
 func _process(_delta):
 	$items_ui/VBoxContainer/Label.text = "Shells: " + str(items[0])
@@ -48,6 +50,7 @@ func _input(event):
 			
 	elif event.is_action_pressed(&"left_click") and not block_movement:
 		target = get_global_mouse_position()
+		walk_sound.play()
 	if event.is_action_pressed("make_coal") and items[1] and not block_movement:
 		block_movement = true
 		wood_minigame_instance = wood_minigame.instantiate()
@@ -68,7 +71,6 @@ func _physics_process(_delta):
 		#walk_sound.stop()
 	if position.distance_to(target) > 10 and not block_movement:
 		move_and_slide()
-		walk_sound.play()
 
 func _on_throw_cooldown_timeout() -> void:
 	can_throw = true

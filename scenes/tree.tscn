@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://4dr46qywa42t"]
+[gd_scene load_steps=11 format=3 uid="uid://4dr46qywa42t"]
 
 [ext_resource type="Texture2D" uid="uid://bk8ola3ebtjm6" path="res://assets/tree.png" id="1_avsvi"]
 [ext_resource type="Script" uid="uid://bslg5pnjdmc6j" path="res://scripts/tree.gd" id="2_vplca"]
 [ext_resource type="PackedScene" uid="uid://cs6vorw8qhva2" path="res://scenes/click_indicator.tscn" id="3_viusy"]
 [ext_resource type="Texture2D" uid="uid://4bxuuq6062l3" path="res://assets/tree_hp_bar_empty.png" id="4_ake3r"]
 [ext_resource type="Texture2D" uid="uid://c3d61suif5la0" path="res://assets/tree_hp_bar.png" id="4_qd6xs"]
+[ext_resource type="AudioStream" uid="uid://buay323nhiqls" path="res://assets/stick_slap.wav" id="6_dmmp0"]
+[ext_resource type="AudioStream" uid="uid://cckqk8rqvnx8v" path="res://assets/stick_fall.wav" id="7_m26wl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_viusy"]
 radius = 72.0278
@@ -62,8 +64,10 @@ texture_progress = ExtResource("4_qd6xs")
 metadata/_edit_use_anchors_ = true
 
 [node name="Hit_tree_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_dmmp0")
 
 [node name="Break_tree_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_m26wl")
 
 [connection signal="mouse_entered" from="punch_hitbox" to="." method="_on_punch_hitbox_mouse_entered"]
 [connection signal="mouse_exited" from="punch_hitbox" to="." method="_on_punch_hitbox_mouse_exited"]

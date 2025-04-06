@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c6agk3fbwbgsf" path="res://assets/volcano_islands/vulcanic3.png" id="1_6bsgh"]
 [ext_resource type="PackedScene" uid="uid://4dr46qywa42t" path="res://scenes/tree.tscn" id="2_fef7v"]
-[ext_resource type="PackedScene" uid="uid://dtojjnxtrvye8" path="res://scenes/snake.tscn" id="3_2hdq6"]
+[ext_resource type="PackedScene" uid="uid://o6e5fdcfdv4r" path="res://scenes/snake.tscn" id="3_2hdq6"]
 [ext_resource type="PackedScene" uid="uid://bkhwrpk8o2kf8" path="res://scenes/Player.tscn" id="3_vybd8"]
 [ext_resource type="PackedScene" uid="uid://bi8c5e1k7qi8r" path="res://scenes/crab.tscn" id="4_0mfbj"]
 [ext_resource type="PackedScene" uid="uid://vsswstq88npp" path="res://scenes/item.tscn" id="5_ncxdc"]

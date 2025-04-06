@@ -1,13 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://jpuk188t3p7h"]
+[gd_scene load_steps=7 format=3 uid="uid://jpuk188t3p7h"]
 
 [ext_resource type="Texture2D" uid="uid://b2xbviayn2yjr" path="res://icon.svg" id="1_bswci"]
 [ext_resource type="PackedScene" uid="uid://bkhwrpk8o2kf8" path="res://scenes/Player.tscn" id="2_rus8k"]
 [ext_resource type="PackedScene" uid="uid://vsswstq88npp" path="res://scenes/item.tscn" id="3_rus8k"]
 [ext_resource type="PackedScene" uid="uid://4dr46qywa42t" path="res://scenes/tree.tscn" id="4_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://bi8c5e1k7qi8r" path="res://scenes/crab.tscn" id="5_4nkto"]
-[ext_resource type="Texture2D" uid="uid://buhkh165r0kcf" path="res://assets/tree1.png" id="5_pa8r4"]
-[ext_resource type="Texture2D" uid="uid://bpte3les6l5g3" path="res://assets/tree3.png" id="6_15mv3"]
-[ext_resource type="Texture2D" uid="uid://bk1t52qr6pvrs" path="res://assets/basic2.png" id="8_15mv3"]
 [ext_resource type="Texture2D" uid="uid://br856cjntwh1" path="res://assets/blue_background.png" id="9_e3sih"]
 
 [node name="Level1" type="Node2D"]
@@ -36,14 +33,14 @@ position = Vector2(798, -47)
 
 [node name="Tree" parent="Trees" instance=ExtResource("4_5xbjy")]
 position = Vector2(-192, -165)
-texture = ExtResource("5_pa8r4")
+texture = null
 
 [node name="Tree3" parent="Trees" instance=ExtResource("4_5xbjy")]
 position = Vector2(431, 341)
 
 [node name="Tree2" parent="Trees" instance=ExtResource("4_5xbjy")]
 position = Vector2(284, -311)
-texture = ExtResource("6_15mv3")
+texture = null
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_4nkto")]
 position = Vector2(225, 497)
@@ -68,7 +65,6 @@ position = Vector2(-650, 1023)
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 show_behind_parent = true
-texture = ExtResource("8_15mv3")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D3"]
 position = Vector2(-3175.61, -1781.91)

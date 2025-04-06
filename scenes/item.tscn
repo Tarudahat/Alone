@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://vsswstq88npp"]
+[gd_scene load_steps=20 format=3 uid="uid://vsswstq88npp"]
 
 [ext_resource type="Texture2D" uid="uid://cnvb48j08akv0" path="res://assets/items.png" id="1_6muww"]
 [ext_resource type="Texture2D" uid="uid://c8x023cjfvjs3" path="res://assets/items_thick.png" id="1_vljjh"]
 [ext_resource type="Script" uid="uid://d2d6swjtxfavm" path="res://scripts/item.gd" id="2_sb42f"]
 [ext_resource type="PackedScene" uid="uid://dsp5tqil3gvlt" path="res://scenes/e_indicator.tscn" id="3_6fq18"]
+[ext_resource type="AudioStream" uid="uid://8mwl4w6rc1y2" path="res://assets/Collect-item.wav" id="5_ro5b8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v0cwl"]
 atlas = ExtResource("1_vljjh")
@@ -117,6 +118,9 @@ shape = SubResource("CircleShape2D_sb42f")
 
 [node name="E_indicator" parent="." instance=ExtResource("3_6fq18")]
 position = Vector2(0, -70)
+
+[node name="Item_collect_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ro5b8")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -8,8 +8,7 @@ class_name Snake
 var rng = RandomNumberGenerator.new()
 var snake_rope = preload("res://scenes/item.tscn")
 
-@onready var walk_sound: AudioStreamPlayer2D = $Walk_sound
-@onready var damage_sound: AudioStreamPlayer2D = $Damage_sound
+@onready var slither_sound: AudioStreamPlayer2D = $Slither_sound
 @onready var next_idle_target: Vector2 = self.position
 var player_node: Node2D = null
 var og_position
@@ -32,7 +31,7 @@ func _physics_process(_delta):
 			
 	look_at(self.position + velocity)
 	var collision = move_and_slide()
-	walk_sound.play()
+	slither_sound.play()
 	if collision:
 		for i in get_slide_collision_count():
 			var collision_ = get_slide_collision(i)
@@ -41,7 +40,6 @@ func _physics_process(_delta):
 				$dmg_cooldown.start()
 				can_dmg = false
 				player_node.damage()
-				damage_sound.play()
 
 	if hp <= 0:
 		for i in rng.randi_range(2, 4):
