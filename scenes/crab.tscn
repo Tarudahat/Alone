@@ -1,35 +1,51 @@
 [gd_scene load_steps=8 format=3 uid="uid://bi8c5e1k7qi8r"]
 
 [ext_resource type="Script" uid="uid://b214ub7m2aky5" path="res://scripts/crab.gd" id="1_2b8bq"]
-[ext_resource type="Texture2D" uid="uid://cgq5s40lv3v3e" path="res://assets/enemies/crab.png" id="2_2b8bq"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rq6vx"]
-atlas = ExtResource("2_2b8bq")
-region = Rect2(0, 0, 240, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_83q5x"]
-atlas = ExtResource("2_2b8bq")
-region = Rect2(240, 0, 240, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_rftv6"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rq6vx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_83q5x")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://b5yavdjevhpjm" path="res://assets/crab_walk.png" id="2_2b8bq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ow7wl"]
-radius = 127.063
+radius = 55.3263
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2b8bq"]
 radius = 466.429
+
+[sub_resource type="Animation" id="Animation_83q5x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_rftv6"]
+resource_name = "Walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.103766, 0.203954, 0.30593),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hj1h3"]
+_data = {
+&"RESET": SubResource("Animation_83q5x"),
+&"Walk": SubResource("Animation_rftv6")
+}
 
 [node name="Crab" type="CharacterBody2D"]
 collision_layer = 3
@@ -41,11 +57,10 @@ floor_block_on_wall = false
 platform_floor_layers = 4294967294
 script = ExtResource("1_2b8bq")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_rftv6")
-autoplay = "default"
-frame_progress = 0.886327
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.235294, 0.137255, 1)
+texture = ExtResource("2_2b8bq")
+hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ow7wl")
@@ -67,6 +82,11 @@ target_position = Vector2(40, 0)
 
 [node name="dmg_cooldown" type="Timer" parent="."]
 wait_time = 1.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hj1h3")
+}
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

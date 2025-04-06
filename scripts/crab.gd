@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Crab
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 @export var SPEED = 320.0
 @export var NON_AGRO_SPEED = 250.0
 @export var no_angry_direction = -1
@@ -14,6 +16,7 @@ var can_dmg:bool = true
 
 func _ready():
 	og_postions = self.position
+	animation_player.play("Walk")
 
 func _physics_process(_delta):
 	velocity = Vector2.ZERO
@@ -36,7 +39,7 @@ func _physics_process(_delta):
 		for i in get_slide_collision_count():
 			var collision_ = get_slide_collision(i)
 			var collider = collision_.get_collider()
-			if collider is Player and can_dmg:
+			if collider.name == "Player" and can_dmg:
 				$dmg_cooldown.start()
 				can_dmg = false
 				player_node.damage()
@@ -46,13 +49,13 @@ func _physics_process(_delta):
 		queue_free()
 		
 func _on_agro_zone_body_entered(body: Node2D) -> void:
-	if body is Player:
+	if body.name == "Player":
 		angry = true
 		player_node = body
 
 
 func _on_agro_zone_body_exited(body: Node2D) -> void:
-	if body is Player:
+	if body.name == "Player":
 		angry = false
 
 

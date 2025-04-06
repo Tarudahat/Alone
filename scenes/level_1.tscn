@@ -1,58 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://jpuk188t3p7h"]
+[gd_scene load_steps=10 format=3 uid="uid://jpuk188t3p7h"]
 
+[ext_resource type="Texture2D" uid="uid://b2xbviayn2yjr" path="res://icon.svg" id="1_bswci"]
 [ext_resource type="PackedScene" uid="uid://bkhwrpk8o2kf8" path="res://scenes/Player.tscn" id="2_rus8k"]
 [ext_resource type="PackedScene" uid="uid://vsswstq88npp" path="res://scenes/item.tscn" id="3_rus8k"]
 [ext_resource type="PackedScene" uid="uid://4dr46qywa42t" path="res://scenes/tree.tscn" id="4_5xbjy"]
-[ext_resource type="PackedScene" uid="uid://dupqr4gi3wba4" path="res://scenes/fireball.tscn" id="6_pa8r4"]
+[ext_resource type="PackedScene" uid="uid://bi8c5e1k7qi8r" path="res://scenes/crab.tscn" id="5_4nkto"]
+[ext_resource type="Texture2D" uid="uid://buhkh165r0kcf" path="res://assets/tree1.png" id="5_pa8r4"]
+[ext_resource type="Texture2D" uid="uid://bpte3les6l5g3" path="res://assets/tree3.png" id="6_15mv3"]
+[ext_resource type="Texture2D" uid="uid://bk1t52qr6pvrs" path="res://assets/basic2.png" id="8_15mv3"]
+[ext_resource type="Texture2D" uid="uid://br856cjntwh1" path="res://assets/blue_background.png" id="9_e3sih"]
 
 [node name="Level1" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(435, 341)
+scale = Vector2(4.57813, 1)
+texture = ExtResource("1_bswci")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(536, 261)
+scale = Vector2(1, 4.39063)
+texture = ExtResource("1_bswci")
 
 [node name="Player" parent="." instance=ExtResource("2_rus8k")]
 position = Vector2(145, 45)
 speed = 600
 
 [node name="Sprite2D" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-460, 1198)
-
-[node name="Sprite2D3" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-642, 718)
-item_type = 5
-
-[node name="Sprite2D4" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-764, 744)
-item_type = 5
-
-[node name="Sprite2D5" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-753, 834)
-item_type = 5
-
-[node name="Sprite2D6" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-985, 866)
-item_type = 5
-
-[node name="Sprite2D7" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-852, 892)
-item_type = 5
-
-[node name="Sprite2D8" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-852, 929.5)
-scale = Vector2(1, 1.9375)
-item_type = 5
-
-[node name="Sprite2D9" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-713, 957)
-scale = Vector2(1, 1.9375)
-item_type = 5
-
-[node name="Sprite2D10" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-595, 876)
-scale = Vector2(1, 1.9375)
-item_type = 5
-
-[node name="Sprite2D11" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(-595, 876)
-scale = Vector2(1, 1.9375)
-item_type = 5
+position = Vector2(-463, 640)
 
 [node name="Sprite2D2" parent="." instance=ExtResource("3_rus8k")]
 position = Vector2(798, -47)
@@ -61,57 +36,44 @@ position = Vector2(798, -47)
 
 [node name="Tree" parent="Trees" instance=ExtResource("4_5xbjy")]
 position = Vector2(-192, -165)
+texture = ExtResource("5_pa8r4")
 
 [node name="Tree3" parent="Trees" instance=ExtResource("4_5xbjy")]
-position = Vector2(1290, 447)
+position = Vector2(431, 341)
 
 [node name="Tree2" parent="Trees" instance=ExtResource("4_5xbjy")]
 position = Vector2(284, -311)
+texture = ExtResource("6_15mv3")
 
-[node name="Fireball" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_4nkto")]
+position = Vector2(225, 497)
 
-[node name="Fireball2" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
+[node name="CharacterBody2D2" parent="." instance=ExtResource("5_4nkto")]
+position = Vector2(-93, 491)
 
-[node name="Fireball3" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
+[node name="CharacterBody2D3" parent="." instance=ExtResource("5_4nkto")]
+position = Vector2(135, 707)
 
-[node name="Fireball4" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
+[node name="CharacterBody2D4" parent="." instance=ExtResource("5_4nkto")]
+position = Vector2(-163, 880)
 
-[node name="Fireball5" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
+[node name="CharacterBody2D5" parent="." instance=ExtResource("5_4nkto")]
+position = Vector2(367, 937)
 
-[node name="Fireball6" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
+[node name="CharacterBody2D6" parent="." instance=ExtResource("5_4nkto")]
+position = Vector2(-112, 1142)
 
-[node name="Fireball7" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
+[node name="CharacterBody2D7" parent="." instance=ExtResource("5_4nkto")]
+position = Vector2(-650, 1023)
 
-[node name="Fireball8" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture = ExtResource("8_15mv3")
 
-[node name="Fireball9" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D3"]
+position = Vector2(-3175.61, -1781.91)
+polygon = PackedVector2Array(-13.3911, -16.0923, 400.609, 353.908, 510.609, 187.908, 732.609, 111.908, 995.609, 68.9077, 2106.61, 62.9077, 2383.61, 71.9077, 2708.61, 17.9077, 3159.61, 20.9077, 3399.61, -7.09229, 3449.61, 63.9077, 3647.61, 184.908, 3812.61, 421.908, 3925.61, 742.908, 3963.61, 1021.91, 3925.61, 1295.91, 3833.61, 1429.91, 3614.61, 1481.91, 3428.61, 1554.91, 3373.61, 1656.91, 3355.61, 1772.91, 3440.61, 1860.91, 3561.61, 1890.91, 3789.61, 1841.91, 4037.61, 1743.91, 4211.61, 1547.91, 4324.61, 1213.91, 4300.61, 743.908, 4383.61, 464.908, 4376.61, 239.908, 4585.61, 161.908, 4835.61, 149.908, 5189.61, 158.908, 5573.61, 196.908, 5809.61, 267.908, 5916.61, 338.908, 6033.61, 503.908, 6109.61, 712.908, 6135.61, 924.908, 6142.61, 1004.91, 6202.61, 1223.91, 6202.61, 1383.91, 6034.61, 2156.91, 6004.61, 2437.91, 5890.61, 2810.91, 5794.61, 2917.91, 5737.61, 2997.91, 5724.61, 3129.91, 5641.61, 3269.91, 5366.61, 3293.91, 5174.61, 3264.91, 5075.61, 3202.91, 5132.61, 2979.91, 5260.61, 2733.91, 5317.61, 2533.91, 5286.61, 2245.91, 5184.61, 1949.91, 5087.61, 1666.91, 5066.61, 1407.91, 4987.61, 1306.91, 4868.61, 1291.91, 4781.61, 1341.91, 4720.61, 1407.91, 4701.61, 1595.91, 4748.61, 1850.91, 4904.61, 2309.91, 4929.61, 2448.91, 4914.61, 2541.91, 4598.61, 3138.91, 4484.61, 3214.91, 3714.61, 3255.91, 3178.61, 3244.91, 2772.61, 2921.91, 2502.61, 2606.91, 2419.61, 2078.91, 2821.61, 1478.91, 2915.61, 910.908, 3117.61, 484.908, 3047.61, 298.908, 2887.61, 241.908, 2682.61, 308.908, 2560.61, 440.908, 2503.61, 567.908, 2500.61, 819.908, 2531.61, 1060.91, 2506.61, 1224.91, 2402.61, 1397.91, 2218.61, 1538.91, 1980.61, 1649.91, 1662.61, 1668.91, 1320.61, 1630.91, 1098.61, 1591.91, 970.609, 1391.91, 897.609, 1213.91, 738.609, 1141.91, 618.609, 1222.91, 567.609, 1355.91, 605.609, 1563.91, 674.609, 1779.91, 755.609, 1899.91, 920.609, 1981.91, 1120.61, 2026.91, 1366.61, 2039.91, 1538.61, 2092.91, 1715.61, 2206.91, 1888.61, 2401.91, 1947.61, 2529.91, 1938.61, 2699.91, 2023.61, 2843.91, 2192.61, 2962.91, 2246.61, 3107.91, 2248.61, 3220.91, 2260.61, 3302.91, 2251.61, 3365.91, 2100.61, 3462.91, 1869.61, 3416.91, 1726.61, 3319.91, 1307.61, 3220.91, 891.609, 3170.91, 587.609, 3108.91, 443.609, 2968.91, 390.609, 2779.91, 163.609, 2463.91, 65.6089, 2143.91, 146.609, 1807.91, 152.609, 1457.91, 85.6089, 1073.91, 105.609, 878.908, 273.609, 737.908, 388.609, 353.908)
 
-[node name="Fireball10" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball11" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball12" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball13" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball14" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball15" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
-
-[node name="Fireball16" parent="." instance=ExtResource("6_pa8r4")]
-position = Vector2(-471, 503)
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+visibility_layer = 0
+texture = ExtResource("9_e3sih")
