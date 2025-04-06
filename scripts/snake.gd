@@ -37,6 +37,7 @@ func _physics_process(_delta):
 			var collision_ = get_slide_collision(i)
 			var collider = collision_.get_collider()
 			if collider is Player and can_dmg:
+				player_node = collider
 				$dmg_cooldown.start()
 				can_dmg = false
 				player_node.damage()
