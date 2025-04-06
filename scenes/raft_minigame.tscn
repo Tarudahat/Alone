@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cy7actb3fia78"]
+[gd_scene load_steps=12 format=3 uid="uid://cy7actb3fia78"]
 
 [ext_resource type="Script" uid="uid://b2uu3d4udk4q4" path="res://scripts/raft_minigame.gd" id="1_keugn"]
 [ext_resource type="Script" uid="uid://co2thrc4yd4xi" path="res://scripts/rock.gd" id="2_j7673"]
@@ -9,11 +9,14 @@
 [ext_resource type="Script" uid="uid://bda1hwj4ajj13" path="res://scenes/finish.gd" id="6_v08c5"]
 [ext_resource type="Texture2D" uid="uid://bw3xo01m6qtt2" path="res://assets/raft.png" id="7_uet1u"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vbdr"]
+size = Vector2(473, 14284)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nyjvl"]
 size = Vector2(132, 184)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v08c5"]
-size = Vector2(1321, 20)
+size = Vector2(1321, 204)
 
 [node name="RaftMinigame" type="Control"]
 layout_mode = 3
@@ -39,9 +42,30 @@ texture = ExtResource("4_eegjx")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
-position = Vector2(2, 733)
-polygon = PackedVector2Array(-4, -8, -2, -14130, 1293, -14134, 1279, -2, -2, -8, -2, 16, 1312, 29, 1397, -14307, -175, -14330, -69, -10)
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(473, -13798)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_2vbdr")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Background"]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Background/StaticBody2D2"]
+position = Vector2(548, 941)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_2vbdr")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Background"]
+position = Vector2(-411, -1234)
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Background/StaticBody2D3"]
+position = Vector2(172, -5185)
+shape = SubResource("RectangleShape2D_2vbdr")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Background"]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Background/StaticBody2D4"]
+position = Vector2(1510, -6419)
+shape = SubResource("RectangleShape2D_2vbdr")
 
 [node name="Player" parent="." instance=ExtResource("5_cfoot")]
 z_index = 1
@@ -62,7 +86,7 @@ shape = SubResource("RectangleShape2D_nyjvl")
 script = ExtResource("6_v08c5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
-position = Vector2(642.5, -13373)
+position = Vector2(642.5, -13465)
 shape = SubResource("RectangleShape2D_v08c5")
 
 [node name="Node2D" type="Node2D" parent="."]
