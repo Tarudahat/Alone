@@ -2,6 +2,7 @@ extends CharacterBody2D
 @export var speed = 400
 @export var vertical_speed := 300.0  # constant upward motion
 @onready var finish: StaticBody2D = $"../finish"
+var block_movement: bool = false
 
 func _ready() -> void:
 	pass
@@ -17,7 +18,10 @@ func _physics_process(delta) -> void:
 		direction += 1
 
 	# Apply movement
-	velocity.x = direction * speed
+	if not block_movement:
+		velocity.x = direction * speed
 	velocity.y = -vertical_speed  # Always going up
 
 	move_and_slide()
+
+	
