@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cy7actb3fia78"]
+[gd_scene load_steps=14 format=3 uid="uid://cy7actb3fia78"]
 
 [ext_resource type="Script" uid="uid://b2uu3d4udk4q4" path="res://scripts/raft_minigame.gd" id="1_keugn"]
 [ext_resource type="Script" uid="uid://co2thrc4yd4xi" path="res://scripts/rock.gd" id="2_j7673"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bda1hwj4ajj13" path="res://scenes/finish.gd" id="6_v08c5"]
 [ext_resource type="Texture2D" uid="uid://bw3xo01m6qtt2" path="res://assets/raft.png" id="7_uet1u"]
 [ext_resource type="Texture2D" uid="uid://do3auymkwtcw1" path="res://assets/Seamine.png" id="8_v08c5"]
+[ext_resource type="PackedScene" uid="uid://vsswstq88npp" path="res://scenes/item.tscn" id="9_nyjvl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vbdr"]
 size = Vector2(473, 14284)
@@ -884,6 +885,96 @@ texture = ExtResource("8_v08c5")
 position = Vector2(0.5, -1.5)
 scale = Vector2(-5.59023, -4.77938)
 shape = SubResource("CircleShape2D_nyjvl")
+
+[node name="wood" type="Node2D" parent="."]
+
+[node name="item" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(441, -270)
+item_type = 1
+
+[node name="item2" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(809, -581)
+item_type = 1
+
+[node name="item3" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(813, -1166)
+item_type = 1
+
+[node name="item4" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(767, -1720)
+item_type = 1
+
+[node name="item5" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(497, -2035)
+item_type = 1
+
+[node name="item6" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(524, -2457)
+item_type = 1
+
+[node name="item7" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(486, -3190)
+item_type = 1
+
+[node name="item8" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(475, -3923)
+item_type = 1
+
+[node name="item9" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(608, -4774)
+item_type = 1
+
+[node name="item10" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(764, -5404)
+item_type = 1
+
+[node name="item11" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(646, -6038)
+item_type = 1
+
+[node name="item12" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(616, -6543)
+item_type = 1
+
+[node name="item13" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(537, -7333)
+item_type = 1
+
+[node name="item14" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(659, -8032)
+item_type = 1
+
+[node name="item15" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(564, -8917)
+item_type = 1
+
+[node name="item16" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(834, -9395)
+item_type = 1
+
+[node name="item17" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(488, -9892)
+item_type = 1
+
+[node name="item18" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(454, -10841)
+item_type = 1
+
+[node name="item19" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(811, -11460)
+item_type = 1
+
+[node name="item20" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(633, -11976)
+item_type = 1
+
+[node name="item21" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(432, -12717)
+item_type = 1
+
+[node name="item22" parent="wood" instance=ExtResource("9_nyjvl")]
+position = Vector2(903, -12395)
+item_type = 1
 
 [connection signal="area_entered" from="finish" to="finish" method="_on_area_entered"]
 [connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]

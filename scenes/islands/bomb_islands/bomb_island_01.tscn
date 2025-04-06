@@ -54,6 +54,18 @@ position = Vector2(2151, 2304)
 [node name="Tree9" parent="Trees" instance=ExtResource("7_bqpj4")]
 position = Vector2(977, 2285)
 
+[node name="Tree11" parent="Trees" instance=ExtResource("7_bqpj4")]
+position = Vector2(840, 2356)
+
+[node name="Tree12" parent="Trees" instance=ExtResource("7_bqpj4")]
+position = Vector2(1131, 2439)
+
+[node name="Tree13" parent="Trees" instance=ExtResource("7_bqpj4")]
+position = Vector2(831, 2570)
+
+[node name="Tree14" parent="Trees" instance=ExtResource("7_bqpj4")]
+position = Vector2(2133, 1086)
+
 [node name="Tree10" parent="Trees" instance=ExtResource("7_bqpj4")]
 position = Vector2(1996, 1266)
 

@@ -43,7 +43,7 @@ func _physics_process(_delta):
 				player_node.damage()
 
 	if hp <= 0:
-		for i in rng.randi_range(2, 4):
+		for i in rng.randi_range(3, 5):
 			var snake_rope_instance = snake_rope.instantiate()
 			snake_rope_instance.item_type = 4
 			snake_rope_instance.position = self.position + Vector2(rng.randf_range(-100.0, 100.0),rng.randf_range(-10.0, 200.0))

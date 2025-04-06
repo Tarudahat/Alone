@@ -9,23 +9,8 @@ extends Control
 var player_node
 
 func _ready():
-	player.current_timer = minigame_timer
-	minigame_timer.start()
+	player.get_node("island_timer").start(Globals.time_left + 1.5*60.0)
+	$Player.get_node("Sprite").frame = 4
 
 func _process(_delta: float) -> void:
-	player.position = raft.position
-
-func _on_minigame_timer_timeout():
-	pass
-
-func exit_raft() -> void:
-	player.block_movement = false
-	# add destination scene as child root
-	var target_scene = Globals.bomb_island.instantiate()
-	get_tree().get_root().add_child(target_scene)
-	# queue wipe current scene from root
-	get_tree().get_current_scene().queue_free()
-	# change scene
-	get_tree().set_current_scene(target_scene)
-	#
-	queue_free()
+	player.position = raft.position + Vector2(0,-50)
