@@ -9,7 +9,7 @@ class_name Player
 @onready var wave_sounds : AudioStreamPlayer2D = $Wave_sounds
 
 var target = position
-var block_movement = false
+@export var block_movement = true
 var can_throw = true
 var throw_target_position
 var items: Array[int] = [0,0,0,0,0,0]
@@ -102,3 +102,8 @@ func _on_island_timer_timeout() -> void:
 
 func _on_wave_sounds_finished() -> void:
 	$Wave_sounds.play(0)
+
+
+func _on_movement_bug_timer_timeout() -> void:
+	block_movement = false
+	target = self.position

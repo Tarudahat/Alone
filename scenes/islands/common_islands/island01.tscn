@@ -331,4 +331,4 @@ destination_scene = ExtResource("9_xwgot")
 position = Vector2(-1830, -469)
 
 [node name="Player" parent="." instance=ExtResource("2_h75ht")]
-position = Vector2(-454, 1186)
+position = Vector2(-501, 1273)

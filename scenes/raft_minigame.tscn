@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cy7actb3fia78"]
+[gd_scene load_steps=7 format=3 uid="uid://clg7umv02ce63"]
 
-[ext_resource type="Script" uid="uid://b2uu3d4udk4q4" path="res://scripts/raft_minigame.gd" id="1_keugn"]
-[ext_resource type="Script" uid="uid://co2thrc4yd4xi" path="res://scripts/rock.gd" id="2_j7673"]
+[ext_resource type="Script" path="res://scripts/raft_minigame.gd" id="1_keugn"]
+[ext_resource type="Script" path="res://scripts/rock.gd" id="2_j7673"]
 [ext_resource type="Texture2D" uid="uid://b2xbviayn2yjr" path="res://icon.svg" id="3_eegjx"]
 [ext_resource type="Texture2D" uid="uid://br856cjntwh1" path="res://assets/blue_background.png" id="4_eegjx"]
 [ext_resource type="PackedScene" uid="uid://bkhwrpk8o2kf8" path="res://scenes/Player.tscn" id="5_cfoot"]

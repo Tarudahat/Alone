@@ -14,7 +14,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player_in_range and player_node:
 		if Input.is_action_just_pressed("collect"):
 			if player_node.items[3] >= coal_cost and\
@@ -25,8 +25,8 @@ func _process(delta: float) -> void:
 				player_node.items[3] -= coal_cost * max_bombs
 				player_node.items[2] -= sulfur_cost * max_bombs
 				player_node.items[0] -= shell_cost * max_bombs
-				$AnimatedSprite2D.scale.x = 1.0 + max_bombs/10
-				$AnimatedSprite2D.scale.y = 1.0 + max_bombs/10
+				$AnimatedSprite2D.scale.x = 1.0 + float(max_bombs)/10
+				$AnimatedSprite2D.scale.y = 1.0 + float(max_bombs)/10
 			
 
 

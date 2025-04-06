@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://mjyooktkajre"]
+
+[ext_resource type="Texture2D" uid="uid://bhh68iqbodrtk" path="res://assets/title_screen.png" id="1_fgkus"]
+[ext_resource type="Script" uid="uid://b8a1aia0bk4cg" path="res://scripts/title_screen.gd" id="1_s4lrb"]
+[ext_resource type="Texture2D" uid="uid://o06sybv7ip50" path="res://assets/question_marks.png" id="2_sa3yf"]
+[ext_resource type="AudioStream" uid="uid://b4u8vaok4vy0l" path="res://assets/fwwuuuu.wav" id="4_mgrm8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4lrb"]
+atlas = ExtResource("2_sa3yf")
+region = Rect2(0, 0, 250, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgrm8"]
+atlas = ExtResource("2_sa3yf")
+region = Rect2(250, 0, 250, 350)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dc4i4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4lrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgrm8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="title_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s4lrb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fgkus")
+
+[node name="question_mark" type="AnimatedSprite2D" parent="."]
+position = Vector2(1821, 461)
+scale = Vector2(1.8, 1.8)
+sprite_frames = SubResource("SpriteFrames_dc4i4")
+autoplay = "default"
+frame_progress = 0.70872
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 985.0
+offset_top = 884.0
+offset_right = 1000.0
+offset_bottom = 902.0
+scale = Vector2(39.72, 15.84)
+flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_mgrm8")
+volume_db = 2.0
+pitch_scale = 0.9
+autoplay = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
