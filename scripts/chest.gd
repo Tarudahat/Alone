@@ -24,6 +24,8 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("collect"):
 		if player_in_range and player_node and $AnimatedSprite2D.frame < 3:
+			if $AnimatedSprite2D.frame == 1:
+				$AudioStreamPlayer2D.play(0)
 			$AnimatedSprite2D.frame += 1
 
 

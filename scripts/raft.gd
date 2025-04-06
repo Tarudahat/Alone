@@ -10,7 +10,7 @@ func _ready() -> void:
 	pass
 	
 
-func _physics_process(delta) -> void:
+func _physics_process(_delta) -> void:
 	var direction = 0
 
 	# Handle A/D input

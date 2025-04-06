@@ -139,6 +139,18 @@ item_type = 5
 position = Vector2(1157, 1677)
 item_type = 5
 
+[node name="item37" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(3598, 2478)
+item_type = 5
+
+[node name="item38" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(3425, 2475)
+item_type = 5
+
+[node name="item39" parent="Stones" instance=ExtResource("5_ncxdc")]
+position = Vector2(3494, 2525)
+item_type = 5
+
 [node name="item36" parent="Stones" instance=ExtResource("5_ncxdc")]
 position = Vector2(1387, 1542)
 item_type = 5

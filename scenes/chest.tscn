@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://2tbe5mnhco3q"]
+[gd_scene load_steps=12 format=3 uid="uid://2tbe5mnhco3q"]
 
 [ext_resource type="Script" uid="uid://cwyxcu2cel237" path="res://scripts/chest.gd" id="1_gqd3d"]
 [ext_resource type="Texture2D" uid="uid://b6wl3med4t2wj" path="res://assets/chest.png" id="1_oii8l"]
 [ext_resource type="PackedScene" uid="uid://dsp5tqil3gvlt" path="res://scenes/e_indicator.tscn" id="2_sy5e1"]
+[ext_resource type="AudioStream" uid="uid://dnb4j7w1c77jc" path="res://assets/stonks.wav" id="4_yue2o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gqd3d"]
 atlas = ExtResource("1_oii8l")
@@ -65,6 +66,9 @@ shape = SubResource("CircleShape2D_oii8l")
 
 [node name="E_indicator" parent="." instance=ExtResource("2_sy5e1")]
 position = Vector2(0, -102)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_yue2o")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

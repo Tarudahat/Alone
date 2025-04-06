@@ -12,7 +12,7 @@ func _ready():
 	player.current_timer = minigame_timer
 	minigame_timer.start()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	player.position = raft.position
 
 func _on_minigame_timer_timeout():

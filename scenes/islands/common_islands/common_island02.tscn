@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://e1a8cxmcl6ck" path="res://scenes/raft_build_area.tscn" id="7_uoabq"]
 [ext_resource type="PackedScene" uid="uid://2tbe5mnhco3q" path="res://scenes/chest.tscn" id="8_8502n"]
 
-[node name="Island" type="Node2D"]
+[node name="Island2" type="Node2D"]
 
 [node name="map" type="Node2D" parent="."]
 
@@ -167,6 +167,50 @@ item_type = 5
 
 [node name="item8" parent="rocks" instance=ExtResource("3_8xybv")]
 position = Vector2(2823, -2087)
+item_type = 5
+
+[node name="item18" parent="rocks" instance=ExtResource("3_8xybv")]
+position = Vector2(2807, -425)
+item_type = 5
+
+[node name="item19" parent="rocks" instance=ExtResource("3_8xybv")]
+position = Vector2(5384, -504)
+item_type = 5
+
+[node name="item20" parent="rocks" instance=ExtResource("3_8xybv")]
+position = Vector2(5295, -543)
+item_type = 5
+
+[node name="item21" parent="rocks" instance=ExtResource("3_8xybv")]
+position = Vector2(5395, -609)
+item_type = 5
+
+[node name="item22" parent="rocks" instance=ExtResource("3_8xybv")]
+position = Vector2(4860, -978)
+item_type = 5
+
+[node name="item23" parent="rocks" instance=ExtResource("3_8xybv")]
+position = Vector2(5016, -975)
+item_type = 5
+
+[node name="item24" parent="rocks" instance=ExtResource("3_8xybv")]
+position = Vector2(2699, -1751)
+item_type = 5
+
+[node name="item25" parent="rocks" instance=ExtResource("3_8xybv")]
+position = Vector2(2768, -1986)
+item_type = 5
+
+[node name="item26" parent="rocks" instance=ExtResource("3_8xybv")]
+position = Vector2(2896, -1952)
+item_type = 5
+
+[node name="item27" parent="rocks" instance=ExtResource("3_8xybv")]
+position = Vector2(2533, -1813)
+item_type = 5
+
+[node name="item28" parent="rocks" instance=ExtResource("3_8xybv")]
+position = Vector2(2644, -1851)
 item_type = 5
 
 [node name="item13" parent="rocks" instance=ExtResource("3_8xybv")]

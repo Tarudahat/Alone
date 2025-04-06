@@ -66,6 +66,24 @@ func _input(event):
 			
 	elif event.is_action_pressed(&"left_click") and not block_movement:
 		target = get_global_mouse_position()
+		var movement_dir = position.direction_to(target)
+		var a = 0.95
+		if (movement_dir.dot(Vector2(1,1)))>a:
+			$Sprite.frame = 1
+		if (movement_dir.dot(Vector2(1,-1)))>a:
+			$Sprite.frame = 3
+		if (movement_dir.dot(Vector2.RIGHT))>a:
+			$Sprite.frame = 2
+		if (movement_dir.dot(Vector2.UP))>a:
+			$Sprite.frame = 4
+		if (movement_dir.dot(Vector2(-1,-1)))>a:
+			$Sprite.frame = 5
+		if (movement_dir.dot(Vector2(-1,1)))>a:
+			$Sprite.frame = 7
+		if (movement_dir.dot(Vector2.LEFT))>a:
+			$Sprite.frame = 6
+		if (movement_dir.dot(Vector2.DOWN))>a:
+			$Sprite.frame = 0
 		walk_sound.play()
 	if event.is_action_pressed("make_coal") and items[1] and not block_movement:
 		block_movement = true
@@ -79,7 +97,9 @@ func _input(event):
 			wood_minigame_instance.max_coal_reward = items[1]
 			
 		get_parent().add_child(wood_minigame_instance)
-
+		
+		
+	
 
 func _physics_process(_delta):
 	velocity = position.direction_to(target) * speed

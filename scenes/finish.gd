@@ -2,11 +2,6 @@ extends Area2D
 
 @onready var raft_minigame: Control = $".."
 
-
-func _process(delta: float) -> void:
-	pass
-	
-
 func _on_body_entered(body: Node2D) -> void:
 	print("finished")
 	if body.name == "Player":
