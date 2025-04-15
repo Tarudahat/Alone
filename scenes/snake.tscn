@@ -40,13 +40,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc36x"]
-size = Vector2(200, 44)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_auphx"]
+size = Vector2(34, 198)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yc36x"]
 radius = 430.01
 
 [node name="Snake" type="CharacterBody2D"]
+collision_layer = 17
+collision_mask = 17
 input_pickable = true
 motion_mode = 1
 floor_stop_on_slope = false
@@ -62,7 +64,8 @@ autoplay = "default"
 frame_progress = 0.297862
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_yc36x")
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_auphx")
 
 [node name="agro_zone" type="Area2D" parent="."]
 

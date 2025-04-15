@@ -60,7 +60,7 @@ grow_vertical = 2
 script = ExtResource("1_tmktg")
 
 [node name="Log" type="Sprite2D" parent="."]
-position = Vector2(0, 620)
+position = Vector2(-27, 620)
 texture = ExtResource("1_nfrom")
 
 [node name="Stick" type="Sprite2D" parent="."]

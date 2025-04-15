@@ -6,7 +6,7 @@ class_name Crab
 @export var SPEED = 320.0
 @export var NON_AGRO_SPEED = 250.0
 @export var no_angry_direction = -1
-@export var hp = 5
+@export var hp = 4
 var rng = RandomNumberGenerator.new()
 
 var player_node: Node2D = null

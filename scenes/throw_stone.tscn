@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dirndebnao166" path="res://assets/throw_rock.png" id="2_fq5w6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7c8on"]
-radius = 46.0977
+radius = 53.0
 
 [node name="throw_stone" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 16
 motion_mode = 1
 script = ExtResource("2_3pohx")
 
@@ -16,3 +18,9 @@ texture = ExtResource("2_fq5w6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7c8on")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

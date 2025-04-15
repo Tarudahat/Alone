@@ -26,7 +26,7 @@ polygon = PackedVector2Array(3351, 1639, 3450, 1579, 3697, 1702, 3519, 1804, 331
 [node name="StaticBody2D2" type="StaticBody2D" parent="map"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="map/StaticBody2D2"]
-polygon = PackedVector2Array(856, 108, 1681, 231, 1939, 669, 2136, 72, 2920, 124, 3334, -28, 4549, 148, 4674, 258, 4663, 479, 4767, 572, 4832, 538, 5129, 51, 5944, 92, 6193, 666, 5854, 1111, 5409, 1208, 5316, 1439, 5015, 1556, 5337, 1639, 5713, 1498, 6075, 1487, 6286, 1632, 6258, 1712, 6448, 2136, 6369, 2233, 6155, 2878, 5968, 3023, 5844, 3313, 5609, 3351, 5223, 3255, 4370, 3168, 3835, 2575, 3869, 2323, 3759, 2274, 3652, 2392, 3383, 3120, 3120, 3307, 2530, 3424, 1908, 3345, 1627, 3555, 1160, 3545, 887, 3407, 880, 3256, 1160, 2786, 1047, 2265, 1338, 2017, 1659, 2089, 1599, 2293, 1765, 2425, 1976, 2327, 1897, 2152, 1668, 1966, 1389, 1894, 1084, 1957, 924, 2152, 940, 3027, 767, 3200, 529, 3087, 297, 2688, 114, 2192, 187, 1715, 93, 1191, 190, 777, 344, 683, 488, 206, 949, 74, 943, -155, -127, -188, -40, 3660, 6644, 3647, 6555, -155, 782, -226)
+polygon = PackedVector2Array(856, 108, 1681, 231, 1939, 669, 2136, 72, 2920, 124, 3334, -28, 4549, 148, 4674, 258, 4663, 479, 4767, 572, 4832, 538, 5129, 51, 5944, 92, 6193, 666, 5854, 1111, 5409, 1208, 5316, 1439, 5015, 1556, 5337, 1639, 5713, 1498, 6075, 1487, 6286, 1632, 6258, 1712, 6448, 2136, 6369, 2233, 6155, 2878, 5968, 3023, 5844, 3313, 5609, 3351, 5223, 3255, 4370, 3168, 3835, 2575, 3869, 2323, 3759, 2274, 3652, 2392, 3383, 3120, 3120, 3307, 2530, 3424, 1908, 3345, 1627, 3555, 1160, 3545, 887, 3407, 880, 3256, 1160, 2786, 1047, 2265, 1338, 2017, 1659, 2089, 1645, 2269, 1765, 2425, 1976, 2327, 1897, 2152, 1668, 1966, 1389, 1894, 1084, 1957, 924, 2152, 940, 3027, 767, 3200, 529, 3087, 297, 2688, 114, 2192, 187, 1715, 93, 1191, 190, 777, 344, 683, 488, 206, 949, 74, 943, -155, -127, -188, -40, 3660, 6644, 3647, 6555, -155, 782, -226)
 
 [node name="trees" type="Node2D" parent="."]
 
@@ -165,10 +165,6 @@ item_type = 5
 position = Vector2(2728, -2134)
 item_type = 5
 
-[node name="item8" parent="rocks" instance=ExtResource("3_8xybv")]
-position = Vector2(2823, -2087)
-item_type = 5
-
 [node name="item18" parent="rocks" instance=ExtResource("3_8xybv")]
 position = Vector2(2807, -425)
 item_type = 5
@@ -197,24 +193,24 @@ item_type = 5
 position = Vector2(2699, -1751)
 item_type = 5
 
-[node name="item25" parent="rocks" instance=ExtResource("3_8xybv")]
-position = Vector2(2768, -1986)
-item_type = 5
-
 [node name="item26" parent="rocks" instance=ExtResource("3_8xybv")]
 position = Vector2(2896, -1952)
 item_type = 5
 
-[node name="item27" parent="rocks" instance=ExtResource("3_8xybv")]
-position = Vector2(2533, -1813)
-item_type = 5
-
 [node name="item28" parent="rocks" instance=ExtResource("3_8xybv")]
-position = Vector2(2644, -1851)
+position = Vector2(2580, -1830)
 item_type = 5
 
 [node name="item13" parent="rocks" instance=ExtResource("3_8xybv")]
 position = Vector2(109, -358)
+item_type = 5
+
+[node name="item29" parent="rocks" instance=ExtResource("3_8xybv")]
+position = Vector2(-122, -508)
+item_type = 5
+
+[node name="item31" parent="rocks" instance=ExtResource("3_8xybv")]
+position = Vector2(149, -77)
 item_type = 5
 
 [node name="item14" parent="rocks" instance=ExtResource("3_8xybv")]

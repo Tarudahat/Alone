@@ -21,6 +21,8 @@ offset_bottom = 40.0
 texture = ExtResource("1_vtltj")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="map"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="map/StaticBody2D"]
 polygon = PackedVector2Array(-91, 443, 973, 373, 1161, 508, 1341, 1028, 1544, 1053, 1676, 952, 1821, 628, 1793, 378, 2010, 201, 2437, 215, 2780, 351, 2818, 495, 2704, 785, 2714, 933, 2398, 1274, 2288, 1268, 2166, 1523, 2253, 1861, 2642, 2057, 2763, 2494, 2608, 2737, 2146, 2948, 1949, 3117, 1854, 3319, 1450, 3439, 1204, 3433, 356, 3117, 328, 2881, 135, 2655, 199, 1992, 227, 1763, 354, 1527, 152, 1172, 204, 1011, 400, 874, 519, 664, 513, 393, -91, 428, -58, 3607, 3157, 3550, 3198, -40, -96, 32)

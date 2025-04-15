@@ -3,6 +3,7 @@ extends Control
 @export var destination_scene = load("res://scenes/title_screen.tscn")
 
 func _on_timer_timeout() -> void:
+	Globals.reset_all_values()
 	# add destination scene as child root
 	var target_scene = destination_scene.instantiate()
 	get_tree().get_root().add_child(target_scene)

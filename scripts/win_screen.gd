@@ -30,6 +30,7 @@ func _process(_delta: float) -> void:
 		get_tree().set_current_scene(target_scene)
 	if can_go:
 		if (Input.is_action_just_pressed("collect") or Input.is_action_just_pressed("left_click")):
+			Globals.reset_all_values()
 			# add destination scene as child root
 			var target_scene = destination_scene.instantiate()
 			get_tree().get_root().add_child(target_scene)

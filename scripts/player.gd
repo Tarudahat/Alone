@@ -26,7 +26,8 @@ var wood_minigame_instance = null
 func _ready():
 	self.items = Globals.items
 	self.get_node("island_timer").start(Globals.time_left + Globals.time_s_per_level[Globals.current_level])
- 
+
+
 func damage():
 	for j in rng.randi_range(1, 5):
 		var victim_idx = rng.randi_range(0, 5)
@@ -34,25 +35,26 @@ func damage():
 			items[victim_idx] -= 1
 	damage_sound.play()
 
+
 func _process(_delta):
-	$items_ui/VBoxContainer/Label.text = "Shells: " + str(items[0])
-	$items_ui/VBoxContainer/Label2.text = "Wood: " + str(items[1])
-	$items_ui/VBoxContainer/Label3.text = "Sulfur: " + str(items[2])
-	$items_ui/VBoxContainer/Label4.text = "Coal: " + str(items[3])
-	$items_ui/VBoxContainer/Label5.text = "\"Rope\": " + str(items[4])
-	$items_ui/VBoxContainer/Label6.text = "Stones: " + str(items[5])
+	$UI/items_ui/VBoxContainer/Label.text = "Shells: " + str(items[0])
+	$UI/items_ui/VBoxContainer/Label2.text = "Wood: " + str(items[1])
+	$UI/items_ui/VBoxContainer/Label3.text = "Sulfur: " + str(items[2])
+	$UI/items_ui/VBoxContainer/Label4.text = "Coal: " + str(items[3])
+	$UI/items_ui/VBoxContainer/Label5.text = "\"Rope\": " + str(items[4])
+	$UI/items_ui/VBoxContainer/Label6.text = "Stones: " + str(items[5])
 	#$Sprite.play(animation_direction())
 	if int(int(current_timer.time_left)%60) > 9:
-		$items_ui/death_timer_ui/Label7.text = str(int(current_timer.time_left/60)) +\
+		$UI/items_ui/death_timer_ui/Label7.text = str(int(current_timer.time_left/60)) +\
 		 " : " +str(int(int(current_timer.time_left)%60))
 	else:
-		$items_ui/death_timer_ui/Label7.text = str(int(current_timer.time_left/60)) +\
+		$UI/items_ui/death_timer_ui/Label7.text = str(int(current_timer.time_left/60)) +\
 		 " : 0" +str(int(int(current_timer.time_left)%60))
 		
 
 func _input(event):
 	# Use is_action_pressed to only accept single taps as input instead of mouse drags.
-	if items[5] and Input.is_action_pressed("collect") and event.is_action_pressed(&"left_click"):
+	if items[5] and event.is_action_pressed(&"right_click"):
 		if can_throw:
 			throw_sound.play()
 			items[5]-=1

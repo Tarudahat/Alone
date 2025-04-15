@@ -23,6 +23,8 @@ script = ExtResource("2_vplca")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-8, 115)
+collision_layer = 19
+collision_mask = 19
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 118)
@@ -64,6 +66,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Hit_tree_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_dmmp0")
+volume_db = -5.0
 
 [connection signal="mouse_entered" from="punch_hitbox" to="." method="_on_punch_hitbox_mouse_entered"]
 [connection signal="mouse_exited" from="punch_hitbox" to="." method="_on_punch_hitbox_mouse_exited"]

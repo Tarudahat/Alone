@@ -10,3 +10,10 @@ var bomb_island = load("res://scenes/islands/bomb_islands/bomb_island_01.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+
+func reset_all_values() -> void:
+	current_level = 0
+	items = [0,0,0,0,0,0]
+	time_left = 0 # + per level time
+	treasures_found = 0
+	max_bombs = 0
